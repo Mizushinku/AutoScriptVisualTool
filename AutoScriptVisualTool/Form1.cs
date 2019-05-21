@@ -18,6 +18,7 @@ namespace AutoScriptVisualTool
         public mainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void main_panel_Paint(object sender, PaintEventArgs e)
@@ -28,6 +29,7 @@ namespace AutoScriptVisualTool
         private void add_btn_Click(object sender, EventArgs e)
         {
             Add_Form add_Form = new Add_Form();
+            add_Form.StartPosition = FormStartPosition.CenterParent;
             if(add_Form.ShowDialog(this) == DialogResult.OK)
             {
                 int which = add_Form.which;
@@ -35,26 +37,26 @@ namespace AutoScriptVisualTool
                 if (which == 1)
                 {
                     item_cnt = start_list.Items.Count;
-                    start_list.Items.Add(String.Format("{0}. start[{0}]", item_cnt));
-                    map.Add(start_list.Items[item_cnt], new Script_form());
+                    start_list.Items.Add(String.Format("start{0}", item_cnt));
+                    map.Add(start_list.Items[item_cnt], new Script_form(which));
                 }
                 else if(which == 2)
                 {
                     item_cnt = trigger_list.Items.Count;
-                    trigger_list.Items.Add(String.Format("{0}. trigger[{0}]", item_cnt));
-                    map.Add(trigger_list.Items[item_cnt], new Script_form());
+                    trigger_list.Items.Add(String.Format("trigger{0}", item_cnt));
+                    map.Add(trigger_list.Items[item_cnt], new Script_form(which));
                 }
                 else if(which == 3)
                 {
                     item_cnt = destroy_list.Items.Count;
-                    destroy_list.Items.Add(String.Format("{0}. destroy[{0}]", item_cnt));
-                    map.Add(destroy_list.Items[item_cnt], new Script_form());
+                    destroy_list.Items.Add(String.Format("destroy{0}", item_cnt));
+                    map.Add(destroy_list.Items[item_cnt], new Script_form(which));
                 }
                 else if(which == 4)
                 {
                     item_cnt = update_list.Items.Count;
-                    update_list.Items.Add(String.Format("{0}. update[{0}]", item_cnt));
-                    map.Add(update_list.Items[item_cnt], new Script_form());
+                    update_list.Items.Add(String.Format("update{0}", item_cnt));
+                    map.Add(update_list.Items[item_cnt], new Script_form(which));
                 }
             }
         }
@@ -72,6 +74,45 @@ namespace AutoScriptVisualTool
             cur_form.Show();
         }
 
+        int trigger_pre_slt = -1;
+        private void trigger_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (trigger_list.SelectedIndex == trigger_pre_slt) return;
+            trigger_pre_slt = trigger_list.SelectedIndex;
+            if (trigger_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[trigger_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
+        int destroy_pre_slt = -1;
+        private void destroy_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (destroy_list.SelectedIndex == destroy_pre_slt) return;
+            destroy_pre_slt = destroy_list.SelectedIndex;
+            if (destroy_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[destroy_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
+        int update_pre_slt = -1;
+        private void update_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (update_list.SelectedIndex == update_pre_slt) return;
+            update_pre_slt = update_list.SelectedIndex;
+            if (update_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[update_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
         private void newClass_btn_Click(object sender, EventArgs e)
         {
             if(cur_form == null)
@@ -80,7 +121,13 @@ namespace AutoScriptVisualTool
             }
             else
             {
-                cur_form.class_list.Items.Add("new class");
+                InputBox inputBox = new InputBox("New Class", "請輸入新項目名稱");
+                inputBox.StartPosition = FormStartPosition.CenterParent;
+                if(inputBox.ShowDialog() == DialogResult.OK)
+                {
+                    cur_form.class_list.Items.Add(inputBox.textBox1.Text);
+                    cur_form.class_list_ItemAdded();
+                }
             }
         }
 

@@ -152,6 +152,7 @@
             this.trigger_list.Name = "trigger_list";
             this.trigger_list.Size = new System.Drawing.Size(196, 489);
             this.trigger_list.TabIndex = 1;
+            this.trigger_list.SelectedIndexChanged += new System.EventHandler(this.trigger_list_SelectedIndexChanged);
             // 
             // destroy_page
             // 
@@ -174,6 +175,7 @@
             this.destroy_list.Name = "destroy_list";
             this.destroy_list.Size = new System.Drawing.Size(196, 489);
             this.destroy_list.TabIndex = 1;
+            this.destroy_list.SelectedIndexChanged += new System.EventHandler(this.destroy_list_SelectedIndexChanged);
             // 
             // update_page
             // 
@@ -196,6 +198,7 @@
             this.update_list.Name = "update_list";
             this.update_list.Size = new System.Drawing.Size(196, 489);
             this.update_list.TabIndex = 1;
+            this.update_list.SelectedIndexChanged += new System.EventHandler(this.update_list_SelectedIndexChanged);
             // 
             // player_page
             // 
