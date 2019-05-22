@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Condition_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Condition_Form.Designer.cs">
+      <DependentUpon>Condition_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Event_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Condition_Form.resx">
+      <DependentUpon>Condition_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Event_Form.resx">
       <DependentUpon>Event_Form.cs</DependentUpon>
     </EmbeddedResource>

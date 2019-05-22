@@ -155,5 +155,25 @@ namespace AutoScriptVisualTool
             main_panel.Controls.Clear();
             cur_form = null;
         }
+
+        private void add_cond_btn_Click(object sender, EventArgs e)
+        {
+            /*
+            if(cur_form == null || cur_form.pre_slt == -1)
+            {
+                MessageBox.Show("請選擇一個class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Condition_Form condition_Form = new condition_Form();
+                if(condition_Form.ShowDialog() == DialogResult.OK)
+                {
+                    Event_Form sub_form = cur_form.get_sub_form();
+                    sub_form.event_list.Items.Add(condition_Form.condstr);
+                }
+            }
+            */
+            new Condition_Form().ShowDialog();
+        }
     }
 }

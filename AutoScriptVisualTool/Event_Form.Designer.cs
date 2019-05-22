@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.event_list = new System.Windows.Forms.ListView();
+            this.event_list = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -52,11 +52,13 @@
             // event_list
             // 
             this.event_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.event_list.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.event_list.FormattingEnabled = true;
+            this.event_list.ItemHeight = 19;
             this.event_list.Location = new System.Drawing.Point(0, 0);
             this.event_list.Name = "event_list";
             this.event_list.Size = new System.Drawing.Size(690, 471);
             this.event_list.TabIndex = 0;
-            this.event_list.UseCompatibleStateImageBehavior = false;
             // 
             // Event_Form
             // 
@@ -77,6 +79,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListView event_list;
+        internal System.Windows.Forms.ListBox event_list;
     }
 }

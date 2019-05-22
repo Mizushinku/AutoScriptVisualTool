@@ -47,6 +47,7 @@
             this.add_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.newClass_btn = new System.Windows.Forms.Button();
+            this.add_cond_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -268,6 +269,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.add_cond_btn);
             this.panel1.Controls.Add(this.newClass_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(216, 0);
@@ -288,6 +290,17 @@
             this.newClass_btn.Text = "New Class";
             this.newClass_btn.UseVisualStyleBackColor = false;
             this.newClass_btn.Click += new System.EventHandler(this.newClass_btn_Click);
+            // 
+            // add_cond_btn
+            // 
+            this.add_cond_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.add_cond_btn.Location = new System.Drawing.Point(75, 0);
+            this.add_cond_btn.Name = "add_cond_btn";
+            this.add_cond_btn.Size = new System.Drawing.Size(75, 57);
+            this.add_cond_btn.TabIndex = 1;
+            this.add_cond_btn.Text = "Add\r\nCondition";
+            this.add_cond_btn.UseVisualStyleBackColor = true;
+            this.add_cond_btn.Click += new System.EventHandler(this.add_cond_btn_Click);
             // 
             // mainForm
             // 
@@ -331,6 +344,7 @@
         private System.Windows.Forms.TabPage function_page;
         private System.Windows.Forms.TabPage default_page;
         private System.Windows.Forms.Panel main_panel;
+        private System.Windows.Forms.Button add_cond_btn;
     }
 }
 
