@@ -29,10 +29,24 @@ namespace AutoScriptVisualTool
 
         private void OK_btn_Click(object sender, EventArgs e)
         {
-            //find the checked rb's name
-            String crb_name = logics_gb.Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked).Text;
+            //find the checked rb
+            RadioButton rb = logics_gb.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            if(rb == null)
+            {
+                MessageBox.Show("未選擇條件", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            String crb_name = rb.Text;
             condstr = crb_name;
-            this.DialogResult = DialogResult.OK;
+            if(make_condstr(rb.TabIndex))
+            {
+                MessageBox.Show(condstr);
+            }
+            else
+            {
+                MessageBox.Show("條件參數錯誤", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //this.DialogResult = DialogResult.OK;
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -57,7 +71,7 @@ namespace AutoScriptVisualTool
             {
                 int index = rb.TabIndex;
                 if (index == (int)Logics.FOUND) draw_panel(1);
-                if (index >= (int)Logics.GT && index <= (int)Logics.SEQ) draw_panel(2, rb.Text); 
+                else if (index >= (int)Logics.GT && index <= (int)Logics.SEQ) draw_panel(2, rb.Text); 
             }
         }
 
@@ -77,6 +91,7 @@ namespace AutoScriptVisualTool
                     Location = new Point(70, 4),
                 });
                 set_mid();
+                panel1.Controls["found_range_tb"].Focus();
             }
             else if(type == 2)
             {
@@ -100,6 +115,7 @@ namespace AutoScriptVisualTool
                     Location = new Point(158, 4),
                 });
                 set_mid();
+                panel1.Controls["val_1_tb"].Focus();
             }
         }
 
@@ -110,6 +126,25 @@ namespace AutoScriptVisualTool
             {
                 obj.Location = new Point(obj.Location.X, mid - obj.Height / 2);
             }
+        }
+
+        private bool make_condstr(int index)
+        {
+            if (index == (int)Logics.FOUND)
+            {
+                String param1 = panel1.Controls["found_range_tb"].Text;
+                if (param1 == String.Empty) return false;
+                condstr = String.Format("{0} {1}", condstr, param1);
+            }
+            else if (index >= (int)Logics.GT && index <= (int)Logics.SEQ)
+            {
+                String param1 = panel1.Controls["val_1_tb"].Text;
+                String param2 = panel1.Controls["val_2_tb"].Text;
+                if (param1 == String.Empty || param2 == String.Empty) return false;
+                condstr = String.Format("{0} {1} {2}", condstr, param1, param2);
+            }
+
+            return true;
         }
     }
 }
