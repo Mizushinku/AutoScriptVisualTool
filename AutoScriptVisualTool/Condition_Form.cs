@@ -66,12 +66,14 @@ namespace AutoScriptVisualTool
             if (rb.Checked == false)
             {
                 panel1.Controls.Clear();
+                panel2.Controls.Clear();
             }
             else
             {
                 int index = rb.TabIndex;
                 if (index == (int)Logics.FOUND) draw_panel(1);
-                else if (index >= (int)Logics.GT && index <= (int)Logics.SEQ) draw_panel(2, rb.Text); 
+                else if (index >= (int)Logics.GT && index <= (int)Logics.SEQ) draw_panel(2, rb.Text);
+                else if (index >= (int)Logics.AND && index <= (int)Logics.NOT) draw_panel(3, rb.Text);
             }
         }
 
@@ -117,6 +119,28 @@ namespace AutoScriptVisualTool
                 set_mid();
                 panel1.Controls["val_1_tb"].Focus();
             }
+            else if(type ==3)
+            {
+                panel2.Controls.Add(new TreeView
+                {
+                    Name = "logic_tree_view",
+                    Dock = DockStyle.Fill,
+                    Font = new Font("新細明體", 12, FontStyle.Regular),
+                });
+                TreeView tv = (TreeView)panel2.Controls["logic_tree_view"];
+                tv.AfterSelect += new TreeViewEventHandler(tree_view_AfterSelect);
+                tv.Nodes.Add(new TreeNode(logic));
+                if(logic == "not")
+                {
+                    tv.Nodes[0].Nodes.Add(makeNode("Cond"));
+                }
+                else
+                {
+                    tv.Nodes[0].Nodes.Add(makeNode("Cond1"));
+                    tv.Nodes[0].Nodes.Add(makeNode("Cond2"));
+                }
+                tv.Nodes[0].Expand();
+            }
         }
 
         private void set_mid()
@@ -145,6 +169,32 @@ namespace AutoScriptVisualTool
             }
 
             return true;
+        }
+
+        private TreeNode makeNode(String text)
+        {
+            TreeNode tn = new TreeNode
+            {
+                Text = text,
+                NodeFont = new Font("新細明體", 12, FontStyle.Bold)
+            };
+            return tn;
+        }
+
+        private void tree_view_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if(e.Node.Text == "Cond1")
+            {
+                ;
+            }
+            else if(e.Node.Text == "Cond2" || e.Node.Text == "Cond")
+            {
+                ;
+            }
+            else
+            {
+                ;
+            }
         }
     }
 }
