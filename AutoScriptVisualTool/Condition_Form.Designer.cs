@@ -45,14 +45,14 @@
             this.cancel_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.true_rb = new System.Windows.Forms.RadioButton();
             this.logics_gb.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // logics_gb
             // 
             this.logics_gb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.logics_gb.Controls.Add(this.true_rb);
             this.logics_gb.Controls.Add(this.found_rb);
             this.logics_gb.Controls.Add(this.not_rb);
             this.logics_gb.Controls.Add(this.or_rb);
@@ -68,7 +68,7 @@
             this.logics_gb.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.logics_gb.Location = new System.Drawing.Point(32, 12);
             this.logics_gb.Name = "logics_gb";
-            this.logics_gb.Size = new System.Drawing.Size(386, 207);
+            this.logics_gb.Size = new System.Drawing.Size(386, 246);
             this.logics_gb.TabIndex = 0;
             this.logics_gb.TabStop = false;
             this.logics_gb.Text = "Logic";
@@ -76,7 +76,7 @@
             // found_rb
             // 
             this.found_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.found_rb.Location = new System.Drawing.Point(264, 152);
+            this.found_rb.Location = new System.Drawing.Point(264, 70);
             this.found_rb.Name = "found_rb";
             this.found_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.found_rb.Size = new System.Drawing.Size(108, 35);
@@ -89,7 +89,7 @@
             // not_rb
             // 
             this.not_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.not_rb.Location = new System.Drawing.Point(264, 111);
+            this.not_rb.Location = new System.Drawing.Point(264, 29);
             this.not_rb.Name = "not_rb";
             this.not_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.not_rb.Size = new System.Drawing.Size(108, 35);
@@ -102,7 +102,7 @@
             // or_rb
             // 
             this.or_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.or_rb.Location = new System.Drawing.Point(264, 70);
+            this.or_rb.Location = new System.Drawing.Point(135, 193);
             this.or_rb.Name = "or_rb";
             this.or_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.or_rb.Size = new System.Drawing.Size(108, 35);
@@ -115,7 +115,7 @@
             // and_rb
             // 
             this.and_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.and_rb.Location = new System.Drawing.Point(264, 29);
+            this.and_rb.Location = new System.Drawing.Point(135, 152);
             this.and_rb.Name = "and_rb";
             this.and_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.and_rb.Size = new System.Drawing.Size(108, 35);
@@ -128,7 +128,7 @@
             // unlike_rb
             // 
             this.unlike_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.unlike_rb.Location = new System.Drawing.Point(135, 152);
+            this.unlike_rb.Location = new System.Drawing.Point(135, 111);
             this.unlike_rb.Name = "unlike_rb";
             this.unlike_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.unlike_rb.Size = new System.Drawing.Size(108, 35);
@@ -141,7 +141,7 @@
             // as_rb
             // 
             this.as_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.as_rb.Location = new System.Drawing.Point(135, 111);
+            this.as_rb.Location = new System.Drawing.Point(135, 70);
             this.as_rb.Name = "as_rb";
             this.as_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.as_rb.Size = new System.Drawing.Size(108, 35);
@@ -154,7 +154,7 @@
             // streq_rb
             // 
             this.streq_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.streq_rb.Location = new System.Drawing.Point(135, 70);
+            this.streq_rb.Location = new System.Drawing.Point(135, 29);
             this.streq_rb.Name = "streq_rb";
             this.streq_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.streq_rb.Size = new System.Drawing.Size(108, 35);
@@ -167,7 +167,7 @@
             // eq_rb
             // 
             this.eq_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.eq_rb.Location = new System.Drawing.Point(135, 29);
+            this.eq_rb.Location = new System.Drawing.Point(6, 193);
             this.eq_rb.Name = "eq_rb";
             this.eq_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.eq_rb.Size = new System.Drawing.Size(108, 35);
@@ -251,25 +251,30 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(32, 251);
+            this.panel1.Location = new System.Drawing.Point(32, 284);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(386, 60);
             this.panel1.TabIndex = 3;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.treeView1);
             this.panel2.Location = new System.Drawing.Point(424, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(337, 349);
             this.panel2.TabIndex = 4;
             // 
-            // treeView1
+            // true_rb
             // 
-            this.treeView1.Location = new System.Drawing.Point(149, 48);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(121, 97);
-            this.treeView1.TabIndex = 0;
+            this.true_rb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.true_rb.Location = new System.Drawing.Point(264, 111);
+            this.true_rb.Name = "true_rb";
+            this.true_rb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.true_rb.Size = new System.Drawing.Size(108, 35);
+            this.true_rb.TabIndex = 12;
+            this.true_rb.TabStop = true;
+            this.true_rb.Text = "true";
+            this.true_rb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.true_rb.UseVisualStyleBackColor = true;
             // 
             // Condition_Form
             // 
@@ -286,7 +291,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Condition";
             this.logics_gb.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,6 +314,6 @@
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.RadioButton true_rb;
     }
 }

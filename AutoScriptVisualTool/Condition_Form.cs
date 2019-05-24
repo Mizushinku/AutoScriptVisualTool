@@ -14,7 +14,8 @@ namespace AutoScriptVisualTool
     {
         public String condstr { get; set; } = "";
         private bool firstChecked = false;
-        private enum Logics { GT, LT, GET, LET, EQ, SEQ, AS, UNLIKE, AND, OR, NOT, FOUND };
+        private bool not_cond_clear = false, and_or_cond_clear = false, and_or_cond2_clear = false;
+        private enum Logics { GT, LT, GET, LET, EQ, SEQ, AS, UNLIKE, AND, OR, NOT, FOUND, TRUE };
 
         public Condition_Form()
         {
@@ -40,13 +41,12 @@ namespace AutoScriptVisualTool
             condstr = crb_name;
             if(make_condstr(rb.TabIndex))
             {
-                MessageBox.Show(condstr);
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
                 MessageBox.Show("條件參數錯誤", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //this.DialogResult = DialogResult.OK;
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace AutoScriptVisualTool
                 }
                 else
                 {
-                    tv.Nodes[0].Nodes.Add(makeNode("Cond1"));
+                    tv.Nodes[0].Nodes.Add(makeNode("Cond"));
                     tv.Nodes[0].Nodes.Add(makeNode("Cond2"));
                 }
                 tv.Nodes[0].Expand();
@@ -167,7 +167,25 @@ namespace AutoScriptVisualTool
                 if (param1 == String.Empty || param2 == String.Empty) return false;
                 condstr = String.Format("{0} {1} {2}", condstr, param1, param2);
             }
-
+            else if(index >= (int)Logics.AND && index <= (int)Logics.NOT)
+            {
+                TreeNode root = ((TreeView)panel2.Controls["logic_tree_view"]).Nodes[0];
+                if(root.Text == "not")
+                {
+                    if (!not_cond_clear) return false;
+                    condstr = String.Format("{0} {1}", condstr, root.Nodes[0].Text);
+                }
+                else
+                {
+                    if (!(and_or_cond_clear && and_or_cond2_clear)) return false;
+                    foreach(TreeNode node in root.Nodes)
+                    {
+                        if (node.Text == "opt.") break;
+                        if(root.Text == "and") condstr = String.Format("{0} {1} ;", condstr, node.Text);
+                        else if(root.Text == "or") condstr = String.Format("{0} {1} |", condstr, node.Text);
+                    }
+                }
+            }
             return true;
         }
 
@@ -183,17 +201,36 @@ namespace AutoScriptVisualTool
 
         private void tree_view_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(e.Node.Text == "Cond1")
+            String root_text = ((TreeView)panel2.Controls["logic_tree_view"]).Nodes[0].Text;
+            String text = e.Node.Text;
+            if(text == "Cond" || text == "Cond2" || text == "opt.")
             {
-                ;
-            }
-            else if(e.Node.Text == "Cond2" || e.Node.Text == "Cond")
-            {
-                ;
-            }
-            else
-            {
-                ;
+                Condition_Form sub_cond_form = new Condition_Form();
+                if(sub_cond_form.ShowDialog() == DialogResult.OK)
+                {
+                    String sub_condstr = sub_cond_form.condstr;
+                    e.Node.Text = sub_condstr;
+                    e.Node.NodeFont = new Font("新細明體", 12, FontStyle.Regular);
+                    ((TreeView)panel2.Controls["logic_tree_view"]).SelectedNode = null;
+                    if(text == "Cond")
+                    {
+                        if (root_text == "not") not_cond_clear = true;
+                        else if (root_text == "and" || root_text == "or") and_or_cond_clear = true;
+                    }
+                    else if(text == "Cond2")
+                    {
+                        and_or_cond2_clear = true;
+                        TreeNode tn = new TreeNode("opt.");
+                        tn.NodeFont = new Font("新細明體", 12, FontStyle.Bold);
+                        e.Node.Parent.Nodes.Add(tn);
+                    }
+                    else if(text == "opt.")
+                    {
+                        TreeNode tn = new TreeNode("opt.");
+                        tn.NodeFont = new Font("新細明體", 12, FontStyle.Bold);
+                        e.Node.Parent.Nodes.Add(tn);
+                    }
+                }
             }
         }
     }
