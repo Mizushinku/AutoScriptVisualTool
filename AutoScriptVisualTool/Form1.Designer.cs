@@ -46,8 +46,11 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.add_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.newClass_btn = new System.Windows.Forms.Button();
             this.add_cond_btn = new System.Windows.Forms.Button();
+            this.newClass_btn = new System.Windows.Forms.Button();
+            this.default_list = new System.Windows.Forms.ListBox();
+            this.player_list = new System.Windows.Forms.ListBox();
+            this.function_list = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -55,6 +58,9 @@
             this.trigger_page.SuspendLayout();
             this.destroy_page.SuspendLayout();
             this.update_page.SuspendLayout();
+            this.player_page.SuspendLayout();
+            this.function_page.SuspendLayout();
+            this.default_page.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +209,7 @@
             // 
             // player_page
             // 
+            this.player_page.Controls.Add(this.player_list);
             this.player_page.Location = new System.Drawing.Point(4, 56);
             this.player_page.Name = "player_page";
             this.player_page.Padding = new System.Windows.Forms.Padding(3);
@@ -213,6 +220,7 @@
             // 
             // function_page
             // 
+            this.function_page.Controls.Add(this.function_list);
             this.function_page.Location = new System.Drawing.Point(4, 56);
             this.function_page.Name = "function_page";
             this.function_page.Padding = new System.Windows.Forms.Padding(3);
@@ -223,6 +231,7 @@
             // 
             // default_page
             // 
+            this.default_page.Controls.Add(this.default_list);
             this.default_page.Location = new System.Drawing.Point(4, 56);
             this.default_page.Name = "default_page";
             this.default_page.Padding = new System.Windows.Forms.Padding(3);
@@ -278,6 +287,17 @@
             this.panel1.Size = new System.Drawing.Size(864, 57);
             this.panel1.TabIndex = 5;
             // 
+            // add_cond_btn
+            // 
+            this.add_cond_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.add_cond_btn.Location = new System.Drawing.Point(75, 0);
+            this.add_cond_btn.Name = "add_cond_btn";
+            this.add_cond_btn.Size = new System.Drawing.Size(75, 57);
+            this.add_cond_btn.TabIndex = 1;
+            this.add_cond_btn.Text = "Add\r\nCondition";
+            this.add_cond_btn.UseVisualStyleBackColor = true;
+            this.add_cond_btn.Click += new System.EventHandler(this.add_cond_btn_Click);
+            // 
             // newClass_btn
             // 
             this.newClass_btn.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -291,16 +311,41 @@
             this.newClass_btn.UseVisualStyleBackColor = false;
             this.newClass_btn.Click += new System.EventHandler(this.newClass_btn_Click);
             // 
-            // add_cond_btn
+            // default_list
             // 
-            this.add_cond_btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.add_cond_btn.Location = new System.Drawing.Point(75, 0);
-            this.add_cond_btn.Name = "add_cond_btn";
-            this.add_cond_btn.Size = new System.Drawing.Size(75, 57);
-            this.add_cond_btn.TabIndex = 1;
-            this.add_cond_btn.Text = "Add\r\nCondition";
-            this.add_cond_btn.UseVisualStyleBackColor = true;
-            this.add_cond_btn.Click += new System.EventHandler(this.add_cond_btn_Click);
+            this.default_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.default_list.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.default_list.FormattingEnabled = true;
+            this.default_list.ItemHeight = 21;
+            this.default_list.Location = new System.Drawing.Point(3, 3);
+            this.default_list.Name = "default_list";
+            this.default_list.Size = new System.Drawing.Size(196, 489);
+            this.default_list.TabIndex = 0;
+            this.default_list.SelectedIndexChanged += new System.EventHandler(this.default_list_SelectedIndexChanged);
+            // 
+            // player_list
+            // 
+            this.player_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.player_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.player_list.FormattingEnabled = true;
+            this.player_list.ItemHeight = 21;
+            this.player_list.Location = new System.Drawing.Point(3, 3);
+            this.player_list.Name = "player_list";
+            this.player_list.Size = new System.Drawing.Size(196, 489);
+            this.player_list.TabIndex = 0;
+            this.player_list.SelectedIndexChanged += new System.EventHandler(this.player_list_SelectedIndexChanged);
+            // 
+            // function_list
+            // 
+            this.function_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.function_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.function_list.FormattingEnabled = true;
+            this.function_list.ItemHeight = 21;
+            this.function_list.Location = new System.Drawing.Point(3, 3);
+            this.function_list.Name = "function_list";
+            this.function_list.Size = new System.Drawing.Size(196, 489);
+            this.function_list.TabIndex = 0;
+            this.function_list.SelectedIndexChanged += new System.EventHandler(this.function_list_SelectedIndexChanged);
             // 
             // mainForm
             // 
@@ -317,6 +362,9 @@
             this.trigger_page.ResumeLayout(false);
             this.destroy_page.ResumeLayout(false);
             this.update_page.ResumeLayout(false);
+            this.player_page.ResumeLayout(false);
+            this.function_page.ResumeLayout(false);
+            this.default_page.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -345,6 +393,9 @@
         private System.Windows.Forms.TabPage default_page;
         private System.Windows.Forms.Panel main_panel;
         private System.Windows.Forms.Button add_cond_btn;
+        private System.Windows.Forms.ListBox default_list;
+        private System.Windows.Forms.ListBox player_list;
+        private System.Windows.Forms.ListBox function_list;
     }
 }
 

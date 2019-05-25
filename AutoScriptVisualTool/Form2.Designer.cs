@@ -33,6 +33,8 @@
             this.destroy_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.cancel_btn = new System.Windows.Forms.Button();
+            this.function_btn = new System.Windows.Forms.Button();
+            this.main_script_cb = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // start_btn
@@ -77,7 +79,7 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(143, 273);
+            this.cancel_btn.Location = new System.Drawing.Point(143, 309);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 33);
             this.cancel_btn.TabIndex = 4;
@@ -85,11 +87,34 @@
             this.cancel_btn.UseVisualStyleBackColor = true;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
+            // function_btn
+            // 
+            this.function_btn.Location = new System.Drawing.Point(129, 29);
+            this.function_btn.Name = "function_btn";
+            this.function_btn.Size = new System.Drawing.Size(78, 47);
+            this.function_btn.TabIndex = 5;
+            this.function_btn.Text = "Function";
+            this.function_btn.UseVisualStyleBackColor = true;
+            this.function_btn.Click += new System.EventHandler(this.function_btn_Click);
+            // 
+            // main_script_cb
+            // 
+            this.main_script_cb.AutoSize = true;
+            this.main_script_cb.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.main_script_cb.Location = new System.Drawing.Point(21, 265);
+            this.main_script_cb.Name = "main_script_cb";
+            this.main_script_cb.Size = new System.Drawing.Size(123, 23);
+            this.main_script_cb.TabIndex = 6;
+            this.main_script_cb.Text = "程式進入點";
+            this.main_script_cb.UseVisualStyleBackColor = true;
+            // 
             // Add_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 318);
+            this.ClientSize = new System.Drawing.Size(245, 354);
+            this.Controls.Add(this.main_script_cb);
+            this.Controls.Add(this.function_btn);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.destroy_btn);
@@ -98,6 +123,7 @@
             this.Name = "Add_Form";
             this.Text = "Add Script";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +134,7 @@
         private System.Windows.Forms.Button destroy_btn;
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Button cancel_btn;
+        private System.Windows.Forms.Button function_btn;
+        private System.Windows.Forms.CheckBox main_script_cb;
     }
 }

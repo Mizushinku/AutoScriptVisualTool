@@ -19,6 +19,10 @@ namespace AutoScriptVisualTool
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            player_list.Items.Add("player");
+            map.Add(player_list.Items[0], new Script_form(5));
+            default_list.Items.Add("default");
+            map.Add(default_list.Items[0], new Script_form(7));
         }
 
         private void main_panel_Paint(object sender, PaintEventArgs e)
@@ -33,32 +37,68 @@ namespace AutoScriptVisualTool
             if(add_Form.ShowDialog(this) == DialogResult.OK)
             {
                 int which = add_Form.which;
-                int item_cnt = 0;
+                bool main_script_flag = add_Form.main_script_flag;
                 if (which == 1)
                 {
-                    item_cnt = start_list.Items.Count;
-                    start_list.Items.Add(String.Format("start{0}", item_cnt));
-                    map.Add(start_list.Items[item_cnt], new Script_form(which));
+                    add_new_script(start_list, "start", which, main_script_flag);
                 }
                 else if(which == 2)
                 {
-                    item_cnt = trigger_list.Items.Count;
-                    trigger_list.Items.Add(String.Format("trigger{0}", item_cnt));
-                    map.Add(trigger_list.Items[item_cnt], new Script_form(which));
+                    add_new_script(trigger_list, "trigger", which, main_script_flag);
                 }
                 else if(which == 3)
                 {
-                    item_cnt = destroy_list.Items.Count;
-                    destroy_list.Items.Add(String.Format("destroy{0}", item_cnt));
-                    map.Add(destroy_list.Items[item_cnt], new Script_form(which));
+                    add_new_script(destroy_list, "destroy", which, main_script_flag);
                 }
                 else if(which == 4)
                 {
-                    item_cnt = update_list.Items.Count;
-                    update_list.Items.Add(String.Format("update{0}", item_cnt));
-                    map.Add(update_list.Items[item_cnt], new Script_form(which));
+                    add_new_script(update_list, "update", which, main_script_flag);
+                }
+                else if(which == 6)
+                {
+                    add_new_script(function_list, "function", which, main_script_flag);
                 }
             }
+        }
+
+        private void add_new_script(ListBox list, String cat, int which, bool flag)
+        {
+            bool has_main_script = false;
+            if (list.Items.Count > 0)
+            {
+                has_main_script = list.Items[0].ToString() == (cat + "0") ? true : false;
+            }
+            if (flag)
+            {
+                if (has_main_script)
+                {
+                    MessageBox.Show("這個分類已經擁有程式進入點的Script", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    list.Items.Insert(0, cat + "0");
+                    map.Add(list.Items[0], new Script_form(which));
+                }
+            }
+            else
+            {
+                int item_cnt = list.Items.Count;
+                String format = cat + "{0}";
+                if (has_main_script)
+                {
+                    list.Items.Add(String.Format(format, item_cnt));
+                }
+                else
+                {
+                    list.Items.Add(String.Format(format, item_cnt + 1));
+                }
+                map.Add(list.Items[item_cnt], new Script_form(which));
+            }
+            if (cat == "start" && start_pre_slt != -1) ++start_pre_slt;
+            else if (cat == "trigger" && trigger_pre_slt != -1) ++trigger_pre_slt;
+            else if (cat == "destroy" && destroy_pre_slt != -1) ++destroy_pre_slt;
+            else if (cat == "update" && update_pre_slt != -1) ++update_pre_slt;
+            else if (cat == "function" && function_pre_slt != -1) ++function_pre_slt;
         }
 
         int start_pre_slt = -1;
@@ -113,6 +153,39 @@ namespace AutoScriptVisualTool
             cur_form.Show();
         }
 
+        int function_pre_slt = -1;
+        private void function_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (function_list.SelectedIndex == function_pre_slt) return;
+            function_pre_slt = function_list.SelectedIndex;
+            if (function_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[function_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
+        private void player_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (player_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[player_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
+        private void default_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (default_list.SelectedIndex == -1) return;
+
+            main_panel.Controls.Clear();
+            cur_form = (Script_form)map[default_list.SelectedItem];
+            main_panel.Controls.Add(cur_form);
+            cur_form.Show();
+        }
+
         private void newClass_btn_Click(object sender, EventArgs e)
         {
             if(cur_form == null)
@@ -149,6 +222,18 @@ namespace AutoScriptVisualTool
             else if (pre_tab == 3)
             {
                 update_list.ClearSelected();
+            }
+            else if(pre_tab == 4)
+            {
+                player_list.ClearSelected();
+            }
+            else if(pre_tab == 5)
+            {
+                function_list.ClearSelected();
+            }
+            else if(pre_tab == 6)
+            {
+                default_list.ClearSelected();
             }
 
             pre_tab = tabControl1.SelectedIndex;

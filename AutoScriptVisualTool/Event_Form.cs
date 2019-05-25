@@ -41,6 +41,10 @@ namespace AutoScriptVisualTool
                 add_lb_in_p1("執行週期(s)", 12, 12, 22);
                 add_tb_in_p1("freq_tb", 12, 47);
             }
+            else if(which == 6)
+            {
+                //function class
+            }
         }
 
         private void add_cb_in_p1(String name, String text)

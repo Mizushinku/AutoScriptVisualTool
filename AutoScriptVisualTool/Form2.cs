@@ -13,40 +13,54 @@ namespace AutoScriptVisualTool
     public partial class Add_Form : Form
     {
         public int which { get; set; }
+        public bool main_script_flag { get; set; } = false;
 
         public Add_Form()
         {
             InitializeComponent();
         }
 
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            this.which = 0;
+            main_script_flag = main_script_cb.Checked;
+            this.DialogResult = DialogResult.Cancel;
+        }
+
         private void start_btn_Click(object sender, EventArgs e)
         {
             this.which = 1;
+            main_script_flag = main_script_cb.Checked;
             this.DialogResult = DialogResult.OK;
         }
 
         private void trigger_btn_Click(object sender, EventArgs e)
         {
             this.which = 2;
+            main_script_flag = main_script_cb.Checked;
             this.DialogResult = DialogResult.OK;
         }
 
         private void destroy_btn_Click(object sender, EventArgs e)
         {
             this.which = 3;
+            main_script_flag = main_script_cb.Checked;
             this.DialogResult = DialogResult.OK;
         }
 
         private void update_btn_Click(object sender, EventArgs e)
         {
             this.which = 4;
+            main_script_flag = main_script_cb.Checked;
             this.DialogResult = DialogResult.OK;
         }
 
-        private void cancel_btn_Click(object sender, EventArgs e)
+        private void function_btn_Click(object sender, EventArgs e)
         {
-            this.which = 0;
-            this.DialogResult = DialogResult.Cancel;
+            this.which = 6;
+            main_script_flag = main_script_cb.Checked;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
