@@ -51,6 +51,7 @@
             this.default_list = new System.Windows.Forms.ListBox();
             this.player_list = new System.Windows.Forms.ListBox();
             this.function_list = new System.Windows.Forms.ListBox();
+            this.add_action_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -278,6 +279,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.add_action_btn);
             this.panel1.Controls.Add(this.add_cond_btn);
             this.panel1.Controls.Add(this.newClass_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -347,6 +349,17 @@
             this.function_list.TabIndex = 0;
             this.function_list.SelectedIndexChanged += new System.EventHandler(this.function_list_SelectedIndexChanged);
             // 
+            // add_action_btn
+            // 
+            this.add_action_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.add_action_btn.Location = new System.Drawing.Point(150, 0);
+            this.add_action_btn.Name = "add_action_btn";
+            this.add_action_btn.Size = new System.Drawing.Size(75, 57);
+            this.add_action_btn.TabIndex = 2;
+            this.add_action_btn.Text = "Add\r\nAction";
+            this.add_action_btn.UseVisualStyleBackColor = true;
+            this.add_action_btn.Click += new System.EventHandler(this.add_action_btn_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -396,6 +409,7 @@
         private System.Windows.Forms.ListBox default_list;
         private System.Windows.Forms.ListBox player_list;
         private System.Windows.Forms.ListBox function_list;
+        private System.Windows.Forms.Button add_action_btn;
     }
 }
 

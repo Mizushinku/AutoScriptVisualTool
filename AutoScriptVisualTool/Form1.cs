@@ -258,5 +258,10 @@ namespace AutoScriptVisualTool
                 }
             }
         }
+
+        private void add_action_btn_Click(object sender, EventArgs e)
+        {
+            new Action_Form().ShowDialog();
+        }
     }
 }
