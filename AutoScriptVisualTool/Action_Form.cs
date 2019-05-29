@@ -152,10 +152,11 @@ namespace AutoScriptVisualTool
 
             if (cat == "視覺")
             {
-                if(cmd == "Light")
-                {
-                    baseAF = new Light_Form();
-                }
+                if (cmd == "Light") baseAF = new Light_Form();
+                else if (cmd == "FadeIn") baseAF = new Fade_Form(0);
+                else if (cmd == "FadeOut") baseAF = new Fade_Form(1);
+                else if (cmd == "Camera") baseAF = new Camera_Form();
+                else if (cmd == "Anima") baseAF = new Anima_Form();
             }
             else if (cat == "力學")
             {
