@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionForms\Vision\Light_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Vision\Light_Form.Designer.cs">
+      <DependentUpon>Light_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Action_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Action_Form.Designer.cs">
       <DependentUpon>Action_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseActionForm.Designer.cs">
+      <DependentUpon>BaseActionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Condition_Form.cs">
       <SubType>Form</SubType>
@@ -90,8 +102,14 @@
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActionForms\Vision\Light_Form.resx">
+      <DependentUpon>Light_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Action_Form.resx">
       <DependentUpon>Action_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseActionForm.resx">
+      <DependentUpon>BaseActionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Condition_Form.resx">
       <DependentUpon>Condition_Form.cs</DependentUpon>
@@ -133,5 +151,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
