@@ -157,6 +157,10 @@ namespace AutoScriptVisualTool
                 else if (cmd == "FadeOut") baseAF = new Fade_Form(1);
                 else if (cmd == "Camera") baseAF = new Camera_Form();
                 else if (cmd == "Anima") baseAF = new Anima_Form();
+                else if (cmd == "ShowText") baseAF = new Text_Form(0);
+                else if (cmd == "ChangeText") baseAF = new Text_Form(1);
+                else if (cmd == "ShowImage") baseAF = new ShowImage_Form(false);
+                else if (cmd == "ShowImageFrom") baseAF = new ShowImage_Form(true);
             }
             else if (cat == "力學")
             {

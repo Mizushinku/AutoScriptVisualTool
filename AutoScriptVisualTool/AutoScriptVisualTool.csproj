@@ -70,6 +70,18 @@
     <Compile Include="ActionForms\Vision\Light_Form.Designer.cs">
       <DependentUpon>Light_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionForms\Vision\ShowImage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Vision\ShowImage_Form.Designer.cs">
+      <DependentUpon>ShowImage_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Vision\Text_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Vision\Text_Form.Designer.cs">
+      <DependentUpon>Text_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Action_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Vision\Light_Form.resx">
       <DependentUpon>Light_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Vision\ShowImage_Form.resx">
+      <DependentUpon>ShowImage_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Vision\Text_Form.resx">
+      <DependentUpon>Text_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Action_Form.resx">
       <DependentUpon>Action_Form.cs</DependentUpon>
