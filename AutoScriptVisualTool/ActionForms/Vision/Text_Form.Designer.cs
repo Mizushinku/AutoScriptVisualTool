@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.text_name_lb = new System.Windows.Forms.Label();
-            this.text_name_tb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.content_tb = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.exist_time_tb = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.font_style_cb = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.font_size_tb = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.font_index_tb = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.color_pl = new System.Windows.Forms.Panel();
             this.color_pick_btn = new System.Windows.Forms.Button();
             this.blue_tb = new System.Windows.Forms.TextBox();
@@ -42,21 +47,16 @@
             this.red_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label9 = new System.Windows.Forms.Label();
-            this.font_index_tb = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.font_size_tb = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.font_style_cb = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.exist_time_tb = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pos_x_tb = new System.Windows.Forms.TextBox();
             this.pos_y_tb = new System.Windows.Forms.TextBox();
+            this.pos_x_tb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.content_tb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.text_name_tb = new System.Windows.Forms.TextBox();
+            this.text_name_lb = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,41 +95,97 @@
             this.panel1.Size = new System.Drawing.Size(600, 500);
             this.panel1.TabIndex = 0;
             // 
-            // text_name_lb
+            // label13
             // 
-            this.text_name_lb.AutoSize = true;
-            this.text_name_lb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.text_name_lb.Location = new System.Drawing.Point(12, 35);
-            this.text_name_lb.Name = "text_name_lb";
-            this.text_name_lb.Size = new System.Drawing.Size(98, 16);
-            this.text_name_lb.TabIndex = 0;
-            this.text_name_lb.Text = "(textName) :";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label13.Location = new System.Drawing.Point(169, 335);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 16);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "(-1表示永久)";
             // 
-            // text_name_tb
+            // exist_time_tb
             // 
-            this.text_name_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.text_name_tb.Location = new System.Drawing.Point(116, 32);
-            this.text_name_tb.Name = "text_name_tb";
-            this.text_name_tb.Size = new System.Drawing.Size(158, 27);
-            this.text_name_tb.TabIndex = 1;
+            this.exist_time_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exist_time_tb.Location = new System.Drawing.Point(104, 332);
+            this.exist_time_tb.Name = "exist_time_tb";
+            this.exist_time_tb.Size = new System.Drawing.Size(59, 27);
+            this.exist_time_tb.TabIndex = 48;
+            this.exist_time_tb.Text = "-1";
+            this.exist_time_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // label12
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(12, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "內文 :";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label12.Location = new System.Drawing.Point(12, 335);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 16);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "存在時間 :";
             // 
-            // content_tb
+            // font_style_cb
             // 
-            this.content_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.content_tb.Location = new System.Drawing.Point(70, 92);
-            this.content_tb.Name = "content_tb";
-            this.content_tb.Size = new System.Drawing.Size(373, 27);
-            this.content_tb.TabIndex = 3;
+            this.font_style_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.font_style_cb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.font_style_cb.FormattingEnabled = true;
+            this.font_style_cb.Items.AddRange(new object[] {
+            "N : 正常",
+            "I : 斜體",
+            "B :粗體"});
+            this.font_style_cb.Location = new System.Drawing.Point(379, 272);
+            this.font_style_cb.Name = "font_style_cb";
+            this.font_style_cb.Size = new System.Drawing.Size(80, 24);
+            this.font_style_cb.TabIndex = 46;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(319, 275);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 16);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Style :";
+            // 
+            // font_size_tb
+            // 
+            this.font_size_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.font_size_tb.Location = new System.Drawing.Point(236, 272);
+            this.font_size_tb.Name = "font_size_tb";
+            this.font_size_tb.Size = new System.Drawing.Size(40, 27);
+            this.font_size_tb.TabIndex = 44;
+            this.font_size_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.Location = new System.Drawing.Point(178, 275);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 16);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "大小 :";
+            // 
+            // font_index_tb
+            // 
+            this.font_index_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.font_index_tb.Location = new System.Drawing.Point(104, 272);
+            this.font_index_tb.Name = "font_index_tb";
+            this.font_index_tb.Size = new System.Drawing.Size(40, 27);
+            this.font_index_tb.TabIndex = 42;
+            this.font_index_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(12, 275);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 16);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "字型編號 :";
             // 
             // color_pl
             // 
@@ -220,117 +276,23 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "顏色 :";
             // 
-            // label9
+            // pos_y_tb
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(12, 275);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 16);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "字型編號 :";
+            this.pos_y_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.pos_y_tb.Location = new System.Drawing.Point(222, 152);
+            this.pos_y_tb.Name = "pos_y_tb";
+            this.pos_y_tb.Size = new System.Drawing.Size(59, 27);
+            this.pos_y_tb.TabIndex = 8;
+            this.pos_y_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // font_index_tb
+            // pos_x_tb
             // 
-            this.font_index_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.font_index_tb.Location = new System.Drawing.Point(104, 272);
-            this.font_index_tb.Name = "font_index_tb";
-            this.font_index_tb.Size = new System.Drawing.Size(40, 27);
-            this.font_index_tb.TabIndex = 42;
-            this.font_index_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(178, 275);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 16);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "大小 :";
-            // 
-            // font_size_tb
-            // 
-            this.font_size_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.font_size_tb.Location = new System.Drawing.Point(236, 272);
-            this.font_size_tb.Name = "font_size_tb";
-            this.font_size_tb.Size = new System.Drawing.Size(40, 27);
-            this.font_size_tb.TabIndex = 44;
-            this.font_size_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(319, 275);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 16);
-            this.label11.TabIndex = 45;
-            this.label11.Text = "Style :";
-            // 
-            // font_style_cb
-            // 
-            this.font_style_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.font_style_cb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.font_style_cb.FormattingEnabled = true;
-            this.font_style_cb.Items.AddRange(new object[] {
-            "N : 正常",
-            "I : 斜體",
-            "B :粗體"});
-            this.font_style_cb.Location = new System.Drawing.Point(379, 272);
-            this.font_style_cb.Name = "font_style_cb";
-            this.font_style_cb.Size = new System.Drawing.Size(80, 24);
-            this.font_style_cb.TabIndex = 46;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(12, 335);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 16);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "存在時間 :";
-            // 
-            // exist_time_tb
-            // 
-            this.exist_time_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.exist_time_tb.Location = new System.Drawing.Point(104, 332);
-            this.exist_time_tb.Name = "exist_time_tb";
-            this.exist_time_tb.Size = new System.Drawing.Size(59, 27);
-            this.exist_time_tb.TabIndex = 48;
-            this.exist_time_tb.Text = "-1";
-            this.exist_time_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(169, 335);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 16);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "(-1表示永久)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(12, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "位置 :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(70, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "X :";
+            this.pos_x_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.pos_x_tb.Location = new System.Drawing.Point(103, 152);
+            this.pos_x_tb.Name = "pos_x_tb";
+            this.pos_x_tb.Size = new System.Drawing.Size(59, 27);
+            this.pos_x_tb.TabIndex = 7;
+            this.pos_x_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -342,23 +304,61 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Y :";
             // 
-            // pos_x_tb
+            // label3
             // 
-            this.pos_x_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.pos_x_tb.Location = new System.Drawing.Point(103, 152);
-            this.pos_x_tb.Name = "pos_x_tb";
-            this.pos_x_tb.Size = new System.Drawing.Size(59, 27);
-            this.pos_x_tb.TabIndex = 7;
-            this.pos_x_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(70, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "X :";
             // 
-            // pos_y_tb
+            // label2
             // 
-            this.pos_y_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.pos_y_tb.Location = new System.Drawing.Point(222, 152);
-            this.pos_y_tb.Name = "pos_y_tb";
-            this.pos_y_tb.Size = new System.Drawing.Size(59, 27);
-            this.pos_y_tb.TabIndex = 8;
-            this.pos_y_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(12, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "位置 :";
+            // 
+            // content_tb
+            // 
+            this.content_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.content_tb.Location = new System.Drawing.Point(70, 92);
+            this.content_tb.Name = "content_tb";
+            this.content_tb.Size = new System.Drawing.Size(373, 27);
+            this.content_tb.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(12, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "內文 :";
+            // 
+            // text_name_tb
+            // 
+            this.text_name_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.text_name_tb.Location = new System.Drawing.Point(116, 32);
+            this.text_name_tb.Name = "text_name_tb";
+            this.text_name_tb.Size = new System.Drawing.Size(158, 27);
+            this.text_name_tb.TabIndex = 1;
+            // 
+            // text_name_lb
+            // 
+            this.text_name_lb.AutoSize = true;
+            this.text_name_lb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.text_name_lb.Location = new System.Drawing.Point(12, 35);
+            this.text_name_lb.Name = "text_name_lb";
+            this.text_name_lb.Size = new System.Drawing.Size(98, 16);
+            this.text_name_lb.TabIndex = 0;
+            this.text_name_lb.Text = "(textName) :";
             // 
             // Text_Form
             // 

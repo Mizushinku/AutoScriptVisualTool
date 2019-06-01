@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoScriptVisualTool.ActionForms.Vision;
+using AutoScriptVisualTool.ActionForms.Mechanics;
 
 namespace AutoScriptVisualTool
 {
@@ -161,9 +162,16 @@ namespace AutoScriptVisualTool
                 else if (cmd == "ChangeText") baseAF = new Text_Form(1);
                 else if (cmd == "ShowImage") baseAF = new ShowImage_Form(false);
                 else if (cmd == "ShowImageFrom") baseAF = new ShowImage_Form(true);
+                else if (cmd == "ChangeImage") baseAF = new ChangeImage_Form();
+                else if (cmd == "Broadcast") baseAF = new Broadcast_Form();
             }
             else if (cat == "力學")
             {
+                if (cmd == "Rotate") baseAF = new RSTAR_Form(0);
+                else if (cmd == "Scale") baseAF = new RSTAR_Form(1);
+                else if (cmd == "Teleport") baseAF = new RSTAR_Form(2);
+                else if (cmd == "AddForce") baseAF = new RSTAR_Form(3);
+                else if (cmd == "Rigid") baseAF = new RSTAR_Form(4);
             }
             else if (cat == "創造")
             {

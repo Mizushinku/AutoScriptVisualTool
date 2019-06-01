@@ -46,17 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionForms\Mechanics\RSTAR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Mechanics\RSTAR_Form.Designer.cs">
+      <DependentUpon>RSTAR_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Vision\Anima_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ActionForms\Vision\Anima_Form.Designer.cs">
       <DependentUpon>Anima_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionForms\Vision\Broadcast_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Vision\Broadcast_Form.Designer.cs">
+      <DependentUpon>Broadcast_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Vision\Camera_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ActionForms\Vision\Camera_Form.Designer.cs">
       <DependentUpon>Camera_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Vision\ChangeImage_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Vision\ChangeImage_Form.Designer.cs">
+      <DependentUpon>ChangeImage_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionForms\Vision\Fade_Form.cs">
       <SubType>Form</SubType>
@@ -132,11 +150,20 @@
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActionForms\Mechanics\RSTAR_Form.resx">
+      <DependentUpon>RSTAR_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Vision\Anima_Form.resx">
       <DependentUpon>Anima_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Vision\Broadcast_Form.resx">
+      <DependentUpon>Broadcast_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Vision\Camera_Form.resx">
       <DependentUpon>Camera_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Vision\ChangeImage_Form.resx">
+      <DependentUpon>ChangeImage_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Vision\Fade_Form.resx">
       <DependentUpon>Fade_Form.cs</DependentUpon>
