@@ -261,6 +261,43 @@ namespace AutoScriptVisualTool
 
         private void add_action_btn_Click(object sender, EventArgs e)
         {
+            /*
+            if(cur_form != null && cur_form.pre_slt != -1)
+            {
+                ListBox list = cur_form.get_sub_form().event_list;
+                if(list.SelectedIndex != -1)
+                {
+                    string event_str = list.SelectedItem.ToString();
+                    if(event_str.Length == 0)
+                    {
+                        MessageBox.Show("請先新增一個條件", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    int cnt = event_str.Split('#').Length - 1;
+                    if(cnt < 2)
+                    {
+                        Action_Form action = new Action_Form();
+                        if(action.ShowDialog() == DialogResult.OK)
+                        {
+                            list.Items[list.SelectedIndex] += action.actstr;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Action過多", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("請選擇一個event", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("請選擇一個class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            */
+
             new Action_Form().ShowDialog();
         }
     }

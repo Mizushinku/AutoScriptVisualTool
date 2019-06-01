@@ -41,8 +41,8 @@
             this.org_cb = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.ref_name_tb = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,15 @@
             this.panel2.Size = new System.Drawing.Size(458, 205);
             this.panel2.TabIndex = 12;
             // 
+            // ref_name_tb
+            // 
+            this.ref_name_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ref_name_tb.Location = new System.Drawing.Point(138, 62);
+            this.ref_name_tb.Name = "ref_name_tb";
+            this.ref_name_tb.Size = new System.Drawing.Size(196, 27);
+            this.ref_name_tb.TabIndex = 12;
+            this.ref_name_tb.Visible = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -192,15 +201,6 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Ref Obj Name :";
             this.label7.Visible = false;
-            // 
-            // ref_name_tb
-            // 
-            this.ref_name_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ref_name_tb.Location = new System.Drawing.Point(138, 62);
-            this.ref_name_tb.Name = "ref_name_tb";
-            this.ref_name_tb.Size = new System.Drawing.Size(196, 27);
-            this.ref_name_tb.TabIndex = 12;
-            this.ref_name_tb.Visible = false;
             // 
             // RSTAR_Form
             // 

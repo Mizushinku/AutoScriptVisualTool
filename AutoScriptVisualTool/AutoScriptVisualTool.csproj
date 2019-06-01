@@ -46,11 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionForms\Create\Create_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Create\Create_Form.Designer.cs">
+      <DependentUpon>Create_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Create\Particle_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Create\Particle_Form.Designer.cs">
+      <DependentUpon>Particle_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Create\Virtual_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Create\Virtual_Form.Designer.cs">
+      <DependentUpon>Virtual_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Enemy\Monster_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Enemy\Monster_Form.Designer.cs">
+      <DependentUpon>Monster_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Mechanics\RSTAR_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ActionForms\Mechanics\RSTAR_Form.Designer.cs">
       <DependentUpon>RSTAR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Sound\Music_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Sound\Music_Form.Designer.cs">
+      <DependentUpon>Music_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Str\DefineStr_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Str\DefineStr_Form.Designer.cs">
+      <DependentUpon>DefineStr_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ActionForms\Vision\Anima_Form.cs">
       <SubType>Form</SubType>
@@ -150,8 +186,26 @@
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActionForms\Create\Create_Form.resx">
+      <DependentUpon>Create_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Create\Particle_Form.resx">
+      <DependentUpon>Particle_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Create\Virtual_Form.resx">
+      <DependentUpon>Virtual_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Enemy\Monster_Form.resx">
+      <DependentUpon>Monster_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Mechanics\RSTAR_Form.resx">
       <DependentUpon>RSTAR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Sound\Music_Form.resx">
+      <DependentUpon>Music_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Str\DefineStr_Form.resx">
+      <DependentUpon>DefineStr_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Vision\Anima_Form.resx">
       <DependentUpon>Anima_Form.cs</DependentUpon>

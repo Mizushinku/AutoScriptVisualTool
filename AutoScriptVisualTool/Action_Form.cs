@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoScriptVisualTool.ActionForms.Vision;
 using AutoScriptVisualTool.ActionForms.Mechanics;
+using AutoScriptVisualTool.ActionForms.Create;
+using AutoScriptVisualTool.ActionForms.Sound;
+using AutoScriptVisualTool.ActionForms.Enemy;
+using AutoScriptVisualTool.ActionForms.Str;
 
 namespace AutoScriptVisualTool
 {
@@ -175,18 +179,29 @@ namespace AutoScriptVisualTool
             }
             else if (cat == "創造")
             {
+                if (cmd == "Virtual") baseAF = new Virtual_Form();
+                else if (cmd == "Create") baseAF = new Create_Form(0);
+                else if (cmd == "NPC") baseAF = new Create_Form(1);
+                else if (cmd == "SpnParticle") baseAF = new Particle_Form();
             }
             else if (cat == "音效")
             {
+                if (cmd == "PlaySound") baseAF = new Music_Form(0);
+                else if (cmd == "PSfrom") baseAF = new Music_Form(1);
+                else if (cmd == "ChBGM") baseAF = new Music_Form(2);
+                else if (cmd == "ChBGMfrom") baseAF = new Music_Form(3);
             }
             else if (cat == "與敵人相關")
             {
+                if (cmd == "GenMonster") baseAF = new Monster_Form();
             }
             else if (cat == "字串")
             {
+                if (cmd == "DefineStr") baseAF = new DefineStr_Form();
             }
             else if (cat == "劇情")
             {
+
             }
             else if (cat == "邏輯")
             {
