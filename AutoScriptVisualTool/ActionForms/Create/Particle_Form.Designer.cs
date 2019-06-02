@@ -52,6 +52,9 @@
             this.attach_cb = new System.Windows.Forms.CheckBox();
             this.ref_name_tb = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.as_obj_tb = new System.Windows.Forms.TextBox();
+            this.as_cb = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -343,10 +346,45 @@
             this.label14.Text = "Ref Obj Name :";
             this.label14.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(12, 395);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 16);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "As Obj Name :";
+            this.label2.Visible = false;
+            // 
+            // as_obj_tb
+            // 
+            this.as_obj_tb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.as_obj_tb.Location = new System.Drawing.Point(138, 392);
+            this.as_obj_tb.Name = "as_obj_tb";
+            this.as_obj_tb.Size = new System.Drawing.Size(202, 27);
+            this.as_obj_tb.TabIndex = 47;
+            this.as_obj_tb.Visible = false;
+            // 
+            // as_cb
+            // 
+            this.as_cb.AutoSize = true;
+            this.as_cb.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.as_cb.Location = new System.Drawing.Point(269, 275);
+            this.as_cb.Name = "as_cb";
+            this.as_cb.Size = new System.Drawing.Size(44, 20);
+            this.as_cb.TabIndex = 48;
+            this.as_cb.Text = "As";
+            this.as_cb.UseVisualStyleBackColor = true;
+            this.as_cb.CheckedChanged += new System.EventHandler(this.as_cb_CheckedChanged);
+            // 
             // Particle_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1228, 918);
+            this.Controls.Add(this.as_cb);
+            this.Controls.Add(this.as_obj_tb);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ref_name_tb);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.attach_cb);
@@ -403,5 +441,8 @@
         private System.Windows.Forms.CheckBox attach_cb;
         private System.Windows.Forms.TextBox ref_name_tb;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox as_obj_tb;
+        private System.Windows.Forms.CheckBox as_cb;
     }
 }

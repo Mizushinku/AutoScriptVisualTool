@@ -31,9 +31,20 @@ namespace AutoScriptVisualTool.ActionForms.Create
                 " in " + ref_name_tb.Text : " at";
             actstr = String.Format("{0} {1},{2},{3} {4},{5},{6} {7}",
                 actstr, pos_x_tb.Text, pos_y_tb.Text, pos_z_tb.Text, ang_x_tb.Text, ang_y_tb.Text, ang_z_tb.Text, time_tb.Text);
-            if (attach_cb.Checked) actstr += " attach";
+            if(ref_cb.Checked)
+                actstr += (attach_cb.Checked) ? " attach" : " noattach";
+            if (as_cb.Checked)
+            {
+                actstr = String.Format("{0} as {1}", actstr, as_obj_tb.Text);
+            }
 
             return actstr;
+        }
+
+        private void as_cb_CheckedChanged(object sender, EventArgs e)
+        {
+            bool flag = ((CheckBox)sender).Checked;
+            label2.Visible = as_obj_tb.Visible =flag;
         }
     }
 }

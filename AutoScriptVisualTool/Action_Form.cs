@@ -13,6 +13,7 @@ using AutoScriptVisualTool.ActionForms.Create;
 using AutoScriptVisualTool.ActionForms.Sound;
 using AutoScriptVisualTool.ActionForms.Enemy;
 using AutoScriptVisualTool.ActionForms.Str;
+using AutoScriptVisualTool.ActionForms.Plot;
 
 namespace AutoScriptVisualTool
 {
@@ -201,7 +202,33 @@ namespace AutoScriptVisualTool
             }
             else if (cat == "劇情")
             {
-
+                if (cmd == "Bind") baseAF = new Bind_Form();
+                else if (cmd == "ShowButton") baseAF = new Button_Form(0);
+                else if (cmd == "ChangeButton") baseAF = new Button_Form(1);
+                else if (cmd == "ShowInput") baseAF = new Input_Form();
+                else if (cmd == "GetText") baseAF = new GetText_Form();
+                else if (cmd == "Walk") baseAF = new Walk_Form(0);
+                else if (cmd == "WalkForward") baseAF = new Walk_Form(1);
+                else if (cmd == "WalkBackward") baseAF = new Walk_Form(2);
+                else if (cmd == "WalkLeft") baseAF = new Walk_Form(3);
+                else if (cmd == "WalkRight") baseAF = new Walk_Form(4);
+                else if (cmd == "StopWalk") baseAF = new Walk_Form(5);
+                else if (cmd == "Route") baseAF = new Route_Form();
+                else if (cmd == "PushTalk") baseAF = new Talk_Form(0);
+                else if (cmd == "StartTalk") baseAF = new Talk_Form(1);
+                else if (cmd == "Menu") baseAF = new MNA_Form(0);
+                else if (cmd == "NextOne") baseAF = new MNA_Form(1);
+                else if (cmd == "Alchemy") baseAF = new MNA_Form(2);
+                else if (cmd == "Pause") baseAF = new PRTDOL_Form(0);
+                else if (cmd == "Restart") baseAF = new PRTDOL_Form(1);
+                else if (cmd == "Trigger") baseAF = new PRTDOL_Form(2);
+                else if (cmd == "Damage") baseAF = new PRTDOL_Form(3);
+                else if (cmd == "OpenShop") baseAF = new PRTDOL_Form(4);
+                else if (cmd == "LoadScene") baseAF = new PRTDOL_Form(5);
+                else if (cmd == "Shop") baseAF = new Shop_Form();
+                else if (cmd == "AddItem") baseAF = new Item_Form(0);
+                else if (cmd == "AddEquip") baseAF = new Item_Form(1);
+                else if (cmd == "Rename") baseAF = new Rename_Form();
             }
             else if (cat == "邏輯")
             {

@@ -76,6 +76,78 @@
     <Compile Include="ActionForms\Mechanics\RSTAR_Form.Designer.cs">
       <DependentUpon>RSTAR_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionForms\Plot\Bind_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Bind_Form.Designer.cs">
+      <DependentUpon>Bind_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Button_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Button_Form.Designer.cs">
+      <DependentUpon>Button_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\GetText_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\GetText_Form.Designer.cs">
+      <DependentUpon>GetText_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Input_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Input_Form.Designer.cs">
+      <DependentUpon>Input_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Item_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Item_Form.Designer.cs">
+      <DependentUpon>Item_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\MNA_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\MNA_Form.Designer.cs">
+      <DependentUpon>MNA_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\PRTDOL_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\PRTDOL_Form.Designer.cs">
+      <DependentUpon>PRTDOL_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Rename_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Rename_Form.Designer.cs">
+      <DependentUpon>Rename_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Route_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Route_Form.Designer.cs">
+      <DependentUpon>Route_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Shop_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Shop_Form.Designer.cs">
+      <DependentUpon>Shop_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Talk_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Talk_Form.Designer.cs">
+      <DependentUpon>Talk_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Walk_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Plot\Walk_Form.Designer.cs">
+      <DependentUpon>Walk_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Sound\Music_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +272,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Mechanics\RSTAR_Form.resx">
       <DependentUpon>RSTAR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Bind_Form.resx">
+      <DependentUpon>Bind_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Button_Form.resx">
+      <DependentUpon>Button_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\GetText_Form.resx">
+      <DependentUpon>GetText_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Input_Form.resx">
+      <DependentUpon>Input_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Item_Form.resx">
+      <DependentUpon>Item_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\MNA_Form.resx">
+      <DependentUpon>MNA_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\PRTDOL_Form.resx">
+      <DependentUpon>PRTDOL_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Rename_Form.resx">
+      <DependentUpon>Rename_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Route_Form.resx">
+      <DependentUpon>Route_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Shop_Form.resx">
+      <DependentUpon>Shop_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Talk_Form.resx">
+      <DependentUpon>Talk_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Plot\Walk_Form.resx">
+      <DependentUpon>Walk_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Sound\Music_Form.resx">
       <DependentUpon>Music_Form.cs</DependentUpon>
