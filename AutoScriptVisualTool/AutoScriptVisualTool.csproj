@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionForms\Create\ChangeNPC_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Create\ChangeNPC_Form.Designer.cs">
+      <DependentUpon>ChangeNPC_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Create\Create_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActionForms\Create\ChangeNPC_Form.resx">
+      <DependentUpon>ChangeNPC_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Create\Create_Form.resx">
       <DependentUpon>Create_Form.cs</DependentUpon>
     </EmbeddedResource>

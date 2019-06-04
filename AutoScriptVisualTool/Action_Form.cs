@@ -38,7 +38,7 @@ namespace AutoScriptVisualTool
 
         private string[] create = new string[]
         {
-            "Virtual", "Create", "NPC", "SpnParticle",
+            "Virtual", "Create", "NPC", "ChangeNPC", "SpnParticle",
         };
 
         private string[] sound = new string[]
@@ -183,6 +183,7 @@ namespace AutoScriptVisualTool
                 if (cmd == "Virtual") baseAF = new Virtual_Form();
                 else if (cmd == "Create") baseAF = new Create_Form(0);
                 else if (cmd == "NPC") baseAF = new Create_Form(1);
+                else if (cmd == "ChangeNPC") baseAF = new ChangeNPC_Form();
                 else if (cmd == "SpnParticle") baseAF = new Particle_Form();
             }
             else if (cat == "音效")
@@ -232,6 +233,7 @@ namespace AutoScriptVisualTool
             }
             else if (cat == "邏輯")
             {
+                ;
             }
             else if (cat == "除錯")
             {
