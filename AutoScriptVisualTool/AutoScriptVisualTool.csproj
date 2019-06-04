@@ -70,6 +70,12 @@
     <Compile Include="ActionForms\Create\Virtual_Form.Designer.cs">
       <DependentUpon>Virtual_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionForms\Create\Weapon_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Create\Weapon_Form.Designer.cs">
+      <DependentUpon>Weapon_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Enemy\Monster_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Create\Virtual_Form.resx">
       <DependentUpon>Virtual_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Create\Weapon_Form.resx">
+      <DependentUpon>Weapon_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Enemy\Monster_Form.resx">
       <DependentUpon>Monster_Form.cs</DependentUpon>
