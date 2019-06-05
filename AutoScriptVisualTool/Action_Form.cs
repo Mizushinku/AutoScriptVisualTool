@@ -14,6 +14,7 @@ using AutoScriptVisualTool.ActionForms.Sound;
 using AutoScriptVisualTool.ActionForms.Enemy;
 using AutoScriptVisualTool.ActionForms.Str;
 using AutoScriptVisualTool.ActionForms.Plot;
+using AutoScriptVisualTool.ActionForms.Logic;
 
 namespace AutoScriptVisualTool
 {
@@ -234,7 +235,18 @@ namespace AutoScriptVisualTool
             }
             else if (cat == "邏輯")
             {
-                ;
+                if (cmd == "Call") baseAF = new Function_Form(0);
+                else if (cmd == "Execute") baseAF = new Function_Form(1);
+                else if (cmd == "GetSp") baseAF = new GetSp_Form();
+                else if (cmd == "Goto") baseAF = new GSDRD_Form(0);
+                else if (cmd == "Stop") baseAF = new GSDRD_Form(1);
+                else if (cmd == "Destroy") baseAF = new GSDRD_Form(2);
+                else if (cmd == "Return") baseAF = new GSDRD_Form(3);
+                else if (cmd == "Disable") baseAF = new GSDRD_Form(4);
+                else if (cmd == "SetVar") baseAF = new SetVar_Form(0);
+                else if (cmd == "SetRandom") baseAF = new SetVar_Form(1);
+                else if (cmd == "Eval") baseAF = new Eval_Form();
+                else if (cmd == "SetSp") baseAF = new SetSp_Form();
             }
             else if (cat == "除錯")
             {

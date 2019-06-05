@@ -82,6 +82,42 @@
     <Compile Include="ActionForms\Enemy\Monster_Form.Designer.cs">
       <DependentUpon>Monster_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActionForms\Logic\Eval_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\Eval_Form.Designer.cs">
+      <DependentUpon>Eval_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Logic\Function_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\Function_Form.Designer.cs">
+      <DependentUpon>Function_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Logic\GetSp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\GetSp_Form.Designer.cs">
+      <DependentUpon>GetSp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Logic\GSDRD_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\GSDRD_Form.Designer.cs">
+      <DependentUpon>GSDRD_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Logic\SetSp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\SetSp_Form.Designer.cs">
+      <DependentUpon>SetSp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionForms\Logic\SetVar_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForms\Logic\SetVar_Form.Designer.cs">
+      <DependentUpon>SetVar_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionForms\Mechanics\RSTAR_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +323,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Enemy\Monster_Form.resx">
       <DependentUpon>Monster_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\Eval_Form.resx">
+      <DependentUpon>Eval_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\Function_Form.resx">
+      <DependentUpon>Function_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\GetSp_Form.resx">
+      <DependentUpon>GetSp_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\GSDRD_Form.resx">
+      <DependentUpon>GSDRD_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\SetSp_Form.resx">
+      <DependentUpon>SetSp_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionForms\Logic\SetVar_Form.resx">
+      <DependentUpon>SetVar_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActionForms\Mechanics\RSTAR_Form.resx">
       <DependentUpon>RSTAR_Form.cs</DependentUpon>
