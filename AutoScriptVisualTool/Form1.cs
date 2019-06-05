@@ -195,7 +195,6 @@ namespace AutoScriptVisualTool
             else
             {
                 InputBox inputBox = new InputBox("New Class", "請輸入新項目名稱");
-                inputBox.StartPosition = FormStartPosition.CenterParent;
                 if(inputBox.ShowDialog() == DialogResult.OK)
                 {
                     cur_form.class_list.Items.Add(inputBox.textBox1.Text);
@@ -261,7 +260,6 @@ namespace AutoScriptVisualTool
 
         private void add_action_btn_Click(object sender, EventArgs e)
         {
-            /*
             if(cur_form != null && cur_form.pre_slt != -1)
             {
                 ListBox list = cur_form.get_sub_form().event_list;
@@ -296,9 +294,25 @@ namespace AutoScriptVisualTool
             {
                 MessageBox.Show("請選擇一個class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            */
 
-            new Action_Form().ShowDialog();
+            //new Action_Form().ShowDialog();
+        }
+
+        private void add_label_btn_Click(object sender, EventArgs e)
+        {
+            if (cur_form == null || cur_form.pre_slt == -1)
+            {
+                MessageBox.Show("請選擇一個class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                InputBox inputBox = new InputBox("New Label", "請輸入新Label名稱");
+                if (inputBox.ShowDialog() == DialogResult.OK)
+                {
+                    Event_Form sub_form = cur_form.get_sub_form();
+                    sub_form.event_list.Items.Add(inputBox.textBox1.Text + ":");
+                }
+            }
         }
     }
 }

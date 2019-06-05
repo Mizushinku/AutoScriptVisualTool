@@ -89,6 +89,7 @@
             // 
             // function_btn
             // 
+            this.function_btn.Enabled = false;
             this.function_btn.Location = new System.Drawing.Point(129, 29);
             this.function_btn.Name = "function_btn";
             this.function_btn.Size = new System.Drawing.Size(78, 47);

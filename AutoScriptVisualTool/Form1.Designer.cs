@@ -40,18 +40,19 @@
             this.update_page = new System.Windows.Forms.TabPage();
             this.update_list = new System.Windows.Forms.ListBox();
             this.player_page = new System.Windows.Forms.TabPage();
+            this.player_list = new System.Windows.Forms.ListBox();
             this.function_page = new System.Windows.Forms.TabPage();
+            this.function_list = new System.Windows.Forms.ListBox();
             this.default_page = new System.Windows.Forms.TabPage();
+            this.default_list = new System.Windows.Forms.ListBox();
             this.main_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.add_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.add_action_btn = new System.Windows.Forms.Button();
             this.add_cond_btn = new System.Windows.Forms.Button();
             this.newClass_btn = new System.Windows.Forms.Button();
-            this.default_list = new System.Windows.Forms.ListBox();
-            this.player_list = new System.Windows.Forms.ListBox();
-            this.function_list = new System.Windows.Forms.ListBox();
-            this.add_action_btn = new System.Windows.Forms.Button();
+            this.add_label_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -219,6 +220,18 @@
             this.player_page.Text = "Player";
             this.player_page.UseVisualStyleBackColor = true;
             // 
+            // player_list
+            // 
+            this.player_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.player_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.player_list.FormattingEnabled = true;
+            this.player_list.ItemHeight = 21;
+            this.player_list.Location = new System.Drawing.Point(3, 3);
+            this.player_list.Name = "player_list";
+            this.player_list.Size = new System.Drawing.Size(196, 489);
+            this.player_list.TabIndex = 0;
+            this.player_list.SelectedIndexChanged += new System.EventHandler(this.player_list_SelectedIndexChanged);
+            // 
             // function_page
             // 
             this.function_page.Controls.Add(this.function_list);
@@ -230,6 +243,18 @@
             this.function_page.Text = "Function";
             this.function_page.UseVisualStyleBackColor = true;
             // 
+            // function_list
+            // 
+            this.function_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.function_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.function_list.FormattingEnabled = true;
+            this.function_list.ItemHeight = 21;
+            this.function_list.Location = new System.Drawing.Point(3, 3);
+            this.function_list.Name = "function_list";
+            this.function_list.Size = new System.Drawing.Size(196, 489);
+            this.function_list.TabIndex = 0;
+            this.function_list.SelectedIndexChanged += new System.EventHandler(this.function_list_SelectedIndexChanged);
+            // 
             // default_page
             // 
             this.default_page.Controls.Add(this.default_list);
@@ -240,6 +265,18 @@
             this.default_page.TabIndex = 6;
             this.default_page.Text = "Default";
             this.default_page.UseVisualStyleBackColor = true;
+            // 
+            // default_list
+            // 
+            this.default_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.default_list.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.default_list.FormattingEnabled = true;
+            this.default_list.ItemHeight = 21;
+            this.default_list.Location = new System.Drawing.Point(3, 3);
+            this.default_list.Name = "default_list";
+            this.default_list.Size = new System.Drawing.Size(196, 489);
+            this.default_list.TabIndex = 0;
+            this.default_list.SelectedIndexChanged += new System.EventHandler(this.default_list_SelectedIndexChanged);
             // 
             // main_panel
             // 
@@ -279,6 +316,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.add_label_btn);
             this.panel1.Controls.Add(this.add_action_btn);
             this.panel1.Controls.Add(this.add_cond_btn);
             this.panel1.Controls.Add(this.newClass_btn);
@@ -288,6 +326,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(864, 57);
             this.panel1.TabIndex = 5;
+            // 
+            // add_action_btn
+            // 
+            this.add_action_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.add_action_btn.Location = new System.Drawing.Point(150, 0);
+            this.add_action_btn.Name = "add_action_btn";
+            this.add_action_btn.Size = new System.Drawing.Size(75, 57);
+            this.add_action_btn.TabIndex = 2;
+            this.add_action_btn.Text = "Add\r\nAction";
+            this.add_action_btn.UseVisualStyleBackColor = true;
+            this.add_action_btn.Click += new System.EventHandler(this.add_action_btn_Click);
             // 
             // add_cond_btn
             // 
@@ -313,52 +362,16 @@
             this.newClass_btn.UseVisualStyleBackColor = false;
             this.newClass_btn.Click += new System.EventHandler(this.newClass_btn_Click);
             // 
-            // default_list
+            // add_label_btn
             // 
-            this.default_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.default_list.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.default_list.FormattingEnabled = true;
-            this.default_list.ItemHeight = 21;
-            this.default_list.Location = new System.Drawing.Point(3, 3);
-            this.default_list.Name = "default_list";
-            this.default_list.Size = new System.Drawing.Size(196, 489);
-            this.default_list.TabIndex = 0;
-            this.default_list.SelectedIndexChanged += new System.EventHandler(this.default_list_SelectedIndexChanged);
-            // 
-            // player_list
-            // 
-            this.player_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.player_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.player_list.FormattingEnabled = true;
-            this.player_list.ItemHeight = 21;
-            this.player_list.Location = new System.Drawing.Point(3, 3);
-            this.player_list.Name = "player_list";
-            this.player_list.Size = new System.Drawing.Size(196, 489);
-            this.player_list.TabIndex = 0;
-            this.player_list.SelectedIndexChanged += new System.EventHandler(this.player_list_SelectedIndexChanged);
-            // 
-            // function_list
-            // 
-            this.function_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.function_list.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.function_list.FormattingEnabled = true;
-            this.function_list.ItemHeight = 21;
-            this.function_list.Location = new System.Drawing.Point(3, 3);
-            this.function_list.Name = "function_list";
-            this.function_list.Size = new System.Drawing.Size(196, 489);
-            this.function_list.TabIndex = 0;
-            this.function_list.SelectedIndexChanged += new System.EventHandler(this.function_list_SelectedIndexChanged);
-            // 
-            // add_action_btn
-            // 
-            this.add_action_btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.add_action_btn.Location = new System.Drawing.Point(150, 0);
-            this.add_action_btn.Name = "add_action_btn";
-            this.add_action_btn.Size = new System.Drawing.Size(75, 57);
-            this.add_action_btn.TabIndex = 2;
-            this.add_action_btn.Text = "Add\r\nAction";
-            this.add_action_btn.UseVisualStyleBackColor = true;
-            this.add_action_btn.Click += new System.EventHandler(this.add_action_btn_Click);
+            this.add_label_btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.add_label_btn.Location = new System.Drawing.Point(225, 0);
+            this.add_label_btn.Name = "add_label_btn";
+            this.add_label_btn.Size = new System.Drawing.Size(75, 57);
+            this.add_label_btn.TabIndex = 3;
+            this.add_label_btn.Text = "Add\r\nLabel";
+            this.add_label_btn.UseVisualStyleBackColor = true;
+            this.add_label_btn.Click += new System.EventHandler(this.add_label_btn_Click);
             // 
             // mainForm
             // 
@@ -410,6 +423,7 @@
         private System.Windows.Forms.ListBox player_list;
         private System.Windows.Forms.ListBox function_list;
         private System.Windows.Forms.Button add_action_btn;
+        private System.Windows.Forms.Button add_label_btn;
     }
 }
 

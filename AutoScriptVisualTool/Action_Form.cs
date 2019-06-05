@@ -15,6 +15,7 @@ using AutoScriptVisualTool.ActionForms.Enemy;
 using AutoScriptVisualTool.ActionForms.Str;
 using AutoScriptVisualTool.ActionForms.Plot;
 using AutoScriptVisualTool.ActionForms.Logic;
+using AutoScriptVisualTool.ActionForms.LC;
 
 namespace AutoScriptVisualTool
 {
@@ -91,8 +92,8 @@ namespace AutoScriptVisualTool
             if (baseAF != null)
             {
                 this.actstr = baseAF.make_actstr();
-                MessageBox.Show(actstr);
-                //this.DialogResult = DialogResult.OK;
+                //MessageBox.Show(actstr);
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -250,6 +251,8 @@ namespace AutoScriptVisualTool
             }
             else if (cat == "除錯")
             {
+                if (cmd == "Log") baseAF = new LC_Form(0);
+                else if (cmd == "Cast") baseAF = new LC_Form(1);
             }
 
             if(baseAF != null)
