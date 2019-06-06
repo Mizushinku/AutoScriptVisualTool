@@ -23,6 +23,7 @@ namespace AutoScriptVisualTool
             map.Add(player_list.Items[0], new Script_form(5));
             default_list.Items.Add("default");
             map.Add(default_list.Items[0], new Script_form(7));
+        
         }
 
         private void main_panel_Paint(object sender, PaintEventArgs e)
@@ -57,6 +58,10 @@ namespace AutoScriptVisualTool
                 else if(which == 6)
                 {
                     add_new_script(function_list, "function", which, main_script_flag);
+                }
+                else if(which == 7)
+                {
+                    make_sc(1);
                 }
             }
         }
@@ -312,6 +317,60 @@ namespace AutoScriptVisualTool
                     Event_Form sub_form = cur_form.get_sub_form();
                     sub_form.event_list.Items.Add(inputBox.textBox1.Text + ":");
                 }
+            }
+        }
+
+        private void make_sc(int script_num)
+        {
+            map.Clear();
+
+            if (script_num == 1) {
+                ///////////////////////////////////////
+                ListBox list = new ListBox();
+                string[] items =
+                {
+                    "s0","s1"
+                };
+                Dictionary<int, string[]> dic = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "c1"
+                    }},
+                    {1, new string[]{
+                        "c3"
+                    }}
+                };
+                Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "c1", "true # SetVar public 99 0"
+                    }},
+                    {1, new string[]{
+                        "c3", "c4", "c5"
+                    }}
+                };
+
+
+                list.Items.AddRange(items);
+                start_list.Items.Clear();
+                start_list.Items.AddRange(list.Items);
+
+                int k = 0, q = 0, num = 1; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in start_list.Items)
+                {
+                    map.Add(i, new Script_form(num));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic[k])
+                    {
+                        sub.class_list.Items.Add(s);
+                        sub.class_list_ItemAdded(num);
+                        sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+                        ++q;
+                    }
+                    ++k;
+                }
+                /////////////////////////////////////////
             }
         }
     }
