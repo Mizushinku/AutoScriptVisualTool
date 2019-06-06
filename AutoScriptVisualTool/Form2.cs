@@ -56,17 +56,28 @@ namespace AutoScriptVisualTool
             this.DialogResult = DialogResult.OK;
         }
 
-        private void function_btn_Click(object sender, EventArgs e)
-        {
-            this.which = 6;
-            main_script_flag = main_script_cb.Checked;
-            this.DialogResult = DialogResult.OK;
-        }
-
         private void S1_btn_Click(object sender, EventArgs e)
         {
             this.which = 7;
             this.DialogResult = DialogResult.OK;
         }
+        private void S2_btn_Click(object sender, EventArgs e)
+        {
+            this.which = 8;
+            this.DialogResult = DialogResult.OK;
+        }
+        private void S3_btn_Click(object sender, EventArgs e)
+        {
+            this.which = 9;
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void S4_btn_Click(object sender, EventArgs e)
+        {
+            this.which = 10;
+            this.DialogResult = DialogResult.OK;
+        }
+
+
     }
 }
