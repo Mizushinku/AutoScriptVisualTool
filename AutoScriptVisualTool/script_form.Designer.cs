@@ -60,6 +60,7 @@
             this.class_list.TabIndex = 1;
             this.class_list.SelectedIndexChanged += new System.EventHandler(this.class_list_SelectedIndexChanged);
             this.class_list.VisibleChanged += new System.EventHandler(this.class_list_VisibleChanged);
+            this.class_list.MouseDown += new System.Windows.Forms.MouseEventHandler(this.class_list_MouseDown);
             // 
             // class_panel
             // 

@@ -141,7 +141,6 @@ namespace AutoScriptVisualTool
         int start_pre_slt = -1;
         private void start_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("\npre = " + start_pre_slt + "\nselected = " + start_list.SelectedIndex);
             if (start_list.SelectedIndex == start_pre_slt) return;
             start_pre_slt = start_list.SelectedIndex;
             if (start_list.SelectedIndex == -1) return;
@@ -382,16 +381,20 @@ namespace AutoScriptVisualTool
                 }
                 int index = list.IndexFromPoint(e.X, e.Y);
                 if (index == -1 || prev == -2) return;
-                list.ClearSelected();
-                cur_form = null;
+                string msg = "確定刪除 " + list.Items[index] + " 嗎?";
+                if (MessageBox.Show(msg, "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    list.ClearSelected();
+                    cur_form = null;
 
-                object rm_item = list.Items[index] as object;
-                map.Remove(rm_item);
-                list.Items.Remove(rm_item);
+                    object rm_item = list.Items[index] as object;
+                    map.Remove(rm_item);
+                    list.Items.Remove(rm_item);
 
-                if (0 <= prev && prev < index) list.SetSelected(prev, true);
-                if (prev == index) main_panel.Controls.Clear();
-                else if (prev > index) list.SetSelected(prev - 1, true);
+                    if (0 <= prev && prev < index) list.SetSelected(prev, true);
+                    if (prev == index) main_panel.Controls.Clear();
+                    else if (prev > index) list.SetSelected(prev - 1, true);
+                }
             }
         }
 

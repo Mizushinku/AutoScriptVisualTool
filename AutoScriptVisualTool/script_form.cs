@@ -15,6 +15,7 @@ namespace AutoScriptVisualTool
         private Dictionary<object, Event_Form> map = new Dictionary<object, Event_Form>();
         private Event_Form cur_form = null;
         private int which;
+        public int pre_slt { get; set; } = -1;
 
         public Script_form(int which)
         {
@@ -53,8 +54,7 @@ namespace AutoScriptVisualTool
             map.Add(item, event_Form);
             cur_form = event_Form;
         }
-
-        public int pre_slt { get; set; } = -1;
+        
         private void class_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             int slt = class_list.SelectedIndex;
@@ -71,6 +71,30 @@ namespace AutoScriptVisualTool
         public Event_Form get_sub_form()
         {
             return cur_form;
+        }
+
+        private void class_list_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int prev = pre_slt;
+                int index = class_list.IndexFromPoint(e.X, e.Y);
+                if (index == -1) return;
+                string msg = "確定刪除 " + class_list.Items[index] + " 嗎?";
+                if (MessageBox.Show(msg, "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    class_list.ClearSelected();
+                    cur_form = null;
+
+                    object rm_item = class_list.Items[index] as object;
+                    map.Remove(rm_item);
+                    class_list.Items.Remove(rm_item);
+
+                    if (0 <= prev && prev < index) class_list.SetSelected(prev, true);
+                    else if (prev == index) class_panel.Controls.Clear();
+                    else if (prev > index) class_list.SetSelected(prev - 1, true);
+                }
+            }
         }
     }
 }
