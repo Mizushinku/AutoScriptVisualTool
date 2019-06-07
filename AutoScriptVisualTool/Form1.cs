@@ -38,27 +38,29 @@ namespace AutoScriptVisualTool
             if(add_Form.ShowDialog(this) == DialogResult.OK)
             {
                 int which = add_Form.which;
-                bool main_script_flag = add_Form.main_script_flag;
+                string num = add_Form.num;
                 if (which == 1)
                 {
-                    add_new_script(start_list, "start", which, main_script_flag);
+                    add_new_script(start_list, "start" + num, which);
                 }
                 else if(which == 2)
                 {
-                    add_new_script(trigger_list, "trigger", which, main_script_flag);
+                    add_new_script(trigger_list, "trigger" + num, which);
                 }
                 else if(which == 3)
                 {
-                    add_new_script(destroy_list, "destroy", which, main_script_flag);
+                    add_new_script(destroy_list, "destroy" + num, which);
                 }
                 else if(which == 4)
                 {
-                    add_new_script(update_list, "update", which, main_script_flag);
+                    add_new_script(update_list, "update" + num, which);
                 }
+                /*
                 else if(which == 6)
                 {
-                    add_new_script(function_list, "function", which, main_script_flag);
+                    add_new_script(function_list, "function", which);
                 }
+                */
                 else if(which == 7)
                 {
                     make_sc(1);
@@ -66,9 +68,9 @@ namespace AutoScriptVisualTool
             }
         }
 
-        private void add_new_script(ListBox list, String cat, int which, bool flag)
+        private void add_new_script(ListBox list, string name, int which)
         {
-            bool has_main_script = false;
+            /*
             if (list.Items.Count > 0)
             {
                 has_main_script = list.Items[0].ToString() == (cat + "0") ? true : false;
@@ -104,6 +106,18 @@ namespace AutoScriptVisualTool
             else if (cat == "destroy" && destroy_pre_slt != -1) ++destroy_pre_slt;
             else if (cat == "update" && update_pre_slt != -1) ++update_pre_slt;
             else if (cat == "function" && function_pre_slt != -1) ++function_pre_slt;
+            */
+            if (list.Items.Contains(name))
+            {
+                MessageBox.Show("已擁有同名的Script", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                object item = name as object;
+                map.Add(item, new Script_form(which));
+                list.Items.Add(item);
+                re_map(list);
+            }
         }
 
         int start_pre_slt = -1;
@@ -318,6 +332,62 @@ namespace AutoScriptVisualTool
                     sub_form.event_list.Items.Add(inputBox.textBox1.Text + ":");
                 }
             }
+        }
+
+        private void list_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ListBox list = null;
+                int prev = -2;
+                if (sender.Equals(start_list))
+                {
+                    list = start_list;
+                    prev = start_pre_slt;
+                }
+                else if (sender.Equals(trigger_list))
+                {
+                    list = trigger_list;
+                    prev = trigger_pre_slt;
+                }
+                else if (sender.Equals(destroy_list))
+                {
+                    list = destroy_list;
+                    prev = destroy_pre_slt;
+                }
+                else if (sender.Equals(update_list))
+                {
+                    list = update_list;
+                    prev = update_pre_slt;
+                }
+                int index = list.IndexFromPoint(e.X, e.Y);
+                if (index == -1 || prev == -2) return;
+                list.ClearSelected();
+                cur_form = null;
+                
+                //ReMap
+                map.Remove(list.Items[index]);
+                List<Form> forms = new List<Form>();
+                for(int i = index + 1; i < list.Items.Count; ++i)
+                {
+                    forms.Add(map[list.Items[i]]);
+                    map.Remove(list.Items[i]);
+                }
+                list.Items.RemoveAt(index);
+                for(int i = index, j = 0; i < list.Items.Count; ++i, ++j)
+                {
+                    map.Add(list.Items[i], forms[j]);
+                }
+
+                if (0 <= prev && prev < index) list.SetSelected(prev, true);
+                if (prev == index) main_panel.Controls.Clear();
+                else if (prev > index) list.SetSelected(prev - 1, true);
+            }
+        }
+
+        private void re_map(ListBox list)
+        {
+            ;
         }
 
         private void make_sc(int script_num)
