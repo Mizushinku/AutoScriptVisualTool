@@ -665,8 +665,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -849,8 +850,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic[k])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
                         ++q;
                     }
@@ -984,8 +986,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -1079,8 +1082,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic5[k2])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num2);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
                         ++q2;
                     }
@@ -1181,8 +1185,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic[k])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
                         ++q;
                     }
@@ -1316,8 +1321,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -1391,8 +1397,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic5[k2])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num2);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
                         ++q2;
                     }
@@ -1456,8 +1463,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic7[k3])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num3);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num3, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
                         ++q3;
                     }
@@ -1467,7 +1475,759 @@ namespace AutoScriptVisualTool
             }
             else if (script_num == 4)
             {
+                /////////////////////////////////////////
+                ListBox list = new ListBox();
+                string[] items =
+                {
+                    "start0", "start1"
+                };
+                Dictionary<int, string[]> dic = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "SceneStart"
+                    }},
+                    {1, new string[]{
+                        "SceneStart", "OS", "AddMoney", "AddRate", "DontMove", "CanMove", "Translate",
+                        "GasA", "GasB", "GasC", "GasD", "K0", "K1", "K2", "K3", "K4", "K5", "K6", "K7", "K8", "K9",
+                        "KEnter", "KEsc"
+                    }}
+                };
+                Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # ChangeText Caption 征服宇宙大作戰 reserve 255,255,0 0,120,B -1",
+                        "true # ChangeText Start/Text 準備發財 reserve 255,0,0 reserve -1",
+                        "true # ChangeText Load/Text 繼續作夢 reserve 0,0,255 reserve -1",
+                        "true # ChangeText Quit/Text 不敢作夢 reserve 0,255,0 reserve -1",
+                        "true # ShowText 高雄發大財！ 1700,900 0,255,0 1,48,B -1 as FaChai",
+                        "true # ShowImageFrom FaChai.jpg 250,250,500,500 -1 as FaDaChai",
+                        "true # ChangeImage Back universe.jpg reserve 255,255,255,1 -1",
+                        "true # Virtual Slider at 0,0,0",
+                        "true # ChBGMfrom Kao"
+                    }},
+                    {1, new string[]{
+                        "true # SetVar public 99 0",
+                        "true # ShowText 高雄市 1700,1000 0,255,0 1,48,B -1 as Place",
+                        "true # ChBGMfrom Kao",
+                        "true # Virtual Default at 0,0,0",
+                        "true # Virtual AddMoney at 0,0,0",
+                        "true # Virtual AddRate at 0,0,0",
+                        "true # Virtual DontMove at 0,0,0",
+                        "true # Virtual CanMove at 0,0,0",
+                        "true # NPC Blackman in role 0,-10,0 as People",
+                        "true # NPC Zombie at 419.7,1.53,253.7 as Reporter",
+                        "true # NPC Azure at 428.7,1.53,309 as Dachen",
+                        "true # NPC White at 435.7,1.53,315 as Hen",
+                        "true # NPC Mei at 430.7,1.53,255 as Zuki",
+                        "true # NPC RedHood at 440.7,1.53,255 as Ano",
+                        "true # Route People 0,0,0 0,0,3",
+                        "true # ShowText __ 1500,900 0,255,0 0,48,B -1 as gameTime",
+                        "true # Create Rock at 432,0,299 as Gasoline",
+                        "true # Create Bucket at 428,1,305 as River",
+                        "true # Create Door at 424,0,341 as Door",
+                        "true # Light River 0,174,35 0,7 2 point",
+                        "true # Bind down 0 K0 +",
+                        "true # Bind down 1 K1 +",
+                        "true # Bind down 2 K2 +",
+                        "true # Bind down 3 K3 +",
+                        "true # Bind down 0 K4 +",
+                        "true # Bind down 1 K5 +",
+                        "true # Bind down 2 K6 +",
+                        "true # Bind down 3 K7 +",
+                        "true # Bind down 0 K8 +",
+                        "true # Bind down 1 K9 +",
+                        "true # Bind down Esc KEsc +",
+                        "true # Bind down Enter KEnter +"
+                    }},
+                    {2, new string[]{
+                        "true # GetSp l3 $x",
+                        "true # DefineStr 3 ( $l3",
+                        "true # GetSp l3 $y",
+                        "true # DefineStr 3 $str3 , $l3",
+                        "true # GetSp l3 $z",
+                        "true # DefineStr 3 $str3 , $l3 )",
+                        "true # ChangeText gameTime $3 1500,900 1,255,0 0,48,B -1"
+                    }},
+                    {3, new string[]{
+                        "true # DefineStr 3 發財金： $g3 萬元",
+                        "true # ChangeText Money $3 1600,800 255,255,0 1,48,B -1"
+                    }},
+                    {4, new string[]{
+                        "true # DefineStr 3 民調： $g4 %",
+                        "true # ChangeText Rate $3 reserve 0,255,255 1,48,B -1"
+                    }},
+                    {5, new string[]{
+                        "true # Bind press W null",
+                        "true # Bind press S null",
+                        "true # Bind press A null",
+                        "true # Bind press D null",
+                        "true # Bind up W null",
+                        "true # Bind up S null"
+                    }},
+                    {6, new string[]{
+                        "true # Bind press W myWalk",
+                        "true # Bind press S myBack",
+                        "true # Bind press A myLeft",
+                        "true # Bind press D myRight",
+                        "true # Bind up W stopWalk",
+                        "true # Bind up S stopWalk"
+                    }},
+                    {7, new string[]{
+                        "== g10 1 Return",
+                        "true # ShowText 翻譯結果：替含總募集1億的發財金，含總才能被黨徵召。 900,900 0,255,255 1,48,B -1 as Msg",
+                        "true # Pause 3",
+                        "true # ChangeText Msg 高雄發大財，台灣發大財！！！ 900,900 0,255,255 1,48,B 3",
+                        "true # Pause 2",
+                        "true # ShowText 發財金：0元 1700,800 255,255,0 1,48,B -1 as Money",
+                        "true # ShowText 民調：60% 1700,700 0,255,255 1,48,B -1 as Rate",
+                        "true # SetVar public 4 60",
+                        "true # SetVar public 0 2",
+                        "true # SetVar public 10 0",
+                        "true # Destroy 0"
+                    }},
+                    {8, new string[]{
+                        "== g99 1 # Goto event1",
+                        "== g99 2 # Goto event2",
+                        "== g99 3 # Goto event3",
+                        "== g99 4 # Goto event4",
+                        "true # Return",
+                        "event1:",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg 由於用力過猛，你把手弄傷了。 900,900 0,255,255 1,48,B 3",
+                        "true # Damage 100",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event2:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 這水好喝到一個讓人啞口無言的境界了！ 孫小千 $7",
+                        "true # PushTalk 下個月再來吧，現在水已經被含粉搶光了。 孫小千 $7",
+                        "true # StartTalk",
+                        "true # ChangeText Msg 市民感到幸福，含總民調上升！ 900,900 0,255,255 1,48,B 2",
+                        "true # Eval + g4 + 5 to g4",
+                        "true # Restart AddRate",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event3:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 我已經感受到你的心意了！不是為了個人，而是整個高雄市民。 經紀人 $9",
+                        "true # PushTalk 我回去就更改子棋的行程！。 經紀人 $9",
+                        "true # StartTalk",
+                        "true # ChangeText Msg 凳子棋代言高雄，帶來了龐大商機！ 900,900 0,255,255 1,48,B -1",
+                        "true # Pause 2",
+                        "true # ChangeText Msg 獲得發財金2000萬元！ 900,900 0,255,255 1,48,B 2",
+                        "true # Eval + g3 + 2000 to g3",
+                        "true # Restart AddMoney",
+                        "true # SetVar public 10 0",
+                        "true # SetVar public 14 2",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event4:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 高雄是港埠型都市，商業機能非常發達。 席韓娥 $10",
+                        "true # PushTalk 阿No來這裡將能引發另一波經濟奇蹟。 席韓娥 $10",
+                        "true # PushTalk 但我聽說的好像不是這樣。 經紀人 $9",
+                        "true # PushTalk 新市長上任之後，這裡已經轉型成農業都市了。 經紀人 $9",
+                        "true # PushTalk 這聽起來並不會很吸引阿No。 經紀人 $9",
+                        "true # StartTalk",
+                        "true # ChangeText Msg $0 900,900 0,255,255 1,48,B 2",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return"
+                    }},
+                    {9, new string[]{
+                        "== g99 1 # Goto event1",
+                        "== g99 2 # Goto event2",
+                        "== g99 3 # Goto event3",
+                        "== g99 4 # Goto event4",
+                        "true # Return",
+                        "event1:",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg 由於你破壞市容，含總的民調下降了。 900,900 0,255,255 1,48,B 3",
+                        "true # Eval + g4 - 5 to g4",
+                        "true # Restart AddRate",
+                        "true # SetVar public 10 0",
+                        "true # SetVar public 11 1",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event2:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 有一種甘甘的味道。 席韓娥 $10",
+                        "true # PushTalk 真的是含流發威！才短短幾個月，這水質就變得如此清甜。 孫小千 $7",
+                        "true # PushTalk 這筆用來治水的追加經費用不到了。你拿去用在更好的地方吧。 孫小千 $7",
+                        "true # StarTalk",
+                        "true # ChangeText Msg 獲得發財金2000萬元！ 900,900 0,255,255 1,48,B -1",
+                        "true # Eval + g3 2000 to g3",
+                        "true # Restart AddMoney",
+                        "true # Pause 3",
+                        "true # ChangeText Msg 含總治水有成，民調大幅提升！ 900,900 0,255,255 1,48,B 3",
+                        "true # Eval + g4 + 10 to g4",
+                        "true # Restart AddRate",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event3:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 子棋被你弄哭了，看你要怎麼辦！ 經紀人 $9",
+                        "true # StartTalk",
+                        "true # ChangeText Msg 子棋與經紀公司解約，引起輿論譁然！ 900,900 0,255,255 1,48,B -1",
+                        "true # Pause 2",
+                        "true # ChangeText Msg 外界批評聲浪不斷，含總民調下降！ 900,900 0,255,255 1,48,B 2",
+                        "true # Eval + g4 - 5 to g4",
+                        "true # Restart AddRate",
+                        "true # SetVar public 10 0",
+                        "true # SetVar public 14 1",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event4:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 高雄發大財！ 席韓娥 $10",
+                        "true # PushTalk 原來如此，這項計畫不僅能替阿No帶來利益，還能讓市民發財嗎？ 經紀人 $9",
+                        "true # PushTalk 阿No也有當市長的經驗，是能苦民所苦的。 經紀人 $9",
+                        "true # PushTalk 知道了，我會盡快知會阿No。 經紀人 $9",
+                        "true # StartTalk",
+                        "true # ChangeText Msg 阿No代言高雄，帶來了龐大商機！ 900,900 0,255,255 1,48,B -1",
+                        "true # Pause 2",
+                        "true # ChangeText Msg 獲得發財金2000萬元！ 900,900 0,255,255 1,48,B 2",
+                        "true # Eval + g3 + 2000 to g3",
+                        "true # Restart AddMoney",
+                        "true # SetVar public 10 0",
+                        "true # SetVar public 16 1",
+                        "true # Restart CanMove",
+                        "true # Return"
+                    }},
+                    {10, new string[]{
+                        "== g99 1 # Goto event1",
+                        "== g99 2 # Goto event2",
+                        "== g99 3 # Goto event3",
+                        "== g99 4 # Goto event4",
+                        "true # Return",
+                        "event1:",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg $0 900,900 0,255,255 1,48,B 1",
+                        "true # PushTalk 真可惜。如果真的沒東西也沒辦法了。 席韓娥 $10",
+                        "true # Restart CanMove",
+                        "true # StartTalk",
+                        "true # SetVar public 10 0",
+                        "true # Return",
+                        "event2:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 你竟敢這樣說，一定是假含粉！ 孫小千 $7",
+                        "true # PushTalk 等著被含粉出征吧！ 孫小千 $7",
+                        "true # StartTalk",
+                        "true # SpnParticle 9 in Role 0,0,0 0,90,0 3",
+                        "true # Damage 200",
+                        "true # ShowText 含粉大出征，高雄市陷入混亂！ 900,900 0,255,255 1,48,B 2 as Msg",
+                        "true # Pause 2",
+                        "true # ShowText 含市長的民調因此下滑了！ 900,900 0,255,255 1,48,B 2 as Msg",
+                        "true # Eval + g4 - 5 to g4",
+                        "true # Restart AddRate",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event3:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 那麼這個月，就決定是子棋免費替高雄代言了。 席韓娥 $10",
+                        "true # PushTalk 所以請你至少說明一下這個合作案對雙方的利害為何？ 經紀人 $9",
+                        "true # PushTalk 還要請子棋盡快和市府喬時間。 席韓娥 $10",
+                        "true # StartTalk",
+                        "true # ChangeText Msg 經紀人不再說話，只是給了你一個大大的白眼。 900,900 0,255,255 1,48,B 2",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event4:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 高雄是魅力四射的影城。 席韓娥 $10",
+                        "true # PushTalk 在含總的念力下，每個人都生活得很開心。 席韓娥 $10",
+                        "true # PushTalk 的確含先生導演的能力，連阿No也很佩服。 經紀人 $9",
+                        "true # PushTalk 但他目前已經有另一項拍戲的計畫了。他可能會無法兼顧。 經紀人 $9",
+                        "true # StartTalk",
+                        "true # ChangeText Msg $0 900,900 0,255,255 1,48,B 2",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return"
 
+                    }},
+                    {11, new string[]{
+                        "== g99 1 # Goto event1",
+                        "== g99 2 # Goto event2",
+                        "true # Return",
+                        "Gas:",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg 你的誠心引發了奇蹟，大量石油泉湧而出！ 900,900 0,255,255 1,48,B 2",
+                        "true # SetVar public 11 2",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "Two:",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg 什麼也沒發生。 900,900 0,255,255 1,48,B 3",
+                        "true # PushTalk 不能放棄！只要相信高雄一定會發大財就行了！ 席韓娥 $10",
+                        "true # StartTalk",
+                        "true # Eval + l1 1 to l1",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event1:",
+                        "== l1 4 # Goto Gas",
+                        "== l1 2 # Goto Two",
+                        "true # SetVar public 99 0",
+                        "true # ChangeText Msg 什麼也沒發生。 900,900 0,255,255 1,48,B 3",
+                        "true # PushTalk 難道是我的決心不夠？還是這是含黑的陰謀？ 席韓娥 $10",
+                        "true # StartTalk",
+                        "true # Eval + l1 1 to l1",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return",
+                        "event2:",
+                        "true # SetVar public 99 0",
+                        "true # PushTalk 沒錯，讓高雄市民產生幸福感和光榮感，就是我們的使命。 孫小千 $7",
+                        "true # StartTalk",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return"
+                    }},
+                    {12, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 0",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {13, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 1",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {14, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 2",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {15, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 3",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {16, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 4",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {17, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 5",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {18, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 6",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {19, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 7",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {20, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 8",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {21, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str5 9",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }},
+                    {22, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Return",
+                        "event1:",
+                        "true # ChangeText Msg $0 900,900 0,255,255 1,48,B -1",
+                        "Str== $5 1124 # Goto Right # Goto Wrong",
+                        "Right:",
+                        "true # PushTalk 今天是11月24日。 席韓娥 $10",
+                        "true # PushTalk 所有人都說11月24號已經過了。但只有你肯說真話。 釘手中 $0",
+                        "true # PushTalk 在我當台北市長的任內，希望能和含市長維持友好關係。 釘手中 $0",
+                        "true # StartTalk",
+                        "true # SetVar public 17 1",
+                        "true # ChangeText Msg 釘手中贊助高雄市 900,900 0,255,255 1,48,B -1",
+                        "true # Pause 2",
+                        "true # ChangeText Msg 獲得發財金3000萬元！ 900,900 0,255,255 1,48,B 2",
+                        "true # Eval + g3 + 3000 to g3",
+                        "true # Restart AddMoney",
+                        "true # Goto over",
+                        "Wrong:",
+                        "true # PushTalk 這就是今天的日期。 席韓娥 $10",
+                        "true # PushTalk 你竟敢明目張膽的騙人！今天明明就是11月24！ 釘手中 $0",
+                        "true # PushTalk 我不理你們這些玩弄小人步數的傢伙了！ 釘手中 $0",
+                        "true # StartTalk",
+                        "true # SetVar public 17 2",
+                        "true # ChangeText Msg 釘手中生氣了，雖然好像不會怎樣... 900,900 0,255,255 1,48,B 2",
+                        "true # Goto over",
+                        "over:",
+                        "true # SetVar public 99 0",
+                        "true # SetVar public 10 0",
+                        "true # Restart CanMove",
+                        "true # Return"
+                    }},
+                    {23, new string[]{
+                        "== g99 5 # Goto event1",
+                        "true # Menu",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str0",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
+                    }}
+                };
+
+                list.Items.AddRange(items);
+                start_list.Items.Clear();
+                start_list.Items.AddRange(list.Items);
+
+                int k = 0, q = 0, num = 1; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in start_list.Items)
+                {
+                    map.Add(i, new Script_form(num));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic[k])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+                        ++q;
+                    }
+                    ++k;
+                }
+                /////////////////////////////////////////
+                ListBox list1 = new ListBox();
+                string[] items1 =
+                {
+                    "default"
+                };
+                Dictionary<int, string[]> dic3 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "Default",
+                        "KeyDownH",
+                        "KeyPressH",
+                        "KeyUpH",
+                        "KTab",
+                        "Skill0",
+                        "XS",
+                        "CS",
+                        "VS",
+                        "myWalk",
+                        "myBack",
+                        "myLeft",
+                        "myRight",
+                        "myJump",
+                        "stopWalk",
+                        "SpeedUp",
+                        "SpeedDown"
+                    }}
+                };
+                Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # Broadcast 使用預設檔案",
+                        "true # Bind down H KeyDownH +",
+                        "true # Bind press H KeyPressH +",
+                        "true # Bind up H KeyUpH +",
+                        "true # Bind down Tab KTab +",
+                        "true # Bind down Z Skill0 +",
+                        "true # Bind down X XS +",
+                        "true # Bind down C CS +",
+                        "true # Bind down V VS +",
+                        "true # Bind down O OS +",
+                        "true # Bind down Shift SpeedUp +",
+                        "true # Bind up Shift SpeedDown +",
+                        "true # Bind press W myWalk +",
+                        "true # Bind press S myBack +",
+                        "true # Bind press A myLeft +",
+                        "true # Bind press D myRight +",
+                        "true # Bind down A GasA +",
+                        "true # Bind down B GasB +",
+                        "true # Bind down C GasC +",
+                        "true # Bind down D GasD +",
+                        "true # Bind up W stopWalk +",
+                        "true # Bind up S stopWalk",
+                        "true # Bind down Space myJump +"
+                    }},
+                    {1, new string[]{
+                        "true # Eval 0 to g2"
+                    }},
+                    {2, new string[]{
+                        "true # Eval 1 + g2 to g2"
+                    }},
+                    {3, new string[]{
+                        "true # Cast g2"
+                    }},
+                    {4, new string[]{
+                        "true # NextOne"
+                    }},
+                    {5, new string[]{
+                        "true # UseSkill 0"
+                    }},
+                    {6, new string[]{
+                        "true # UseSkill 1"
+                    }},
+                    {7, new string[]{
+                        "true # UseSkill 2"
+                    }},
+                    {8, new string[]{
+                        "true # UseSkill 3"
+                    }},
+                    {9, new string[]{
+                        "true # WalkForward"
+                    }},
+                    {10, new string[]{
+                        "true # WalkBackward"
+                    }},
+                    {11, new string[]{
+                        "true # WalkLeft"
+                    }},
+                    {12, new string[]{
+                        "true # WalkRight"
+                    }},
+                    {13, new string[]{
+                        "== l1 1 # Return",
+                        "true # StopWalk",
+                        "true # AddForce role 0,40000,0",
+                        "true # SetVar private 1 1",
+                        "true # Pause 1",
+                        "true # SetVar private 1 0"
+                    }},
+                    {14, new string[]{
+                        "true # StopWalk"
+                    }},
+                    {15, new string[]{
+                        "true # Broadcast 加速！",
+                        "true # GetSp l2 $speed 4",
+                        "true # Eval + l2 * 2 to l2",
+                        "< l2 15 # SetSp 4 $speed l2"
+                    }},
+                    {16, new string[]{
+                        "true # GetSp l2 $speed 4",
+                        "true # Eval + l2 / 2 to l2",
+                        "true # Cast l2",
+                        "true # SetSp 4 $speed l2"
+                    }}
+                };
+
+                list1.Items.AddRange(items1);
+                default_list.Items.Clear();
+                default_list.Items.AddRange(list1.Items);
+
+                int k1 = 0, q1 = 0, num1 = 7; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in default_list.Items)
+                {
+                    map.Add(i, new Script_form(num1));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic3[k1])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+                        ++q1;
+                    }
+                    ++k1;
+                }
+                /////////////////////////////////////////
+                ListBox list2 = new ListBox();
+                string[] items2 =
+                {
+                    "trigger1"
+                };
+                Dictionary<int, string[]> dic5 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "Rock", "Rock2", "Tree1", "Chest", "Brickwall"
+                    }}
+                };
+                Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # Broadcast 正在採集石材",
+                        "true # Trigger DontMove",
+                        "true # Pause 3",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
+                    }},
+                    {1, new string[]{
+                        "true # Broadcast 正在採集石材",
+                        "true # Trigger DontMove",
+                        "true # Pause 3",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
+                    }},
+                    {2, new string[]{
+                        "true # Broadcast 正在採集木材",
+                        "true # Trigger DontMove",
+                        "true # Pause 4",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
+                    }},
+                    {3, new string[]{
+                        "true # Broadcast 正在尋找物資",
+                        "true # Trigger DontMove",
+                        "true # Pause 7",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
+                    }},
+                    {4, new string[]{
+                        "true # Broadcast 正在採集磚塊",
+                        "true # Trigger DontMove",
+                        "true # Pause 6",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
+                    }}
+                };
+
+                list2.Items.AddRange(items2);
+                trigger_list.Items.Clear();
+                trigger_list.Items.AddRange(list2.Items);
+
+                int k2 = 0, q2 = 0, num2 = 2; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in trigger_list.Items)
+                {
+                    map.Add(i, new Script_form(num2));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic5[k2])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num2, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
+                        ++q2;
+                    }
+                    ++k2;
+                }
+                /////////////////////////////////////////////////////
+                ListBox list3 = new ListBox();
+                string[] items3 =
+                {
+                    "update0"
+                };
+                Dictionary<int, string[]> dic7 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "SceneStart", "Slider"
+                    }}
+                };
+                Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "== l1 1 # ChangeText Caption 征服宇宙大作戰 reserve 255,255,0 0,120,B -1 # ChangeText Caption 征服宇宙大作戰 reserve 255,0,0 0,120,B -1",
+                        "as # SetVar private 1 0 # SetVar private 1 1"
+                    }},
+                    {1, new string[]{
+                        "true # Eval + l2 30 to l2",
+                        "> l2 1900 # SetVar private 2 0",
+                        "true # ChangeText FaChai 高雄發大財！ l2,900 0,255,0 1,48,B -1"
+                    }}
+                };
+
+                list3.Items.AddRange(items3);
+                update_list.Items.Clear();
+                update_list.Items.AddRange(list3.Items);
+
+                int k3 = 0, q3 = 0, num3 = 4; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in update_list.Items)
+                {
+                    map.Add(i, new Script_form(num3));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic7[k3])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num3, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
+                        ++q3;
+                    }
+                    ++k3;
+                }
+                /////////////////////////////////////////////////////
+                ListBox list4 = new ListBox();
+                string[] items4 =
+                {
+                    "destroy1"
+                };
+                Dictionary<int, string[]> dic9 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "GreenBear"
+                    }}
+                };
+                Dictionary<int, string[]> dic10 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # Broadcast 國家感謝您的協助。"
+                    }}
+                };
+
+                list4.Items.AddRange(items4);
+                destroy_list.Items.Clear();
+                destroy_list.Items.AddRange(list4.Items);
+
+                int k4 = 0, q4 = 0, num4 = 3; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in destroy_list.Items)
+                {
+                    map.Add(i, new Script_form(num4));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic9[k4])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num4, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic10[q4]);
+                        ++q4;
+                    }
+                    ++k4;
+                }
+                /////////////////////////////////////////////////////
             }
         }
     }
