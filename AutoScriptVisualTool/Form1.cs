@@ -536,6 +536,141 @@ namespace AutoScriptVisualTool
                     ++k;
                 }
                 /////////////////////////////////////////
+                ListBox list1 = new ListBox();
+                string[] items1 =
+                {
+                    "default"
+                };
+                Dictionary<int, string[]> dic3 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "Default",
+                        "KeyDownH",
+                        "KeyPressH",
+                        "KeyUpH",
+                        "KTab",
+                        "Skill0",
+                        "XS",
+                        "CS",
+                        "VS",
+                        "myWalk",
+                        "myBack",
+                        "myLeft",
+                        "myRight",
+                        "myJump",
+                        "stopWalk",
+                        "SpeedUp",
+                        "SpeedDown"
+                    }}
+                };
+                Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # Broadcast 使用預設檔案",
+                        "true # Bind down H KeyDownH +",
+                        "true # Bind press H KeyPressH +",
+                        "true # Bind up H KeyUpH +",
+                        "true # Bind down Tab KTab +",
+                        "true # Bind down Z Skill0 +",
+                        "true # Bind down X XS +",
+                        "true # Bind down C CS +",
+                        "true # Bind down V VS +",
+                        "true # Bind down O OS +",
+                        "true # Bind down Shift SpeedUp +",
+                        "true # Bind up Shift SpeedDown +",
+                        "true # Bind press W myWalk +",
+                        "true # Bind press S myBack +",
+                        "true # Bind press A myLeft +",
+                        "true # Bind press D myRight +",
+                        "true # Bind down A GasA +",
+                        "true # Bind down B GasB +",
+                        "true # Bind down C GasC +",
+                        "true # Bind down D GasD +",
+                        "true # Bind up W stopWalk +",
+                        "true # Bind up S stopWalk",
+                        "true # Bind down Space myJump +"
+                    }},
+                    {1, new string[]{
+                        "true # Eval 0 to g2"
+                    }},
+                    {2, new string[]{
+                        "true # Eval 1 + g2 to g2"
+                    }},
+                    {3, new string[]{
+                        "true # Cast g2"
+                    }},
+                    {4, new string[]{
+                        "true # NextOne"
+                    }},
+                    {5, new string[]{
+                        "true # UseSkill 0"
+                    }},
+                    {6, new string[]{
+                        "true # UseSkill 1"
+                    }},
+                    {7, new string[]{
+                        "true # UseSkill 2"
+                    }},
+                    {8, new string[]{
+                        "true # UseSkill 3"
+                    }},
+                    {9, new string[]{
+                        "true # WalkForward"
+                    }},
+                    {10, new string[]{
+                        "true # WalkBackward"
+                    }},
+                    {11, new string[]{
+                        "true # WalkLeft"
+                    }},
+                    {12, new string[]{
+                        "true # WalkRight"
+                    }},
+                    {13, new string[]{
+                        "== l1 1 # Return",
+                        "true # StopWalk",
+                        "true # AddForce role 0,40000,0",
+                        "true # SetVar private 1 1",
+                        "true # Pause 1",
+                        "true # SetVar private 1 0"
+                    }},
+                    {14, new string[]{
+                        "true # StopWalk"
+                    }},
+                    {15, new string[]{
+                        "true # Broadcast 加速！",
+                        "true # GetSp l2 $speed 4",
+                        "true # Eval + l2 * 2 to l2",
+                        "< l2 15 # SetSp 4 $speed l2"
+                    }},
+                    {16, new string[]{
+                        "true # GetSp l2 $speed 4",
+                        "true # Eval + l2 / 2 to l2",
+                        "true # Cast l2",
+                        "true # SetSp 4 $speed l2"
+                    }}
+                };
+
+                list1.Items.AddRange(items1);
+                default_list.Items.Clear();
+                default_list.Items.AddRange(list1.Items);
+
+                int k1 = 0, q1 = 0, num1 = 7; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in default_list.Items)
+                {
+                    map.Add(i, new Script_form(num1));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic3[k1])
+                    {
+                        sub.class_list.Items.Add(s);
+                        sub.class_list_ItemAdded(num1);
+                        sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+                        ++q1;
+                    }
+                    ++k1;
+                }
+                /////////////////////////////////////////
             }
             else if (script_num == 2)
             {
