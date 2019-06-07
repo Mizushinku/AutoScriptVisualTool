@@ -68,20 +68,29 @@ namespace AutoScriptVisualTool
                 else if(which == 7)
                 {
                     make_sc(1);
+                    refresh_main_panel();
                 }
                 else if (which == 8)
                 {
                     make_sc(2);
+                    refresh_main_panel();
                 }
                 else if (which == 9)
                 {
                     make_sc(3);
+                    refresh_main_panel();
                 }
                 else if (which == 10)
                 {
                     make_sc(4);
+                    refresh_main_panel();
                 }
             }
+        }
+
+        private void refresh_main_panel()
+        {
+            tabControl1_SelectedIndexChanged(null, null);
         }
 
         private void add_new_script(ListBox list, string cat, int which, string num)
@@ -244,21 +253,25 @@ namespace AutoScriptVisualTool
         int pre_tab = 0;
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(pre_tab == 0)
+            if (pre_tab == 0)
             {
                 start_list.ClearSelected();
+                start_pre_slt = -1;
             }
             else if(pre_tab == 1)
             {
                 trigger_list.ClearSelected();
+                trigger_pre_slt = -1;
             }
             else if(pre_tab == 2)
             {
                 destroy_list.ClearSelected();
+                destroy_pre_slt = -1;
             }
             else if (pre_tab == 3)
             {
                 update_list.ClearSelected();
+                update_pre_slt = -1;
             }
             else if(pre_tab == 4)
             {
