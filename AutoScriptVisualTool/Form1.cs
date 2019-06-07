@@ -1325,75 +1325,55 @@ namespace AutoScriptVisualTool
                 ListBox list2 = new ListBox();
                 string[] items2 =
                 {
-                    "trigger1", "trigger2","trigger10"
+                    "trigger1"
                 };
                 Dictionary<int, string[]> dic5 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "Door", "NPC4"
-                    }},
-                    {1, new string[]{
-                        "Monster", "Princess"
-                    }},
-                    {2, new string[]{
-                        "King", "Statue"
+                        "Rock", "Rock2", "Tree1", "Chest", "Brickwall"
                     }}
                 };
                 Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "true # Broadcast 傳送",
-                        "true # LoadScene 10"
+                        "true # Broadcast 正在採集石材",
+                        "true # Trigger DontMove",
+                        "true # Pause 3",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
                     }},
                     {1, new string[]{
-                        "true # PushTalk 喔!天啊!看天上那是什麼？ 村民 $7",
-                        "true # PushTalk 看起來像是一條龍呢 勇者 $10",
-                        "true # PushTalk 他的爪子是不是還抓著什麼? 村民 $7",
-                        "true # PushTalk 嗯...看起來像是個女人... 勇者 $10",
-                        "true # PushTalk 注意!注意! 傳令兵 $6",
-                        "true # PushTalk 惡龍昆圖庫塔卡提考特蘇瓦西拉松抓走了公主米婭莫拉蘇娜丹妮謝莉红! 傳令兵 $6",
-                        "true # PushTalk 國王急徵勇者前往營救! 傳令兵 $6",
-                        "true # PushTalk 找到傳送門前往王都報到吧! 傳令兵 $6",
-                        "true # PushTalk 太好了，輪到我達拉崩巴斑得貝迪卜多比鲁翁出場了! 勇者 $10",
-                        "true # StartTalk"
+                        "true # Broadcast 正在採集石材",
+                        "true # Trigger DontMove",
+                        "true # Pause 3",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
                     }},
                     {2, new string[]{
-                        "true # PushTalk 我是昆圖庫塔卡提考特蘇瓦西拉松 惡龍 dragon.jpg",
-                        "true # PushTalk 再來一次 惡龍 dragon.jpg",
-                        "true # PushTalk 昆圖庫塔卡提考特蘇瓦西拉松 惡龍 dragon.jpg",
-                        "true # PushTalk 是不是昆特牌提琴烤蛋達蘇打馬拉松 勇者 $10",
-                        "true # PushTalk 不對，是昆圖庫塔卡提考特蘇瓦西拉松 惡龍 dragon.jpg",
-                        "true # PushTalk 於是，達拉崩巴斑得貝迪卜多比鲁翁，砍向 旁白 White.png",
-                        "true # PushTalk 昆圖庫塔卡提考特蘇瓦西拉松 旁白 White.png",
-                        "true # PushTalk 然後，昆圖庫塔卡提考特蘇瓦西拉松，咬了 旁白 White.png",
-                        "true # PushTalk 達拉崩巴斑得貝迪卜多比鲁翁 旁白 White.png",
-                        "true # PushTalk 最後，達拉崩巴斑得貝迪卜多比鲁翁，他戰勝了 旁白 White.png",
-                        "true # PushTalk 昆圖庫塔卡提考特蘇瓦西拉松 旁白 White.png",
-                        "true # PushTalk 救出了，公主米婭莫拉蘇娜丹妮謝莉红 旁白 White.png",
-                        "true # StartTalk",
-                        "true # Destroy 0"
+                        "true # Broadcast 正在採集木材",
+                        "true # Trigger DontMove",
+                        "true # Pause 4",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
                     }},
                     {3, new string[]{
-                        "true # PushTalk 我是公主米婭莫拉蘇娜丹妮謝莉红 公主 princess.jpg",
-                        "true # PushTalk 安安你好給虧嗎 公主 princess.jpg",
-                        "true # StartTalk"
+                        "true # Broadcast 正在尋找物資",
+                        "true # Trigger DontMove",
+                        "true # Pause 7",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
                     }},
                     {4, new string[]{
-                        "true # PushTalk 我要帶上最好的劍 勇者 $10",
-                        "true # PushTalk 翻過最高的山 勇者 $10",
-                        "true # PushTalk 闖進最深的森林 勇者 $10",
-                        "true # PushTalk 把公主帶回到面前 勇者 $10",
-                        "true # PushTalk 朕非常高興，汝姓名為何 國王 king.jpg",
-                        "true # PushTalk 陛下我叫達拉崩巴班得貝迪卜多比魯翁 勇者 $10",
-                        "true # PushTalk 是不是達拉崩巴班得貝迪卜多比魯翁 國王 king.jpg",
-                        "true # PushTalk 對對達拉崩巴班得貝迪卜多比魯翁 勇者 $10",
-                        "true # PushTalk 本來按照歌詞你要慢慢打怪升級 國王 king.jpg",
-                        "true # PushTalk 可是demo時間有限，你直接走傳送門吧-> 國王 king.jpg",
-                        "true # StartTalk"
-                    }},
-                    {5, new string[]{
-                        "true # Broadcast 傳送",
-                        "true # LoadScene 2"
+                        "true # Broadcast 正在採集磚塊",
+                        "true # Trigger DontMove",
+                        "true # Pause 6",
+                        "true # Destroy 1",
+                        "true # 採集完成",
+                        "true # Restart CanMove"
                     }}
                 };
 
