@@ -42,15 +42,15 @@ namespace AutoScriptVisualTool
             cur_form = null;
         }
 
-        public void class_list_ItemAdded()
+        public void class_list_ItemAdded(object item)
         {
-            map.Add(class_list.Items[class_list.Items.Count - 1], new Event_Form(this.which));
+            map.Add(item, new Event_Form(this.which));
         }
 
-        public void class_list_ItemAdded(int p)
+        public void class_list_ItemAdded(int p, object item)
         {
             Event_Form event_Form = new Event_Form(p);
-            map.Add(class_list.Items[class_list.Items.Count - 1], event_Form);
+            map.Add(item, event_Form);
             cur_form = event_Form;
         }
 

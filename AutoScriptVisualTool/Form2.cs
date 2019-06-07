@@ -30,29 +30,29 @@ namespace AutoScriptVisualTool
         private void start_btn_Click(object sender, EventArgs e)
         {
             this.which = 1;
-            show_inputBox();
-            this.DialogResult = DialogResult.OK;
+            if (show_inputBox())
+                this.DialogResult = DialogResult.OK;
         }
 
         private void trigger_btn_Click(object sender, EventArgs e)
         {
             this.which = 2;
-            show_inputBox();
-            this.DialogResult = DialogResult.OK;
+            if (show_inputBox())
+                this.DialogResult = DialogResult.OK;
         }
 
         private void destroy_btn_Click(object sender, EventArgs e)
         {
             this.which = 3;
-            show_inputBox();
-            this.DialogResult = DialogResult.OK;
+            if (show_inputBox())
+                this.DialogResult = DialogResult.OK;
         }
 
         private void update_btn_Click(object sender, EventArgs e)
         {
             this.which = 4;
-            show_inputBox();
-            this.DialogResult = DialogResult.OK;
+            if (show_inputBox())
+                this.DialogResult = DialogResult.OK;
         }
 
         private void S1_btn_Click(object sender, EventArgs e)
@@ -77,11 +77,15 @@ namespace AutoScriptVisualTool
             this.DialogResult = DialogResult.OK;
         }
 
-        private void show_inputBox()
+        private bool show_inputBox()
         {
             InputBox inputBox = new InputBox("New Script", "編號");
             if (inputBox.ShowDialog() == DialogResult.OK)
+            {
                 num = inputBox.textBox1.Text;
+                return true;
+            }
+            return false;
         }
 
 

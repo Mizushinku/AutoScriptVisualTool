@@ -122,7 +122,7 @@
             this.start_page.Controls.Add(this.start_list);
             this.start_page.Location = new System.Drawing.Point(4, 56);
             this.start_page.Name = "start_page";
-            this.start_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.start_page.Padding = new System.Windows.Forms.Padding(3);
             this.start_page.Size = new System.Drawing.Size(202, 495);
             this.start_page.TabIndex = 0;
             this.start_page.Text = "Start";
@@ -137,7 +137,6 @@
             this.start_list.Location = new System.Drawing.Point(3, 3);
             this.start_list.Name = "start_list";
             this.start_list.Size = new System.Drawing.Size(196, 489);
-            this.start_list.Sorted = true;
             this.start_list.TabIndex = 0;
             this.start_list.SelectedIndexChanged += new System.EventHandler(this.start_list_SelectedIndexChanged);
             this.start_list.MouseDown += new System.Windows.Forms.MouseEventHandler(this.list_MouseDown);
@@ -147,7 +146,7 @@
             this.trigger_page.Controls.Add(this.trigger_list);
             this.trigger_page.Location = new System.Drawing.Point(4, 56);
             this.trigger_page.Name = "trigger_page";
-            this.trigger_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.trigger_page.Padding = new System.Windows.Forms.Padding(3);
             this.trigger_page.Size = new System.Drawing.Size(202, 495);
             this.trigger_page.TabIndex = 1;
             this.trigger_page.Text = "Trigger";
@@ -171,7 +170,7 @@
             this.destroy_page.Controls.Add(this.destroy_list);
             this.destroy_page.Location = new System.Drawing.Point(4, 56);
             this.destroy_page.Name = "destroy_page";
-            this.destroy_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.destroy_page.Padding = new System.Windows.Forms.Padding(3);
             this.destroy_page.Size = new System.Drawing.Size(202, 495);
             this.destroy_page.TabIndex = 2;
             this.destroy_page.Text = "Destroy";
@@ -195,7 +194,7 @@
             this.update_page.Controls.Add(this.update_list);
             this.update_page.Location = new System.Drawing.Point(4, 56);
             this.update_page.Name = "update_page";
-            this.update_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.update_page.Padding = new System.Windows.Forms.Padding(3);
             this.update_page.Size = new System.Drawing.Size(202, 495);
             this.update_page.TabIndex = 3;
             this.update_page.Text = "Update";
@@ -219,8 +218,8 @@
             this.player_page.Controls.Add(this.player_list);
             this.player_page.Location = new System.Drawing.Point(4, 56);
             this.player_page.Name = "player_page";
-            this.player_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.player_page.Size = new System.Drawing.Size(203, 497);
+            this.player_page.Padding = new System.Windows.Forms.Padding(3);
+            this.player_page.Size = new System.Drawing.Size(202, 495);
             this.player_page.TabIndex = 4;
             this.player_page.Text = "Player";
             this.player_page.UseVisualStyleBackColor = true;
@@ -233,7 +232,7 @@
             this.player_list.ItemHeight = 21;
             this.player_list.Location = new System.Drawing.Point(3, 3);
             this.player_list.Name = "player_list";
-            this.player_list.Size = new System.Drawing.Size(197, 491);
+            this.player_list.Size = new System.Drawing.Size(196, 489);
             this.player_list.TabIndex = 0;
             this.player_list.SelectedIndexChanged += new System.EventHandler(this.player_list_SelectedIndexChanged);
             // 
@@ -242,8 +241,8 @@
             this.function_page.Controls.Add(this.function_list);
             this.function_page.Location = new System.Drawing.Point(4, 56);
             this.function_page.Name = "function_page";
-            this.function_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.function_page.Size = new System.Drawing.Size(203, 497);
+            this.function_page.Padding = new System.Windows.Forms.Padding(3);
+            this.function_page.Size = new System.Drawing.Size(202, 495);
             this.function_page.TabIndex = 5;
             this.function_page.Text = "Function";
             this.function_page.UseVisualStyleBackColor = true;
@@ -256,7 +255,7 @@
             this.function_list.ItemHeight = 21;
             this.function_list.Location = new System.Drawing.Point(3, 3);
             this.function_list.Name = "function_list";
-            this.function_list.Size = new System.Drawing.Size(197, 491);
+            this.function_list.Size = new System.Drawing.Size(196, 489);
             this.function_list.TabIndex = 0;
             this.function_list.SelectedIndexChanged += new System.EventHandler(this.function_list_SelectedIndexChanged);
             // 
@@ -265,8 +264,8 @@
             this.default_page.Controls.Add(this.default_list);
             this.default_page.Location = new System.Drawing.Point(4, 56);
             this.default_page.Name = "default_page";
-            this.default_page.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.default_page.Size = new System.Drawing.Size(203, 497);
+            this.default_page.Padding = new System.Windows.Forms.Padding(3);
+            this.default_page.Size = new System.Drawing.Size(202, 495);
             this.default_page.TabIndex = 6;
             this.default_page.Text = "Default";
             this.default_page.UseVisualStyleBackColor = true;
@@ -279,7 +278,7 @@
             this.default_list.ItemHeight = 21;
             this.default_list.Location = new System.Drawing.Point(3, 3);
             this.default_list.Name = "default_list";
-            this.default_list.Size = new System.Drawing.Size(197, 491);
+            this.default_list.Size = new System.Drawing.Size(196, 489);
             this.default_list.TabIndex = 0;
             this.default_list.SelectedIndexChanged += new System.EventHandler(this.default_list_SelectedIndexChanged);
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace AutoScriptVisualTool
 {
@@ -19,10 +20,13 @@ namespace AutoScriptVisualTool
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            player_list.Items.Add("player");
-            map.Add(player_list.Items[0], new Script_form(5));
-            default_list.Items.Add("default");
-            map.Add(default_list.Items[0], new Script_form(7));
+            object item = "player" as object;
+            player_list.Items.Add(item);
+            map.Add(item, new Script_form(5));
+
+            object item2 = "default" as object;
+            default_list.Items.Add(item2);
+            map.Add(item2, new Script_form(7));
         
         }
 
@@ -41,19 +45,19 @@ namespace AutoScriptVisualTool
                 string num = add_Form.num;
                 if (which == 1)
                 {
-                    add_new_script(start_list, "start" + num, which);
+                    add_new_script(start_list, "start", which, num);
                 }
                 else if(which == 2)
                 {
-                    add_new_script(trigger_list, "trigger" + num, which);
+                    add_new_script(trigger_list, "trigger", which, num);
                 }
                 else if(which == 3)
                 {
-                    add_new_script(destroy_list, "destroy" + num, which);
+                    add_new_script(destroy_list, "destroy", which, num);
                 }
                 else if(which == 4)
                 {
-                    add_new_script(update_list, "update" + num, which);
+                    add_new_script(update_list, "update", which, num);
                 }
                 /*
                 else if(which == 6)
@@ -80,45 +84,9 @@ namespace AutoScriptVisualTool
             }
         }
 
-        private void add_new_script(ListBox list, string name, int which)
+        private void add_new_script(ListBox list, string cat, int which, string num)
         {
-            /*
-            if (list.Items.Count > 0)
-            {
-                has_main_script = list.Items[0].ToString() == (cat + "0") ? true : false;
-            }
-            if (flag)
-            {
-                if (has_main_script)
-                {
-                    MessageBox.Show("這個分類已經擁有程式進入點的Script", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    list.Items.Insert(0, cat + "0");
-                    map.Add(list.Items[0], new Script_form(which));
-                }
-            }
-            else
-            {
-                int item_cnt = list.Items.Count;
-                String format = cat + "{0}";
-                if (has_main_script)
-                {
-                    list.Items.Add(String.Format(format, item_cnt));
-                }
-                else
-                {
-                    list.Items.Add(String.Format(format, item_cnt + 1));
-                }
-                map.Add(list.Items[item_cnt], new Script_form(which));
-            }
-            if (cat == "start" && start_pre_slt != -1) ++start_pre_slt;
-            else if (cat == "trigger" && trigger_pre_slt != -1) ++trigger_pre_slt;
-            else if (cat == "destroy" && destroy_pre_slt != -1) ++destroy_pre_slt;
-            else if (cat == "update" && update_pre_slt != -1) ++update_pre_slt;
-            else if (cat == "function" && function_pre_slt != -1) ++function_pre_slt;
-            */
+            string name = cat + num;
             if (list.Items.Contains(name))
             {
                 MessageBox.Show("已擁有同名的Script", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,14 +95,53 @@ namespace AutoScriptVisualTool
             {
                 object item = name as object;
                 map.Add(item, new Script_form(which));
-                list.Items.Add(item);
-                re_map(list);
+                if (list.Items.Count == 0)
+                {
+                    list.Items.Add(item);
+                }
+                else
+                {
+                    bool added = false;
+                    for (int i = 0; i < list.Items.Count; ++i)
+                    {
+                        int cur = int.Parse(Regex.Match(list.Items[i].ToString(), @"\d+").Value);
+                        if (cur > int.Parse(num))
+                        {
+                            list.Items.Insert(i, item);
+                            added = true;
+                            maintain_index(list, i);
+                            break;
+                        }
+                    }
+                    if (!added) list.Items.Add(item);
+                }
+            }
+        }
+
+        private void maintain_index(ListBox list, int changed_index)
+        {
+            if (list.Equals(start_list))
+            {
+                if (start_pre_slt >= changed_index) ++start_pre_slt;
+            }
+            else if (list.Equals(trigger_list))
+            {
+                if (trigger_pre_slt >= changed_index) ++trigger_pre_slt;
+            }
+            else if (list.Equals(destroy_list))
+            {
+                if (destroy_pre_slt >= changed_index) ++destroy_pre_slt;
+            }
+            else if (list.Equals(update_list))
+            {
+                if (update_pre_slt >= changed_index) ++update_pre_slt;
             }
         }
 
         int start_pre_slt = -1;
         private void start_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Console.WriteLine("\npre = " + start_pre_slt + "\nselected = " + start_list.SelectedIndex);
             if (start_list.SelectedIndex == start_pre_slt) return;
             start_pre_slt = start_list.SelectedIndex;
             if (start_list.SelectedIndex == -1) return;
@@ -228,8 +235,9 @@ namespace AutoScriptVisualTool
                 InputBox inputBox = new InputBox("New Class", "請輸入新項目名稱");
                 if(inputBox.ShowDialog() == DialogResult.OK)
                 {
-                    cur_form.class_list.Items.Add(inputBox.textBox1.Text);
-                    cur_form.class_list_ItemAdded();
+                    object item = inputBox.textBox1.Text as object;
+                    cur_form.class_list.Items.Add(item);
+                    cur_form.class_list_ItemAdded(item);
                 }
             }
         }
@@ -376,20 +384,10 @@ namespace AutoScriptVisualTool
                 if (index == -1 || prev == -2) return;
                 list.ClearSelected();
                 cur_form = null;
-                
-                //ReMap
-                map.Remove(list.Items[index]);
-                List<Form> forms = new List<Form>();
-                for(int i = index + 1; i < list.Items.Count; ++i)
-                {
-                    forms.Add(map[list.Items[i]]);
-                    map.Remove(list.Items[i]);
-                }
-                list.Items.RemoveAt(index);
-                for(int i = index, j = 0; i < list.Items.Count; ++i, ++j)
-                {
-                    map.Add(list.Items[i], forms[j]);
-                }
+
+                object rm_item = list.Items[index] as object;
+                map.Remove(rm_item);
+                list.Items.Remove(rm_item);
 
                 if (0 <= prev && prev < index) list.SetSelected(prev, true);
                 if (prev == index) main_panel.Controls.Clear();
@@ -445,8 +443,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic[k])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
                         ++q;
                     }
