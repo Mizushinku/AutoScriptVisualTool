@@ -2144,45 +2144,24 @@ namespace AutoScriptVisualTool
                 ListBox list3 = new ListBox();
                 string[] items3 =
                 {
-                    "update1"
+                    "update0"
                 };
                 Dictionary<int, string[]> dic7 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "Zombie1", "Zombie2", "Zombie3", "Zombie4", "Zombie5", "Zombie6"
+                        "SceneStart", "Slider"
                     }}
                 };
                 Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
+                        "== l1 1 # ChangeText Caption 征服宇宙大作戰 reserve 255,255,0 0,120,B -1 # ChangeText Caption 征服宇宙大作戰 reserve 255,0,0 0,120,B -1",
+                        "as # SetVar private 1 0 # SetVar private 1 1"
                     }},
                     {1, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
-                    }},
-                    {2, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
-                    }},
-                    {3, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
-                    }},
-                    {4, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
-                    }},
-                    {5, new string[]{
-                        "found 1 # Broadcast 您被感染，遊戲結束",
-                        "as # Pause 1",
-                        "as # Damage 10000"
+                        "true # Eval + l2 30 to l2",
+                        "> l2 1900 # SetVar private 2 0",
+                        "true # ChangeText FaChai 高雄發大財！ l2,900 0,255,0 1,48,B -1"
                     }}
                 };
 
@@ -2205,6 +2184,45 @@ namespace AutoScriptVisualTool
                         ++q3;
                     }
                     ++k3;
+                }
+                /////////////////////////////////////////////////////
+                ListBox list4 = new ListBox();
+                string[] items4 =
+                {
+                    "destroy1"
+                };
+                Dictionary<int, string[]> dic9 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "GreenBear"
+                    }}
+                };
+                Dictionary<int, string[]> dic10 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "true # Broadcast 國家感謝您的協助。"
+                    }}
+                };
+
+                list4.Items.AddRange(items4);
+                destroy_list.Items.Clear();
+                destroy_list.Items.AddRange(list4.Items);
+
+                int k4 = 0, q4 = 0, num4 = 3; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in destroy_list.Items)
+                {
+                    map.Add(i, new Script_form(num4));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic9[k4])
+                    {
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num4, obj);
+                        sub.get_sub_form().event_list.Items.AddRange(dic10[q4]);
+                        ++q4;
+                    }
+                    ++k4;
                 }
                 /////////////////////////////////////////////////////
             }
