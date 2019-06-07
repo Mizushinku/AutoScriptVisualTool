@@ -13,7 +13,7 @@ namespace AutoScriptVisualTool
     public partial class Add_Form : Form
     {
         public int which { get; set; }
-        public bool main_script_flag { get; set; } = false;
+        public string num { get; set; }
 
         public Add_Form()
         {
@@ -24,35 +24,34 @@ namespace AutoScriptVisualTool
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.which = 0;
-            main_script_flag = main_script_cb.Checked;
             this.DialogResult = DialogResult.Cancel;
         }
 
         private void start_btn_Click(object sender, EventArgs e)
         {
             this.which = 1;
-            main_script_flag = main_script_cb.Checked;
+            show_inputBox();
             this.DialogResult = DialogResult.OK;
         }
 
         private void trigger_btn_Click(object sender, EventArgs e)
         {
             this.which = 2;
-            main_script_flag = main_script_cb.Checked;
+            show_inputBox();
             this.DialogResult = DialogResult.OK;
         }
 
         private void destroy_btn_Click(object sender, EventArgs e)
         {
             this.which = 3;
-            main_script_flag = main_script_cb.Checked;
+            show_inputBox();
             this.DialogResult = DialogResult.OK;
         }
 
         private void update_btn_Click(object sender, EventArgs e)
         {
             this.which = 4;
-            main_script_flag = main_script_cb.Checked;
+            show_inputBox();
             this.DialogResult = DialogResult.OK;
         }
 
@@ -76,6 +75,13 @@ namespace AutoScriptVisualTool
         {
             this.which = 10;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void show_inputBox()
+        {
+            InputBox inputBox = new InputBox("New Script", "編號");
+            if (inputBox.ShowDialog() == DialogResult.OK)
+                num = inputBox.textBox1.Text;
         }
 
 

@@ -28,56 +28,56 @@ namespace AutoScriptVisualTool
 
         private string[] vision = new string[]
         {
-            "Light", "FadeIn", "FadeOut", "Camera", "Anima",
-            "ShowText", "ChangeText", "ShowImage", "ShowImageFrom", "ChangeImage",
-            "Broadcast",
+            "使物體發光", "畫面淡入", "畫面淡出", "更換視點", "撥放角色動畫",
+            "顯示文字", "更改顯示文字", "展示圖片", "從指定路徑展示圖片", "變更圖片",
+            "向使用者展示指定訊息",
         };
 
         private string[] mechanics = new string[]
         {
-            "Rotate", "Scale", "Teleport", "AddForce", "Rigid",
+            "旋轉物體", "縮放物體", "瞬間改變物體位置", "對物體施力", "成為剛體",
         };
 
         private string[] create = new string[]
         {
-            "Virtual", "Create", "NPC", "ChangeNPC", "Weapon", "SpnParticle",
+            "創造不可視物件", "創造物件並定義其類別", "創造非玩家操控角色", "修改NPC屬性", "製作敵人攻擊方式", "產生特定粒子",
         };
 
         private string[] sound = new string[]
         {
-            "PlaySound", "PSfrom", "ChBGM", "ChBGMfrom",
+            "播放效果音", "從指定路徑播放效果音", "變更背景音樂", "從指定路徑變更背景音樂",
         };
 
         private string[] enemy = new string[]
         {
-            "GenMonster",
+            "在指定位置生成特定怪物",
         };
 
         private string[] str = new string[]
         {
-            "DefineStr",
+            "定義字串",
         };
 
         private string[] plot = new string[]
         {
-            "Bind", "ShowButton", "ChangeButton", "ShowInput", "GetText",
-            "Walk", "WalkForward", "WalkBackward", "WalkLeft", "WalkRight",
-            "StopWalk", "Route", "PushTalk", "StartTalk", "Pause",
-            "Restart", "Trigger", "Damage", "Menu", "OpenShop",
-            "Shop", "AddItem", "AddEquip", "NextOne", "Alchemy",
-            "Rename", "LoadScene",
+            "建立鍵位對應", "建立互動式按鈕", "變更按鈕", "建立互動式文字方塊", "取得文字",
+            "讓角色走路", "讓角色向前走", "讓角色倒退走", "讓角色向左旋轉", "讓角色向右旋轉",
+            "讓角色停止走路", "規畫NPC巡邏動線", "將語句加入佇列", "開始對話", "暫時不執行下面的程式碼",
+            "重新執行一個物件的start函數", "直接觸發物件", "傷害當前角色", "打開主選單", "打開交易介面",
+            "建立商店物件", "增減持有道具", "增減持有裝備", "更換成下一位成員", "打開煉金模組",
+            "替角色更名", "切換場景",
         };
 
         private string[] logic = new string[]
         {
-            "Call", "Execute", "GetSp", "Goto", "SetVar",
-            "SetRandom", "Eval", "SetSp", "Stop", "Destroy",
-            "Return", "Disable",
+            "根據名稱呼叫函數", "根據索引值呼叫函數", "取得特殊變量", "跳至指定行", "將變數賦值",
+            "將變數賦隨機值", "評估運算式", "設定特殊變量", "讓物件停止執行update事件", "摧毀物件",
+            "離開函式", "關閉組件",
         };
 
         private string[] debug = new string[]
         {
-            "Log", "Cast",
+            "印出指定訊息", "在編輯器中印出指定的變數的值",
         };
 
         public Action_Form()
@@ -160,99 +160,99 @@ namespace AutoScriptVisualTool
 
             if (cat == "視覺")
             {
-                if (cmd == "Light") baseAF = new Light_Form();
-                else if (cmd == "FadeIn") baseAF = new Fade_Form(0);
-                else if (cmd == "FadeOut") baseAF = new Fade_Form(1);
-                else if (cmd == "Camera") baseAF = new Camera_Form();
-                else if (cmd == "Anima") baseAF = new Anima_Form();
-                else if (cmd == "ShowText") baseAF = new Text_Form(0);
-                else if (cmd == "ChangeText") baseAF = new Text_Form(1);
-                else if (cmd == "ShowImage") baseAF = new ShowImage_Form(false);
-                else if (cmd == "ShowImageFrom") baseAF = new ShowImage_Form(true);
-                else if (cmd == "ChangeImage") baseAF = new ChangeImage_Form();
-                else if (cmd == "Broadcast") baseAF = new Broadcast_Form();
+                if (cmd == "使物體發光") baseAF = new Light_Form();
+                else if (cmd == "畫面淡入") baseAF = new Fade_Form(0);
+                else if (cmd == "畫面淡出") baseAF = new Fade_Form(1);
+                else if (cmd == "更換視點") baseAF = new Camera_Form();
+                else if (cmd == "撥放角色動畫") baseAF = new Anima_Form();
+                else if (cmd == "顯示文字") baseAF = new Text_Form(0);
+                else if (cmd == "更改顯示文字") baseAF = new Text_Form(1);
+                else if (cmd == "展示圖片") baseAF = new ShowImage_Form(false);
+                else if (cmd == "從指定路徑展示圖片") baseAF = new ShowImage_Form(true);
+                else if (cmd == "變更圖片") baseAF = new ChangeImage_Form();
+                else if (cmd == "向使用者展示指定訊息") baseAF = new Broadcast_Form();
             }
             else if (cat == "力學")
             {
-                if (cmd == "Rotate") baseAF = new RSTAR_Form(0);
-                else if (cmd == "Scale") baseAF = new RSTAR_Form(1);
-                else if (cmd == "Teleport") baseAF = new RSTAR_Form(2);
-                else if (cmd == "AddForce") baseAF = new RSTAR_Form(3);
-                else if (cmd == "Rigid") baseAF = new RSTAR_Form(4);
+                if (cmd == "旋轉物體") baseAF = new RSTAR_Form(0);
+                else if (cmd == "縮放物體") baseAF = new RSTAR_Form(1);
+                else if (cmd == "瞬間改變物體位置") baseAF = new RSTAR_Form(2);
+                else if (cmd == "對物體施力") baseAF = new RSTAR_Form(3);
+                else if (cmd == "成為剛體") baseAF = new RSTAR_Form(4);
             }
             else if (cat == "創造")
             {
-                if (cmd == "Virtual") baseAF = new Virtual_Form();
-                else if (cmd == "Create") baseAF = new Create_Form(0);
-                else if (cmd == "NPC") baseAF = new Create_Form(1);
-                else if (cmd == "ChangeNPC") baseAF = new ChangeNPC_Form();
-                else if (cmd == "Weapon") baseAF = new Weapon_Form();
-                else if (cmd == "SpnParticle") baseAF = new Particle_Form();
+                if (cmd == "創造不可視物件") baseAF = new Virtual_Form();
+                else if (cmd == "創造物件並定義其類別") baseAF = new Create_Form(0);
+                else if (cmd == "創造非玩家操控角色") baseAF = new Create_Form(1);
+                else if (cmd == "修改NPC屬性") baseAF = new ChangeNPC_Form();
+                else if (cmd == "製作敵人攻擊方式") baseAF = new Weapon_Form();
+                else if (cmd == "產生特定粒子") baseAF = new Particle_Form();
             }
             else if (cat == "音效")
             {
-                if (cmd == "PlaySound") baseAF = new Music_Form(0);
-                else if (cmd == "PSfrom") baseAF = new Music_Form(1);
-                else if (cmd == "ChBGM") baseAF = new Music_Form(2);
-                else if (cmd == "ChBGMfrom") baseAF = new Music_Form(3);
+                if (cmd == "播放效果音") baseAF = new Music_Form(0);
+                else if (cmd == "從指定路徑播放效果音") baseAF = new Music_Form(1);
+                else if (cmd == "變更背景音樂") baseAF = new Music_Form(2);
+                else if (cmd == "從指定路徑變更背景音樂") baseAF = new Music_Form(3);
             }
             else if (cat == "與敵人相關")
             {
-                if (cmd == "GenMonster") baseAF = new Monster_Form();
+                if (cmd == "在指定位置生成特定怪物") baseAF = new Monster_Form();
             }
             else if (cat == "字串")
             {
-                if (cmd == "DefineStr") baseAF = new DefineStr_Form();
+                if (cmd == "定義字串") baseAF = new DefineStr_Form();
             }
             else if (cat == "劇情")
             {
-                if (cmd == "Bind") baseAF = new Bind_Form();
-                else if (cmd == "ShowButton") baseAF = new Button_Form(0);
-                else if (cmd == "ChangeButton") baseAF = new Button_Form(1);
-                else if (cmd == "ShowInput") baseAF = new Input_Form();
-                else if (cmd == "GetText") baseAF = new GetText_Form();
-                else if (cmd == "Walk") baseAF = new Walk_Form(0);
-                else if (cmd == "WalkForward") baseAF = new Walk_Form(1);
-                else if (cmd == "WalkBackward") baseAF = new Walk_Form(2);
-                else if (cmd == "WalkLeft") baseAF = new Walk_Form(3);
-                else if (cmd == "WalkRight") baseAF = new Walk_Form(4);
-                else if (cmd == "StopWalk") baseAF = new Walk_Form(5);
-                else if (cmd == "Route") baseAF = new Route_Form();
-                else if (cmd == "PushTalk") baseAF = new Talk_Form(0);
-                else if (cmd == "StartTalk") baseAF = new Talk_Form(1);
-                else if (cmd == "Menu") baseAF = new MNA_Form(0);
-                else if (cmd == "NextOne") baseAF = new MNA_Form(1);
-                else if (cmd == "Alchemy") baseAF = new MNA_Form(2);
-                else if (cmd == "Pause") baseAF = new PRTDOL_Form(0);
-                else if (cmd == "Restart") baseAF = new PRTDOL_Form(1);
-                else if (cmd == "Trigger") baseAF = new PRTDOL_Form(2);
-                else if (cmd == "Damage") baseAF = new PRTDOL_Form(3);
-                else if (cmd == "OpenShop") baseAF = new PRTDOL_Form(4);
-                else if (cmd == "LoadScene") baseAF = new PRTDOL_Form(5);
-                else if (cmd == "Shop") baseAF = new Shop_Form();
-                else if (cmd == "AddItem") baseAF = new Item_Form(0);
-                else if (cmd == "AddEquip") baseAF = new Item_Form(1);
-                else if (cmd == "Rename") baseAF = new Rename_Form();
+                if (cmd == "建立鍵位對應") baseAF = new Bind_Form();
+                else if (cmd == "建立互動式按鈕") baseAF = new Button_Form(0);
+                else if (cmd == "變更按鈕") baseAF = new Button_Form(1);
+                else if (cmd == "建立互動式文字方塊") baseAF = new Input_Form();
+                else if (cmd == "取得文字") baseAF = new GetText_Form();
+                else if (cmd == "讓角色走路") baseAF = new Walk_Form(0);
+                else if (cmd == "讓角色向前走") baseAF = new Walk_Form(1);
+                else if (cmd == "讓角色倒退走") baseAF = new Walk_Form(2);
+                else if (cmd == "讓角色向左旋轉") baseAF = new Walk_Form(3);
+                else if (cmd == "讓角色向右旋轉") baseAF = new Walk_Form(4);
+                else if (cmd == "讓角色停止走路") baseAF = new Walk_Form(5);
+                else if (cmd == "規畫NPC巡邏動線") baseAF = new Route_Form();
+                else if (cmd == "將語句加入佇列") baseAF = new Talk_Form(0);
+                else if (cmd == "開始對話") baseAF = new Talk_Form(1);
+                else if (cmd == "打開主選單") baseAF = new MNA_Form(0);
+                else if (cmd == "更換成下一位成員") baseAF = new MNA_Form(1);
+                else if (cmd == "打開煉金模組") baseAF = new MNA_Form(2);
+                else if (cmd == "暫時不執行下面的程式碼") baseAF = new PRTDOL_Form(0);
+                else if (cmd == "重新執行一個物件的start函數") baseAF = new PRTDOL_Form(1);
+                else if (cmd == "直接觸發物件") baseAF = new PRTDOL_Form(2);
+                else if (cmd == "傷害當前角色") baseAF = new PRTDOL_Form(3);
+                else if (cmd == "打開交易介面") baseAF = new PRTDOL_Form(4);
+                else if (cmd == "切換場景") baseAF = new PRTDOL_Form(5);
+                else if (cmd == "建立商店物件") baseAF = new Shop_Form();
+                else if (cmd == "增減持有道具") baseAF = new Item_Form(0);
+                else if (cmd == "增減持有裝備") baseAF = new Item_Form(1);
+                else if (cmd == "替角色更名") baseAF = new Rename_Form();
             }
             else if (cat == "邏輯")
             {
-                if (cmd == "Call") baseAF = new Function_Form(0);
-                else if (cmd == "Execute") baseAF = new Function_Form(1);
-                else if (cmd == "GetSp") baseAF = new GetSp_Form();
-                else if (cmd == "Goto") baseAF = new GSDRD_Form(0);
-                else if (cmd == "Stop") baseAF = new GSDRD_Form(1);
-                else if (cmd == "Destroy") baseAF = new GSDRD_Form(2);
-                else if (cmd == "Return") baseAF = new GSDRD_Form(3);
-                else if (cmd == "Disable") baseAF = new GSDRD_Form(4);
-                else if (cmd == "SetVar") baseAF = new SetVar_Form(0);
-                else if (cmd == "SetRandom") baseAF = new SetVar_Form(1);
-                else if (cmd == "Eval") baseAF = new Eval_Form();
-                else if (cmd == "SetSp") baseAF = new SetSp_Form();
+                if (cmd == "根據名稱呼叫函數") baseAF = new Function_Form(0);
+                else if (cmd == "根據索引值呼叫函數") baseAF = new Function_Form(1);
+                else if (cmd == "取得特殊變量") baseAF = new GetSp_Form();
+                else if (cmd == "跳至指定行") baseAF = new GSDRD_Form(0);
+                else if (cmd == "讓物件停止執行update事件") baseAF = new GSDRD_Form(1);
+                else if (cmd == "摧毀物件") baseAF = new GSDRD_Form(2);
+                else if (cmd == "離開函式") baseAF = new GSDRD_Form(3);
+                else if (cmd == "關閉組件") baseAF = new GSDRD_Form(4);
+                else if (cmd == "將變數賦值") baseAF = new SetVar_Form(0);
+                else if (cmd == "將變數賦隨機值") baseAF = new SetVar_Form(1);
+                else if (cmd == "評估運算式") baseAF = new Eval_Form();
+                else if (cmd == "設定特殊變量") baseAF = new SetSp_Form();
             }
             else if (cat == "除錯")
             {
-                if (cmd == "Log") baseAF = new LC_Form(0);
-                else if (cmd == "Cast") baseAF = new LC_Form(1);
+                if (cmd == "印出指定訊息") baseAF = new LC_Form(0);
+                else if (cmd == "在編輯器中印出指定的變數的值") baseAF = new LC_Form(1);
             }
 
             if(baseAF != null)

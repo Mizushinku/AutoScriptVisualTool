@@ -64,7 +64,7 @@
             this.action_name_cb.FormattingEnabled = true;
             this.action_name_cb.Location = new System.Drawing.Point(200, 45);
             this.action_name_cb.Name = "action_name_cb";
-            this.action_name_cb.Size = new System.Drawing.Size(121, 24);
+            this.action_name_cb.Size = new System.Drawing.Size(268, 24);
             this.action_name_cb.TabIndex = 1;
             this.action_name_cb.SelectedIndexChanged += new System.EventHandler(this.action_name_cb_SelectedIndexChanged);
             // 
