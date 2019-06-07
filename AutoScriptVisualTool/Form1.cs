@@ -662,8 +662,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -846,8 +847,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic[k])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
                         ++q;
                     }
@@ -981,8 +983,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -1076,8 +1079,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic5[k2])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num2);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
                         ++q2;
                     }
@@ -1178,8 +1182,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic[k])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
                         ++q;
                     }
@@ -1313,8 +1318,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic3[k1])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num1);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
                         ++q1;
                     }
@@ -1388,8 +1394,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic5[k2])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num2);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
                         ++q2;
                     }
@@ -1453,8 +1460,9 @@ namespace AutoScriptVisualTool
                     Script_form sub = (Script_form)map[i];
                     foreach (string s in dic7[k3])
                     {
-                        sub.class_list.Items.Add(s);
-                        sub.class_list_ItemAdded(num3);
+                        object obj = s as object;
+                        sub.class_list.Items.Add(obj);
+                        sub.class_list_ItemAdded(num3, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
                         ++q3;
                     }
