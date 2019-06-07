@@ -1397,6 +1397,71 @@ namespace AutoScriptVisualTool
                     ++k2;
                 }
                 /////////////////////////////////////////////////////
+                ListBox list3 = new ListBox();
+                string[] items3 =
+                {
+                    "update1"
+                };
+                Dictionary<int, string[]> dic7 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "Zombie1", "Zombie2", "Zombie3", "Zombie4", "Zombie5", "Zombie6"
+                    }}
+                };
+                Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
+                {
+                    {0, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }},
+                    {1, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }},
+                    {2, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }},
+                    {3, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }},
+                    {4, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }},
+                    {5, new string[]{
+                        "found 1 # Broadcast 您被感染，遊戲結束",
+                        "as # Pause 1",
+                        "as # Damage 10000"
+                    }}
+                };
+
+                list3.Items.AddRange(items3);
+                update_list.Items.Clear();
+                update_list.Items.AddRange(list3.Items);
+
+                int k3 = 0, q3 = 0, num3 = 4; // start=1, trigger 2, destroy 3, update 4, player 5, default 7
+
+                foreach (object i in update_list.Items)
+                {
+                    map.Add(i, new Script_form(num3));
+                    Script_form sub = (Script_form)map[i];
+                    foreach (string s in dic7[k3])
+                    {
+                        sub.class_list.Items.Add(s);
+                        sub.class_list_ItemAdded(num3);
+                        sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
+                        ++q3;
+                    }
+                    ++k3;
+                }
+                /////////////////////////////////////////////////////
             }
             else if (script_num == 4)
             {
