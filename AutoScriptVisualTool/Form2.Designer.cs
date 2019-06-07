@@ -95,7 +95,7 @@
             this.S2_btn.Name = "S2_btn";
             this.S2_btn.Size = new System.Drawing.Size(78, 47);
             this.S2_btn.TabIndex = 5;
-            this.S2_btn.Text = "S2";
+            this.S2_btn.Text = "勇者";
             this.S2_btn.UseVisualStyleBackColor = true;
             this.S2_btn.Click += new System.EventHandler(this.S2_btn_Click);
             // 
@@ -105,7 +105,7 @@
             this.S1_btn.Name = "S1_btn";
             this.S1_btn.Size = new System.Drawing.Size(78, 47);
             this.S1_btn.TabIndex = 7;
-            this.S1_btn.Text = "S1";
+            this.S1_btn.Text = "無雙";
             this.S1_btn.UseVisualStyleBackColor = true;
             this.S1_btn.Click += new System.EventHandler(this.S1_btn_Click);
             // 
@@ -115,7 +115,7 @@
             this.S3_btn.Name = "S3_btn";
             this.S3_btn.Size = new System.Drawing.Size(78, 47);
             this.S3_btn.TabIndex = 8;
-            this.S3_btn.Text = "S3";
+            this.S3_btn.Text = "喪屍";
             this.S3_btn.UseVisualStyleBackColor = true;
             this.S3_btn.Click += new System.EventHandler(this.S3_btn_Click);
             // 
@@ -125,7 +125,7 @@
             this.S4_btn.Name = "S4_btn";
             this.S4_btn.Size = new System.Drawing.Size(78, 47);
             this.S4_btn.TabIndex = 9;
-            this.S4_btn.Text = "S4";
+            this.S4_btn.Text = "發大財";
             this.S4_btn.UseVisualStyleBackColor = true;
             this.S4_btn.Click += new System.EventHandler(this.S4_btn_Click);
             // 
