@@ -341,27 +341,110 @@ namespace AutoScriptVisualTool
                 ListBox list = new ListBox();
                 string[] items =
                 {
-                    "s0","s1"
+                    "start0","start1"
                 };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "c1"
+                        "SceneStart"
                     }},
                     {1, new string[]{
-                        "c3"
+                        "SceneStart", "KEsc"
                     }}
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "c1", "true # SetVar public 99 0"
+                        "true # ChangeText Caption ~無雙~ reserve 255,255,0 0,120,B -1",
+                        "true # ChangeText Start/Text 開始新遊戲 reserve 255,0,0 reserve -1",
+                        "true # ChangeText Load/Text 繼續遊戲 reserve 0,0,255 reserve -1",
+                        "true # ChangeText Quit/Text 離開遊戲 reserve 0,255,0 reserve -1",
+                        "true # ChangeImage Back zombie.jfif reserve 255,255,255,1 -1",
+                        "true # Virtual Slider at 0,0,0",
+                        "true # ChBGMfrom Kao"
                     }},
                     {1, new string[]{
-                        "c3", "c4", "c5"
+                        "true # SetVar public 99 0",
+                        "true # ShowText ??? 1700,1000 0,255,0 1,48,B -1 as Place",
+                        "true # ChBGMfrom Kao",
+                        "true # Virtual Default at 0,0,0",
+                        "true # NPC Ganful in role 0,-10,5 as Soldier1",
+                        "true # ChangeNPC Soldier1 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 0,-10,-5 as Soldier2",
+                        "true # ChangeNPC Soldier2 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 5,-10,0 as Soldier3",
+                        "true # ChangeNPC Soldier3 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -5,-10,0 as Soldier4",
+                        "true # ChangeNPC Soldier4 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 5,-10,5 as Soldier5",
+                        "true # ChangeNPC Soldier5 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 5,-10,-5 as Soldier6",
+                        "true # ChangeNPC Soldier6 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -5,-10,5 as Soldier7",
+                        "true # ChangeNPC Soldier7 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -5,-10,-5 as Soldier8",
+                        "true # ChangeNPC Soldier8 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 2.5,-10,5 as Soldier9",
+                        "true # ChangeNPC Soldier9 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 2.5,-10,-5 as Soldier10",
+                        "true # ChangeNPC Soldier10 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 5,-10,2.5 as Soldier11",
+                        "true # ChangeNPC Soldier11 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -5,-10,2.5 as Soldier12",
+                        "true # ChangeNPC Soldier12 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -2.5,-10,5 as Soldier13",
+                        "true # ChangeNPC Soldier13 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -2.5,-10,-5 as Soldier14",
+                        "true # ChangeNPC Soldier14 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role 5,-10,-2.5 as Soldier15",
+                        "true # ChangeNPC Soldier15 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Ganful in role -5,-10,-2.5 as Soldier16",
+                        "true # ChangeNPC Soldier16 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 0,-10,5 as Soldier17",
+                        "true # ChangeNPC Soldier17 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 0,-10,-5 as Soldier18",
+                        "true # ChangeNPC Soldier18 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 5,-10,0 as Soldier19",
+                        "true # ChangeNPC Soldier19 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -5,-10,0 as Soldier20",
+                        "true # ChangeNPC Soldier20 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 5,-10,5 as Soldier21",
+                        "true # ChangeNPC Soldier21 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 5,-10,-5 as Soldier22",
+                        "true # ChangeNPC Soldier22 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -5,-10,5 as Soldier23",
+                        "true # ChangeNPC Soldier23 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -5,-10,-5 as Soldier24",
+                        "true # ChangeNPC Soldier24 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 2.5,-10,5 as Soldier25",
+                        "true # ChangeNPC Soldier25 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 2.5,-10,-5 as Soldier26",
+                        "true # ChangeNPC Soldier26 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 5,-10,2.5 as Soldier27",
+                        "true # ChangeNPC Soldier27 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -5,-10,2.5 as Soldier28",
+                        "true # ChangeNPC Soldier28 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -2.5,-10,5 as Soldier29",
+                        "true # ChangeNPC Soldier29 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -2.5,-10,-5 as Soldier30",
+                        "true # ChangeNPC Soldier30 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role 5,-10,-2.5 as Soldier31",
+                        "true # ChangeNPC Soldier31 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # NPC Deer in role -5,-10,-2.5 as Soldier32",
+                        "true # ChangeNPC Soldier32 AI Chase Sight 10 Att 1 CD 2 Target 1",
+                        "true # Bind down Esc KEsc +"
+                    }},
+                    {2, new string[]
+                    {
+                        "== g99 5 # Goto event1",
+                        "true # Menu",
+                        "true # Return",
+                        "event1:",
+                        "true # DefineStr 5 $str0",
+                        "true # ChangeText Msg $5 900,900 0,255,255 1,48,B -1",
+                        "true # Return"
                     }}
                 };
-
 
                 list.Items.AddRange(items);
                 start_list.Items.Clear();
