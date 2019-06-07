@@ -53,6 +53,7 @@
             this.add_action_btn = new System.Windows.Forms.Button();
             this.add_cond_btn = new System.Windows.Forms.Button();
             this.newClass_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -320,6 +321,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.add_label_btn);
             this.panel1.Controls.Add(this.add_action_btn);
             this.panel1.Controls.Add(this.add_cond_btn);
@@ -377,6 +379,16 @@
             this.newClass_btn.UseVisualStyleBackColor = false;
             this.newClass_btn.Click += new System.EventHandler(this.newClass_btn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(306, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "按右鍵刪除清單項目\r\n選定event項目後按上下方向鍵移動該項目";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -397,6 +409,7 @@
             this.default_page.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,6 +441,7 @@
         private System.Windows.Forms.ListBox function_list;
         private System.Windows.Forms.Button add_action_btn;
         private System.Windows.Forms.Button add_label_btn;
+        private System.Windows.Forms.Label label1;
     }
 }
 
