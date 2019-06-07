@@ -63,6 +63,18 @@ namespace AutoScriptVisualTool
                 {
                     make_sc(1);
                 }
+                else if (which == 8)
+                {
+                    make_sc(2);
+                }
+                else if (which == 9)
+                {
+                    make_sc(3);
+                }
+                else if (which == 10)
+                {
+                    make_sc(4);
+                }
             }
         }
 
@@ -371,6 +383,18 @@ namespace AutoScriptVisualTool
                     ++k;
                 }
                 /////////////////////////////////////////
+            }
+            else if (script_num == 2)
+            {
+
+            }
+            else if (script_num == 3)
+            {
+
+            }
+            else if (script_num == 4)
+            {
+
             }
         }
     }
