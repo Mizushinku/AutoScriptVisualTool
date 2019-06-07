@@ -60,6 +60,9 @@
             this.event_list.Name = "event_list";
             this.event_list.Size = new System.Drawing.Size(690, 471);
             this.event_list.TabIndex = 0;
+            this.event_list.VisibleChanged += new System.EventHandler(this.event_list_VisibleChanged);
+            this.event_list.KeyDown += new System.Windows.Forms.KeyEventHandler(this.event_list_KeyDown);
+            this.event_list.MouseDown += new System.Windows.Forms.MouseEventHandler(this.event_list_MouseDown);
             // 
             // Event_Form
             // 
