@@ -733,7 +733,7 @@ namespace AutoScriptVisualTool
                         "true # NPC Zombie in role 10,-10,0 as NPC2",
                         "true # NPC Remy in role 0,-10,20 as NPC3",
                         "true # NPC Azure in role 0,-10,0 as NPC4",
-                        "true # NPC Mei in role 10,-10,10 as NCP5",
+                        "true # NPC Mei in role 10,-10,10 as NPC5",
                         "true # NPC White in role 5,-10,20 as NPC6",
                         "true # Route NPC1 0,0,0 10,0,0",
                         "true # Route NPC2 0,0,0 0,0,20",
