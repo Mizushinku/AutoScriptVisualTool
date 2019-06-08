@@ -39,27 +39,26 @@
             this.role_set.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role_set.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.role_set.FormattingEnabled = true;
-            this.role_set.ItemHeight = 20;
-            this.role_set.Location = new System.Drawing.Point(84, 47);
-            this.role_set.Margin = new System.Windows.Forms.Padding(4);
+            this.role_set.ItemHeight = 16;
+            this.role_set.Location = new System.Drawing.Point(63, 38);
             this.role_set.Name = "role_set";
-            this.role_set.Size = new System.Drawing.Size(160, 28);
+            this.role_set.Size = new System.Drawing.Size(121, 24);
             this.role_set.TabIndex = 2;
             this.role_set.SelectedIndexChanged += new System.EventHandler(this.role_set_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(38, 106);
+            this.panel1.Location = new System.Drawing.Point(28, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 479);
+            this.panel1.Size = new System.Drawing.Size(423, 383);
             this.panel1.TabIndex = 3;
             // 
             // next_btn
             // 
-            this.next_btn.Location = new System.Drawing.Point(502, 604);
-            this.next_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.next_btn.Location = new System.Drawing.Point(376, 483);
             this.next_btn.Name = "next_btn";
-            this.next_btn.Size = new System.Drawing.Size(100, 29);
+            this.next_btn.Size = new System.Drawing.Size(75, 23);
             this.next_btn.TabIndex = 5;
             this.next_btn.Text = "下一步";
             this.next_btn.UseVisualStyleBackColor = true;
@@ -67,10 +66,9 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(363, 604);
-            this.cancel_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.cancel_btn.Location = new System.Drawing.Point(272, 483);
             this.cancel_btn.Name = "cancel_btn";
-            this.cancel_btn.Size = new System.Drawing.Size(100, 29);
+            this.cancel_btn.Size = new System.Drawing.Size(75, 23);
             this.cancel_btn.TabIndex = 4;
             this.cancel_btn.Text = "取消";
             this.cancel_btn.UseVisualStyleBackColor = true;
@@ -78,15 +76,17 @@
             // 
             // Player_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 646);
+            this.ClientSize = new System.Drawing.Size(473, 517);
             this.Controls.Add(this.next_btn);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.role_set);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Player_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Player_Form";
             this.ResumeLayout(false);
 
