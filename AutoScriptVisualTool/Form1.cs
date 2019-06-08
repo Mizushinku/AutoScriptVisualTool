@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace AutoScriptVisualTool
 {
@@ -15,6 +16,7 @@ namespace AutoScriptVisualTool
     {
         private Dictionary<object, Form> map = new Dictionary<object, Form>();
         private Script_form cur_form = null;
+        private ListBox cur_list = null;
 
         public mainForm()
         {
@@ -22,12 +24,12 @@ namespace AutoScriptVisualTool
             this.StartPosition = FormStartPosition.CenterScreen;
             object item = "player" as object;
             player_list.Items.Add(item);
-            map.Add(item, new Script_form(5));
+            map.Add(item, new Setting_Form());
 
             object item2 = "default" as object;
             default_list.Items.Add(item2);
             map.Add(item2, new Script_form(7));
-        
+            cur_list = start_list;
         }
 
         private void main_panel_Paint(object sender, PaintEventArgs e)
@@ -217,9 +219,10 @@ namespace AutoScriptVisualTool
             if (player_list.SelectedIndex == -1) return;
 
             main_panel.Controls.Clear();
-            cur_form = (Script_form)map[player_list.SelectedItem];
-            main_panel.Controls.Add(cur_form);
-            cur_form.Show();
+            Setting_Form set_form = (Setting_Form)map[player_list.SelectedItem];
+            main_panel.Controls.Add(set_form);
+            set_form.Show();
+            panel1.Visible = false;
         }
 
         private void default_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -289,6 +292,16 @@ namespace AutoScriptVisualTool
             pre_tab = tabControl1.SelectedIndex;
             main_panel.Controls.Clear();
             cur_form = null;
+            switch (pre_tab)
+            {
+                case 0: cur_list = start_list; break;
+                case 1: cur_list = trigger_list; break;
+                case 2: cur_list = destroy_list; break;
+                case 3: cur_list = update_list; break;
+                case 4: cur_list = player_list; break;
+                case 5: cur_list = function_list; break;
+                case 6: cur_list = default_list; break;
+            }
         }
 
         private void add_cond_btn_Click(object sender, EventArgs e)
@@ -2455,6 +2468,36 @@ namespace AutoScriptVisualTool
                     ++k4;
                 }
                 /////////////////////////////////////////////////////
+            }
+        }
+
+        private void output_file_btn_Click(object sender, EventArgs e)
+        {
+            if (cur_form == null)
+            {
+                MessageBox.Show("請選擇一個Script檔案", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                String scriptName = cur_list.SelectedItem.ToString();
+                FileInfo finfo = new FileInfo("../../Output/" + scriptName + ".txt");
+                StreamWriter sw = finfo.CreateText();
+                foreach (object cls in cur_form.class_list.Items)
+                {
+                    String tmp = "class " + cls.ToString();
+                    sw.WriteLine(tmp);
+                    Dictionary<object, Event_Form> dict = cur_form.get_dict();
+                    Event_Form sub_form = dict[cls];
+                    foreach (object evnt in sub_form.event_list.Items)
+                    {
+                        sw.WriteLine(evnt.ToString());
+                    }
+                    sw.WriteLine("end class");
+                    sw.WriteLine();
+                    sw.Flush();
+                }
+                sw.Close();
+                MessageBox.Show("檔案輸出成功!", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
     }

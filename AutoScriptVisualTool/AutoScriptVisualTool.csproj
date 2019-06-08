@@ -274,6 +274,12 @@
     <Compile Include="BaseActionForm.Designer.cs">
       <DependentUpon>BaseActionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasePlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasePlayerForm.Designer.cs">
+      <DependentUpon>BasePlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Condition_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,72 @@
     <Compile Include="InputBox.Designer.cs">
       <DependentUpon>InputBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerForms\Equip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Equip.Designer.cs">
+      <DependentUpon>Equip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Learn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Learn.Designer.cs">
+      <DependentUpon>Learn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Level.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Level.Designer.cs">
+      <DependentUpon>Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Modeq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Modeq.Designer.cs">
+      <DependentUpon>Modeq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Money.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Money.Designer.cs">
+      <DependentUpon>Money.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Party.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Party.Designer.cs">
+      <DependentUpon>Party.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Scene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Scene.Designer.cs">
+      <DependentUpon>Scene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Skill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Skill.Designer.cs">
+      <DependentUpon>Skill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerForms\Unequip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerForms\Unequip.Designer.cs">
+      <DependentUpon>Unequip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Player_Form.Designer.cs">
+      <DependentUpon>Player_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="script_form.cs">
@@ -311,6 +383,12 @@
     </Compile>
     <Compile Include="script_form.Designer.cs">
       <DependentUpon>script_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting_Form.Designer.cs">
+      <DependentUpon>Setting_Form.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ActionForms\Create\ChangeNPC_Form.resx">
       <DependentUpon>ChangeNPC_Form.cs</DependentUpon>
@@ -426,6 +504,9 @@
     <EmbeddedResource Include="BaseActionForm.resx">
       <DependentUpon>BaseActionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BasePlayerForm.resx">
+      <DependentUpon>BasePlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Condition_Form.resx">
       <DependentUpon>Condition_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +522,39 @@
     <EmbeddedResource Include="InputBox.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Equip.resx">
+      <DependentUpon>Equip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Learn.resx">
+      <DependentUpon>Learn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Level.resx">
+      <DependentUpon>Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Modeq.resx">
+      <DependentUpon>Modeq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Money.resx">
+      <DependentUpon>Money.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Party.resx">
+      <DependentUpon>Party.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Scene.resx">
+      <DependentUpon>Scene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Skill.resx">
+      <DependentUpon>Skill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerForms\Unequip.resx">
+      <DependentUpon>Unequip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player_Form.resx">
+      <DependentUpon>Player_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -452,6 +566,9 @@
     </Compile>
     <EmbeddedResource Include="script_form.resx">
       <DependentUpon>script_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting_Form.resx">
+      <DependentUpon>Setting_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

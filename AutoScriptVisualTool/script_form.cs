@@ -72,6 +72,10 @@ namespace AutoScriptVisualTool
         {
             return cur_form;
         }
+        public Dictionary<object, Event_Form> get_dict()
+        {
+            return map;
+        }
 
         private void class_list_MouseDown(object sender, MouseEventArgs e)
         {
