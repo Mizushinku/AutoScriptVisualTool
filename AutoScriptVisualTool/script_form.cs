@@ -76,7 +76,6 @@ namespace AutoScriptVisualTool
         {
             return map;
         }
-
         private void class_list_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)

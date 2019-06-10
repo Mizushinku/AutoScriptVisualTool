@@ -37,7 +37,18 @@ namespace AutoScriptVisualTool
             }
             else
             {
-                FileInfo finfo = new FileInfo("../../Output/player.txt");
+                string path = "";
+                FolderBrowserDialog dialog = new FolderBrowserDialog();
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (string.IsNullOrEmpty(dialog.SelectedPath))
+                    {
+                        MessageBox.Show(this, "資料夾路徑不能為空", "提示");
+                        return;
+                    }
+                    path = dialog.SelectedPath;
+                }
+                FileInfo finfo = new FileInfo(path + "/player.txt");
                 StreamWriter sw = finfo.CreateText();
                 foreach (object line in event_list.Items)
                 {
@@ -45,7 +56,12 @@ namespace AutoScriptVisualTool
                     sw.Flush();
                 }
                 sw.Close();
-                MessageBox.Show("檔案輸出成功!", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                DialogResult result = MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Cipher.encode(path + "/player.txt", path + "/player.txt", (char)0X8C);
+                    MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
             }
         }
     }

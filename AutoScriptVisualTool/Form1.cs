@@ -256,6 +256,7 @@ namespace AutoScriptVisualTool
         int pre_tab = 0;
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            panel1.Visible = true;
             if (pre_tab == 0)
             {
                 start_list.ClearSelected();
@@ -2605,31 +2606,94 @@ namespace AutoScriptVisualTool
 
         private void output_file_btn_Click(object sender, EventArgs e)
         {
-            if (cur_form == null)
+            if (cur_form == null )
             {
                 MessageBox.Show("請選擇一個Script檔案", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                String scriptName = cur_list.SelectedItem.ToString();
-                FileInfo finfo = new FileInfo("../../Output/" + scriptName + ".txt");
-                StreamWriter sw = finfo.CreateText();
-                foreach (object cls in cur_form.class_list.Items)
+                string scriptName = cur_list.SelectedItem.ToString();
+                string path = "";
+                FolderBrowserDialog dialog = new FolderBrowserDialog();                
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    String tmp = "class " + cls.ToString();
-                    sw.WriteLine(tmp);
-                    Dictionary<object, Event_Form> dict = cur_form.get_dict();
-                    Event_Form sub_form = dict[cls];
-                    foreach (object evnt in sub_form.event_list.Items)
+                    if (string.IsNullOrEmpty(dialog.SelectedPath))
                     {
-                        sw.WriteLine(evnt.ToString());
+                        MessageBox.Show(this, "資料夾路徑不能為空", "提示");
+                        return;
                     }
-                    sw.WriteLine("end class");
-                    sw.WriteLine();
-                    sw.Flush();
+                    path = dialog.SelectedPath;
                 }
-                sw.Close();
-                MessageBox.Show("檔案輸出成功!", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                try
+                {
+                    FileInfo finfo = new FileInfo(path +"/"+ scriptName + ".txt");
+                    StreamWriter sw = finfo.CreateText();
+                    foreach (object cls in cur_form.class_list.Items)
+                    {
+                        Dictionary<object, Event_Form> dict = cur_form.get_dict();
+                        Event_Form sub_form = dict[cls];
+                        string tmp = "class " + cls.ToString() + " " + sub_form.getAdditionalString();
+                        sw.WriteLine(tmp);                        
+                        foreach (object evnt in sub_form.event_list.Items)
+                        {
+                            sw.WriteLine(evnt.ToString());
+                        }
+                        sw.WriteLine("end class");
+                        sw.WriteLine();
+                        sw.Flush();
+                    }
+                    sw.Close();                   
+                    DialogResult result= MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(result == DialogResult.Yes)
+                    {
+                        InputBox input = new InputBox("密碼", "請輸入金鑰(16進位制):");
+                        char key = '\0';
+                        if (input.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                key = (char)int.Parse(input.textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+                            }catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }
+                        }
+                        Cipher.encode(path + "/" + scriptName + ".txt", path + "/" + scriptName + ".txt",key);
+                        MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    }
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void decode_btn_Click(object sender, EventArgs e)
+        {
+            InputBox input = new InputBox("密碼", "請輸入金鑰(16進位制):");
+            char key='\0';
+            if(input.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    key = (char)int.Parse(input.textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false;
+            dialog.Title = "請選擇檔案";
+            dialog.Filter = "文字檔案(*.txt)|*.txt";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string file = dialog.FileName;
+                Cipher.decode(file, file, key);
+                MessageBox.Show("檔案解密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
     }

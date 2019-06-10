@@ -12,12 +12,16 @@ namespace AutoScriptVisualTool
 {
     public partial class Event_Form : Form
     {
+        private int which;
+        private NumericUpDown nud = null;
+        private TextBox tb = null;
+        private CheckBox cb = null;
         public Event_Form(int which)
         {
             InitializeComponent();
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
-
+            this.which = which;
             if(which == 1)
             {
                 //start class
@@ -46,16 +50,32 @@ namespace AutoScriptVisualTool
                 //function class
             }
         }
-
+        public string getAdditionalString()
+        {
+            if(which == 1)
+            {
+                if (cb.Checked) return "static";
+            }
+            else if(which == 2)
+            {
+                return nud.Value.ToString() + "," + tb.Text;
+            }
+            else if (which == 4)
+            {
+                return tb.Text;
+            }
+            return "";
+        }
         private void add_cb_in_p1(String name, String text)
         {
-            splitContainer1.Panel1.Controls.Add(new CheckBox
+            cb = new CheckBox
             {
                 Name = name,
                 Text = text,
                 Dock = DockStyle.Left,
                 Padding = new Padding(10, 0, 0, 0)
-            });
+            };
+            splitContainer1.Panel1.Controls.Add(cb);
         }
 
         private void add_lb_in_p1(String text,int text_size, int x, int y)
@@ -70,20 +90,22 @@ namespace AutoScriptVisualTool
 
         private void add_nud_in_p1(String name, int x, int y)
         {
-            splitContainer1.Panel1.Controls.Add(new NumericUpDown
+            nud = new NumericUpDown
             {
                 Name = name,
                 Location = new Point(x, y)
-            });
+            };
+            splitContainer1.Panel1.Controls.Add(nud);
         }
 
         private void add_tb_in_p1(String name, int x, int y)
         {
-            splitContainer1.Panel1.Controls.Add(new TextBox
+            tb = new TextBox
             {
                 Name = name,
                 Location = new Point(x, y)
-            });
+            };
+            splitContainer1.Panel1.Controls.Add(tb);
         }
 
         private void event_list_MouseDown(object sender, MouseEventArgs e)

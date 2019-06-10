@@ -280,6 +280,7 @@
     <Compile Include="BasePlayerForm.Designer.cs">
       <DependentUpon>BasePlayerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cipher.cs" />
     <Compile Include="Condition_Form.cs">
       <SubType>Form</SubType>
     </Compile>
