@@ -699,6 +699,21 @@ namespace AutoScriptVisualTool
                     }
                     ++k1;
                 }
+                /*
+                player_list.Items.Clear();
+                object item = "player" as object;
+                player_list.Items.Add(item);
+                */
+                map.Add(player_list.Items[0], new Setting_Form());
+                ListBox player_events = ((Setting_Form)map[player_list.Items[0]]).event_list;
+                player_events.Items.Clear();
+
+                string[] player_items =
+                {
+                    "p1", "p2", "p3"
+                };
+
+                player_events.Items.AddRange(player_items);
                 /////////////////////////////////////////
             }
             else if (script_num == 2)
