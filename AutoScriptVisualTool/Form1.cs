@@ -710,7 +710,25 @@ namespace AutoScriptVisualTool
 
                 string[] player_items =
                 {
-                    "p1", "p2", "p3"
+                    "level 3 11 9",
+                    "skill 0 4 9 6 21 3",
+                    "skill 1 4 5 6 7 1",
+                    "skill 2 8 9 10 21 2",
+                    "learn 0 5 7 8",
+                    "learn 1 20 21 22",
+                    "learn 2 23 24",
+                    "learnp 0 5 6",
+                    "learnp 1 7 8 9",
+                    "learnp 2 10 11 12",
+                    "party 2 1 0",
+                    "item 0,9 1,7 2,8",
+                    "equip 2 3,7,11,15,19",
+                    "unequip 1,3 4,3 6,3 8,3 10,3",
+                    "modeq 1 name:聖獸庇護 text:戴上的那一剎那，你已經獲得聖獸的祝福。 rare:3",
+                    "moditem 1 type:common name:醬油 text:家庭必備調味品。 amount:60",
+                    "modskill 6 name:疾風迅雷 cost:0",
+                    "modp 2 name:如火如荼 text:縮短你的靈核爆破需時",
+                    "scene 1"
                 };
 
                 player_events.Items.AddRange(player_items);
@@ -1131,6 +1149,39 @@ namespace AutoScriptVisualTool
                     }
                     ++k2;
                 }
+                /*
+               player_list.Items.Clear();
+               object item = "player" as object;
+               player_list.Items.Add(item);
+               */
+                map.Add(player_list.Items[0], new Setting_Form());
+                ListBox player_events = ((Setting_Form)map[player_list.Items[0]]).event_list;
+                player_events.Items.Clear();
+
+                string[] player_items =
+                {
+                    "level 3 11 9",
+                    "skill 0 4 9 6 21 3",
+                    "skill 1 4 5 6 7 1",
+                    "skill 2 8 9 10 21 2",
+                    "learn 0 5 7 8",
+                    "learn 1 20 21 22",
+                    "learn 2 23 24",
+                    "learnp 0 5 6",
+                    "learnp 1 7 8 9",
+                    "learnp 2 10 11 12",
+                    "party 2 1 0",
+                    "item 0,9 1,7 2,8",
+                    "equip 2 3,7,11,15,19",
+                    "unequip 1,3 4,3 6,3 8,3 10,3",
+                    "modeq 1 name:聖獸庇護 text:戴上的那一剎那，你已經獲得聖獸的祝福。 rare:3",
+                    "moditem 1 type:common name:醬油 text:家庭必備調味品。 amount:60",
+                    "modskill 6 name:疾風迅雷 cost:0",
+                    "modp 2 name:如火如荼 text:縮短你的靈核爆破需時",
+                    "scene 1"
+                };
+
+                player_events.Items.AddRange(player_items);
                 /////////////////////////////////////////////////////
             }
             else if (script_num == 3)
@@ -1512,6 +1563,39 @@ namespace AutoScriptVisualTool
                     }
                     ++k3;
                 }
+                /*
+               player_list.Items.Clear();
+               object item = "player" as object;
+               player_list.Items.Add(item);
+               */
+                map.Add(player_list.Items[0], new Setting_Form());
+                ListBox player_events = ((Setting_Form)map[player_list.Items[0]]).event_list;
+                player_events.Items.Clear();
+
+                string[] player_items =
+                {
+                    "level 3 11 9",
+                    "skill 0 4 9 6 21 3",
+                    "skill 1 4 5 6 7 1",
+                    "skill 2 8 9 10 21 2",
+                    "learn 0 5 7 8",
+                    "learn 1 20 21 22",
+                    "learn 2 23 24",
+                    "learnp 0 5 6",
+                    "learnp 1 7 8 9",
+                    "learnp 2 10 11 12",
+                    "party 2 1 0",
+                    "item 0,9 1,7 2,8",
+                    "equip 2 3,7,11,15,19",
+                    "unequip 1,3 4,3 6,3 8,3 10,3",
+                    "modeq 1 name:聖獸庇護 text:戴上的那一剎那，你已經獲得聖獸的祝福。 rare:3",
+                    "moditem 1 type:common name:醬油 text:家庭必備調味品。 amount:60",
+                    "modskill 6 name:疾風迅雷 cost:0",
+                    "modp 2 name:如火如荼 text:縮短你的靈核爆破需時",
+                    "scene 1"
+                };
+
+                player_events.Items.AddRange(player_items);
                 /////////////////////////////////////////////////////
             }
             else if (script_num == 4)
@@ -2482,6 +2566,39 @@ namespace AutoScriptVisualTool
                     }
                     ++k4;
                 }
+                /*
+               player_list.Items.Clear();
+               object item = "player" as object;
+               player_list.Items.Add(item);
+               */
+                map.Add(player_list.Items[0], new Setting_Form());
+                ListBox player_events = ((Setting_Form)map[player_list.Items[0]]).event_list;
+                player_events.Items.Clear();
+
+                string[] player_items =
+                {
+                    "level 3 11 9",
+                    "skill 0 4 9 6 21 3",
+                    "skill 1 4 5 6 7 1",
+                    "skill 2 8 9 10 21 2",
+                    "learn 0 5 7 8",
+                    "learn 1 20 21 22",
+                    "learn 2 23 24",
+                    "learnp 0 5 6",
+                    "learnp 1 7 8 9",
+                    "learnp 2 10 11 12",
+                    "party 2 1 0",
+                    "item 0,9 1,7 2,8",
+                    "equip 2 3,7,11,15,19",
+                    "unequip 1,3 4,3 6,3 8,3 10,3",
+                    "modeq 1 name:聖獸庇護 text:戴上的那一剎那，你已經獲得聖獸的祝福。 rare:3",
+                    "moditem 1 type:common name:醬油 text:家庭必備調味品。 amount:60",
+                    "modskill 6 name:疾風迅雷 cost:0",
+                    "modp 2 name:如火如荼 text:縮短你的靈核爆破需時",
+                    "scene 1"
+                };
+
+                player_events.Items.AddRange(player_items);
                 /////////////////////////////////////////////////////
             }
         }
