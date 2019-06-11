@@ -604,7 +604,6 @@ namespace AutoScriptVisualTool
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "true # Broadcast 使用預設檔案",
                         "true # Bind down H KeyDownH +",
                         "true # Bind press H KeyPressH +",
                         "true # Bind up H KeyUpH +",
@@ -983,7 +982,6 @@ namespace AutoScriptVisualTool
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "true # Broadcast 使用預設檔案",
                         "true # Bind down H KeyDownH +",
                         "true # Bind press H KeyPressH +",
                         "true # Bind up H KeyUpH +",
@@ -1383,7 +1381,6 @@ namespace AutoScriptVisualTool
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "true # Broadcast 使用預設檔案",
                         "true # Bind down H KeyDownH +",
                         "true # Bind press H KeyPressH +",
                         "true # Bind up H KeyUpH +",
@@ -2192,7 +2189,6 @@ namespace AutoScriptVisualTool
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
-                        "true # Broadcast 使用預設檔案",
                         "true # Bind down H KeyDownH +",
                         "true # Bind press H KeyPressH +",
                         "true # Bind up H KeyUpH +",
