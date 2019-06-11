@@ -458,6 +458,7 @@ namespace AutoScriptVisualTool
                         "true # ChBGMfrom Kao"
                     }},
                     {1, new string[]{
+                        "true # Rename role 0 開無雙啦RRRR",
                         "true # SetVar public 99 0",
                         "true # ShowText ??? 1700,1000 0,255,0 1,48,B -1 as Place",
                         "true # ChBGMfrom Kao",
@@ -789,6 +790,7 @@ namespace AutoScriptVisualTool
                         "true # ChBGMfrom Kao"
                     }},
                     {1, new string[]{
+                        "true # Rename role 0 達拉崩巴",
                         "true # SetVar public 99 0",
                         "true # ShowText 無名小村 1700,1000 0,255,0 1,48,B -1 as Place",
                         "true # ChBGMfrom Kao",
@@ -1268,6 +1270,7 @@ namespace AutoScriptVisualTool
                         "true # ChBGMfrom Kao"
                     }},
                     {1, new string[]{
+                        "true # Rename role 0 求生者",
                         "true # SetVar public 99 0",
                         "true # ShowText ??? 1700,1000 0,255,0 1,48,B -1 as Place",
                         "true # ChBGMfrom Kao",
