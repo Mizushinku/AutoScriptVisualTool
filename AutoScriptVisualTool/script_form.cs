@@ -30,7 +30,7 @@ namespace AutoScriptVisualTool
                 this.tlp.Controls.Add(new CheckBox {
                     Name = "no_default_cb",
                     Text = "NoDefault",
-                    Anchor = AnchorStyles.None
+                    Anchor = AnchorStyles.None,
                 }, 0, 0);
             }
         }
@@ -98,6 +98,11 @@ namespace AutoScriptVisualTool
                     else if (prev > index) class_list.SetSelected(prev - 1, true);
                 }
             }
+        }
+
+        public void set_no_default_cb(bool flag)
+        {
+            ((CheckBox)this.tlp.Controls["no_default_cb"]).Checked = flag;
         }
     }
 }

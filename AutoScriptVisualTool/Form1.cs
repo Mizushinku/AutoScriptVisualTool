@@ -441,6 +441,10 @@ namespace AutoScriptVisualTool
                 {
                     "start0", "start1"
                 };
+                bool[] is_NoDefault =
+                {
+                    false, true
+                };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -449,6 +453,10 @@ namespace AutoScriptVisualTool
                     {1, new string[]{
                         "SceneStart", "KEsc"
                     }}
+                };
+                bool[] is_static =
+                {
+                    true, true, false
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
@@ -554,12 +562,20 @@ namespace AutoScriptVisualTool
                 {
                     map.Add(i, new Script_form(num));
                     Script_form sub = (Script_form)map[i];
+
+                    // set NoDefault for start scripts
+                    sub.set_no_default_cb(is_NoDefault[k]);
+
                     foreach (string s in dic[k])
                     {
                         object obj = s as object;
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static[q]);
+
                         ++q;
                     }
                     ++k;
@@ -700,11 +716,7 @@ namespace AutoScriptVisualTool
                     }
                     ++k1;
                 }
-                /*
-                player_list.Items.Clear();
-                object item = "player" as object;
-                player_list.Items.Add(item);
-                */
+
                 map.Add(player_list.Items[0], new Setting_Form());
                 ListBox player_events = ((Setting_Form)map[player_list.Items[0]]).event_list;
                 player_events.Items.Clear();
@@ -733,6 +745,9 @@ namespace AutoScriptVisualTool
                 };
 
                 player_events.Items.AddRange(player_items);
+
+
+
                 /////////////////////////////////////////
             }
             else if (script_num == 2)
@@ -1072,6 +1087,14 @@ namespace AutoScriptVisualTool
                         "King", "Statue"
                     }}
                 };
+                int[] ranges =
+                {
+                    1, 2, 3, 4, 5, 6
+                };
+                string[] hints =
+                {
+                    "A", "B", "C", "D", "E", "F"
+                };
                 Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1146,6 +1169,11 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
+
+                        // set trigger range and hint for a class in trigger
+                        sub.get_sub_form().set_range_nud(ranges[q2]);
+                        sub.get_sub_form().set_hint_tb(hints[q2]);
+
                         ++q2;
                     }
                     ++k2;
@@ -1510,6 +1538,10 @@ namespace AutoScriptVisualTool
                         "Zombie1", "Zombie2", "Zombie3", "Zombie4", "Zombie5", "Zombie6"
                     }}
                 };
+                int[] freqs =
+                {
+                    9, 8, 7, 6, 5, 4
+                };
                 Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1560,6 +1592,10 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num3, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
+
+                        // set update freqence for a class in update
+                        sub.get_sub_form().set_freq_tb(freqs[q3]);
+
                         ++q3;
                     }
                     ++k3;

@@ -160,5 +160,25 @@ namespace AutoScriptVisualTool
         {
             event_list.ClearSelected();
         }
+
+        public void set_static_cb(bool flag)
+        {
+            ((CheckBox)this.splitContainer1.Panel1.Controls["static_cb"]).Checked = flag;
+        }
+
+        public void set_range_nud(int range)
+        {
+            ((NumericUpDown)this.splitContainer1.Panel1.Controls["range_nud"]).Value = range;
+        }
+
+        public void set_hint_tb(string hint)
+        {
+            ((TextBox)this.splitContainer1.Panel1.Controls["hint_tb"]).Text = hint;
+        }
+
+        public void set_freq_tb(int freq)
+        {
+            ((TextBox)this.splitContainer1.Panel1.Controls["freq_tb"]).Text = freq.ToString();
+        }
     }
 }
