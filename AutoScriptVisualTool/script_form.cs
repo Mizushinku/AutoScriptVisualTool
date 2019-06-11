@@ -76,6 +76,14 @@ namespace AutoScriptVisualTool
         {
             return map;
         }
+        public int get_which()
+        {
+            return which;
+        }
+        public bool get_NoDefault_checked()
+        {
+            return ((CheckBox)this.tlp.Controls["no_default_cb"]).Checked;
+        }        
         private void class_list_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)

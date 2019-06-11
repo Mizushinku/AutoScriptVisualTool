@@ -29,40 +29,51 @@ namespace AutoScriptVisualTool
             }            
         }
 
-        private void outfile_btn_Click(object sender, EventArgs e)
+        private void event_list_MouseDown(object sender, MouseEventArgs e)
         {
-            if (event_list.Items.Count == 0)
+            if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("檔案不能為空", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string path = "";
-                FolderBrowserDialog dialog = new FolderBrowserDialog();
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                int index = event_list.IndexFromPoint(e.X, e.Y);
+                if (index == -1) return;
+                string msg = "確定刪除 " + event_list.Items[index] + " 嗎?";
+                if (MessageBox.Show(msg, "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    if (string.IsNullOrEmpty(dialog.SelectedPath))
-                    {
-                        MessageBox.Show(this, "資料夾路徑不能為空", "提示");
-                        return;
-                    }
-                    path = dialog.SelectedPath;
-                }
-                FileInfo finfo = new FileInfo(path + "/player.txt");
-                StreamWriter sw = finfo.CreateText();
-                foreach (object line in event_list.Items)
-                {
-                    sw.WriteLine(line.ToString());
-                    sw.Flush();
-                }
-                sw.Close();
-                DialogResult result = MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    Cipher.encode(path + "/player.txt", path + "/player.txt", (char)0X8C);
-                    MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    object rm_item = event_list.Items[index] as object;
+                    event_list.Items.Remove(rm_item);
                 }
             }
+            else if (e.Button == MouseButtons.Left)
+            {
+
+            }
+        }
+
+        private void event_list_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (event_list.SelectedIndex >= 0)
+            {
+                if (e.KeyCode == Keys.Up)
+                {
+                    move_item(-1);
+                    e.Handled = true;
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
+                    move_item(1);
+                    e.Handled = true;
+                }
+            }
+        }
+        private void move_item(int direction)
+        {
+            int new_index = event_list.SelectedIndex + direction;
+            if (new_index < 0 || new_index >= event_list.Items.Count)
+                return;
+
+            object item = event_list.SelectedItem;
+            event_list.Items.RemoveAt(event_list.SelectedIndex);
+            event_list.Items.Insert(new_index, item);
+            event_list.SetSelected(new_index, true);
         }
     }
 }

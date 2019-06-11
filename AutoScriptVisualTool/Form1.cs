@@ -16,7 +16,6 @@ namespace AutoScriptVisualTool
     {
         private Dictionary<object, Form> map = new Dictionary<object, Form>();
         private Script_form cur_form = null;
-        private ListBox cur_list = null;
 
         public mainForm()
         {
@@ -29,7 +28,6 @@ namespace AutoScriptVisualTool
             object item2 = "default" as object;
             default_list.Items.Add(item2);
             map.Add(item2, new Script_form(7));
-            cur_list = start_list;
         }
 
         private void main_panel_Paint(object sender, PaintEventArgs e)
@@ -292,17 +290,7 @@ namespace AutoScriptVisualTool
 
             pre_tab = tabControl1.SelectedIndex;
             main_panel.Controls.Clear();
-            cur_form = null;
-            switch (pre_tab)
-            {
-                case 0: cur_list = start_list; break;
-                case 1: cur_list = trigger_list; break;
-                case 2: cur_list = destroy_list; break;
-                case 3: cur_list = update_list; break;
-                case 4: cur_list = player_list; break;
-                case 5: cur_list = function_list; break;
-                case 6: cur_list = default_list; break;
-            }
+            cur_form = null;            
         }
 
         private void add_cond_btn_Click(object sender, EventArgs e)
@@ -2737,67 +2725,99 @@ namespace AutoScriptVisualTool
         }
 
         private void output_file_btn_Click(object sender, EventArgs e)
-        {
-            if (cur_form == null )
+        {                         
+            string path = "";
+            FolderBrowserDialog dialog = new FolderBrowserDialog();                
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("請選擇一個Script檔案", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string scriptName = cur_list.SelectedItem.ToString();
-                string path = "";
-                FolderBrowserDialog dialog = new FolderBrowserDialog();                
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (string.IsNullOrEmpty(dialog.SelectedPath))
                 {
-                    if (string.IsNullOrEmpty(dialog.SelectedPath))
+                    MessageBox.Show(this, "資料夾路徑不能為空", "提示");
+                    return;
+                }
+                path = dialog.SelectedPath;
+            }
+            TabControl.TabPageCollection pages = tabControl1.TabPages;
+            foreach (TabPage page in pages)
+            {
+                if (page.Name == "Player") continue;
+                ListBox list = page.Controls[0] as ListBox;
+                foreach (object obj in list.Items)
+                {
+                    string scriptName = obj.ToString();
+                    try
                     {
-                        MessageBox.Show(this, "資料夾路徑不能為空", "提示");
+                        FileInfo finfo = new FileInfo(path + "/" + scriptName + ".auto");
+                        StreamWriter sw = finfo.CreateText();
+                        if (scriptName == "player")
+                        {
+                            Setting_Form setting_form = (Setting_Form)map[obj];                       
+                            foreach (object line in setting_form.event_list.Items)
+                            {
+                                sw.WriteLine(line.ToString());
+                                sw.Flush();
+                            }
+                            sw.Close();
+                        }
+                        else
+                        {
+                            Script_form script_form = (Script_form)map[obj];                            
+                            foreach (object cls in script_form.class_list.Items)
+                            {
+                                Dictionary<object, Event_Form> dict = script_form.get_dict();
+                                Event_Form sub_form = dict[cls];
+                                if (script_form.get_which() == 1)
+                                {
+                                    if(script_form.get_NoDefault_checked())
+                                        sw.WriteLine("NoDefault");
+                                }
+                                string tmp = "class " + cls.ToString() + " " + sub_form.getAdditionalString();
+                                sw.WriteLine(tmp);
+                                foreach (object evnt in sub_form.event_list.Items)
+                                {
+                                    sw.WriteLine(evnt.ToString());
+                                }
+                                sw.WriteLine("end class");
+                                sw.WriteLine();
+                                sw.Flush();
+                            }
+                            sw.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                         return;
                     }
-                    path = dialog.SelectedPath;
                 }
-                try
+            }
+                   
+            DialogResult result= MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                InputBox input = new InputBox("密碼", "請輸入金鑰(16進位制):");
+                char key = '\0';
+                if (input.ShowDialog() == DialogResult.OK)
                 {
-                    FileInfo finfo = new FileInfo(path +"/"+ scriptName + ".txt");
-                    StreamWriter sw = finfo.CreateText();
-                    foreach (object cls in cur_form.class_list.Items)
+                    try
                     {
-                        Dictionary<object, Event_Form> dict = cur_form.get_dict();
-                        Event_Form sub_form = dict[cls];
-                        string tmp = "class " + cls.ToString() + " " + sub_form.getAdditionalString();
-                        sw.WriteLine(tmp);                        
-                        foreach (object evnt in sub_form.event_list.Items)
-                        {
-                            sw.WriteLine(evnt.ToString());
-                        }
-                        sw.WriteLine("end class");
-                        sw.WriteLine();
-                        sw.Flush();
-                    }
-                    sw.Close();                   
-                    DialogResult result= MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(result == DialogResult.Yes)
+                        key = (char)int.Parse(input.textBox1.Text, System.Globalization.NumberStyles.HexNumber);
+                    }catch(Exception ex)
                     {
-                        InputBox input = new InputBox("密碼", "請輸入金鑰(16進位制):");
-                        char key = '\0';
-                        if (input.ShowDialog() == DialogResult.OK)
-                        {
-                            try
-                            {
-                                key = (char)int.Parse(input.textBox1.Text, System.Globalization.NumberStyles.HexNumber);
-                            }catch(Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                                return;
-                            }
-                        }
-                        Cipher.encode(path + "/" + scriptName + ".txt", path + "/" + scriptName + ".txt",key);
-                        MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        MessageBox.Show(ex.Message);
+                        return;
                     }
-                }catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
                 }
+                foreach (TabPage page in pages)
+                {
+                    ListBox list = page.Controls[0] as ListBox;
+                    foreach (object obj in list.Items)
+                    {
+                        string scriptName = obj.ToString();
+                        Cipher.encode(path + "/" + scriptName + ".auto", path + "/" + scriptName + ".auto", key);
+                    }
+                }
+                MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
 
