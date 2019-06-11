@@ -56,7 +56,7 @@ namespace AutoScriptVisualTool
         }
         public string getAdditionalString()
         {
-            if(which == 1)
+            if(which == 1 || which == 7)
             {
                 if (cb.Checked) return "static";
             }
