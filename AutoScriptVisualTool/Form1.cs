@@ -1587,7 +1587,7 @@ namespace AutoScriptVisualTool
                 };
                 float[] freqs =
                 {
-                    0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f
+                    1, 1, 1, 1, 1, 1
                 };
                 Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
                 {
