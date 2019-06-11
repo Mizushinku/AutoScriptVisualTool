@@ -608,6 +608,10 @@ namespace AutoScriptVisualTool
                         "SpeedDown"
                     }}
                 };
+                bool[] is_static2 =
+                {
+                    false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+                };
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -712,6 +716,10 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static2[q1]);
+
                         ++q1;
                     }
                     ++k1;
@@ -977,6 +985,10 @@ namespace AutoScriptVisualTool
                         "SpeedDown"
                     }}
                 };
+                bool[] is_static2 =
+                {
+                    false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+                };
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1081,6 +1093,8 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static2[q1]);
                         ++q1;
                     }
                     ++k1;
@@ -1370,6 +1384,10 @@ namespace AutoScriptVisualTool
                         "SpeedDown"
                     }}
                 };
+                bool[] is_static2 =
+                {
+                    false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+                };
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1474,6 +1492,8 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static2[q1]);
                         ++q1;
                     }
                     ++k1;
@@ -2173,6 +2193,10 @@ namespace AutoScriptVisualTool
                         "SpeedDown"
                     }}
                 };
+                bool[] is_static2 =
+                {
+                    false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+                };
                 Dictionary<int, string[]> dic4 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -2277,6 +2301,8 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num1, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic4[q1]);
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static2[q1]);
                         ++q1;
                     }
                     ++k1;
