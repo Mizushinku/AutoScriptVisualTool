@@ -67,7 +67,7 @@ namespace AutoScriptVisualTool
             else if (which == 4)
             {
                 return tb.Text;
-            }
+            }            
             return "";
         }
         private void add_cb_in_p1(String name, String text)

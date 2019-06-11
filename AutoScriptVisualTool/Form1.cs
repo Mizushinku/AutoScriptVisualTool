@@ -2802,22 +2802,23 @@ namespace AutoScriptVisualTool
                     try
                     {
                         key = (char)int.Parse(input.textBox1.Text, System.Globalization.NumberStyles.HexNumber);
-                    }catch(Exception ex)
+                        foreach (TabPage page in pages)
+                        {
+                            ListBox list = page.Controls[0] as ListBox;
+                            foreach (object obj in list.Items)
+                            {
+                                string scriptName = obj.ToString();
+                                Cipher.encode(path + "/" + scriptName + ".auto", path + "/" + scriptName + ".auto", key);
+                            }
+                        }
+                        MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    }
+                    catch(Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                         return;
                     }
-                }
-                foreach (TabPage page in pages)
-                {
-                    ListBox list = page.Controls[0] as ListBox;
-                    foreach (object obj in list.Items)
-                    {
-                        string scriptName = obj.ToString();
-                        Cipher.encode(path + "/" + scriptName + ".auto", path + "/" + scriptName + ".auto", key);
-                    }
-                }
-                MessageBox.Show("檔案加密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }                
             }
         }
 
