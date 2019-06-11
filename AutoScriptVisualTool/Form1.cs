@@ -787,13 +787,13 @@ namespace AutoScriptVisualTool
                         "true # ChangeText Quit/Text 離開遊戲 reserve 0,255,0 reserve -1",
                         "true # ChangeImage Back brave.jfif reserve 255,255,255,1 -1",
                         "true # Virtual Slider at 0,0,0",
-                        "true # ChBGMfrom Kao"
+
                     }},
                     {1, new string[]{
                         "true # Rename role 0 達拉崩巴",
                         "true # SetVar public 99 0",
                         "true # ShowText 無名小村 1700,1000 0,255,0 1,48,B -1 as Place",
-                        "true # ChBGMfrom Kao",
+                        "true # ChBGMfrom Strike",
                         "true # Virtual Default at 0,0,0",
                         "true # Virtual DontMove at 0,0,0",
                         "true # Virtual CanMove at 0,0,0",
@@ -882,6 +882,7 @@ namespace AutoScriptVisualTool
                     {9, new string[]
                     {
                         "true # ShowText 昆圖庫塔卡提考特蘇瓦西拉松龍穴 1700,1000 0,255,0 1,30,B -1 as Place",
+                        "true # ChBGMfrom Strike",
                         "true # Virtual Default at 0,0,0",
                         "true # Virtual DontMove at 0,0,0",
                         "true # Virtual CanMove at 0,0,0",
@@ -1267,13 +1268,13 @@ namespace AutoScriptVisualTool
                         "true # ChangeText Quit/Text 離開遊戲 reserve 0,255,0 reserve -1",
                         "true # ChangeImage Back zombie.jfif reserve 255,255,255,1 -1",
                         "true # Virtual Slider at 0,0,0",
-                        "true # ChBGMfrom Kao"
+                        "true # ChBGMfrom so116"
                     }},
                     {1, new string[]{
                         "true # Rename role 0 求生者",
                         "true # SetVar public 99 0",
                         "true # ShowText ??? 1700,1000 0,255,0 1,48,B -1 as Place",
-                        "true # ChBGMfrom Kao",
+                        "true # ChBGMfrom so116",
                         "true # Virtual Default at 0,0,0",
                         "true # Virtual DontMove at 0,0,0",
                         "true # Virtual CanMove at 0,0,0",
