@@ -49,6 +49,10 @@ namespace AutoScriptVisualTool
             {
                 //function class
             }
+            else if(which == 7)
+            {
+                add_cb_in_p1("static_cb", "static");
+            }
         }
         public string getAdditionalString()
         {
