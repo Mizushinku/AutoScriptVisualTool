@@ -40,14 +40,16 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.event_list);
-            this.splitContainer1.Size = new System.Drawing.Size(690, 561);
-            this.splitContainer1.SplitterDistance = 86;
+            this.splitContainer1.Size = new System.Drawing.Size(1035, 842);
+            this.splitContainer1.SplitterDistance = 129;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
             // 
             // event_list
@@ -55,10 +57,11 @@
             this.event_list.Dock = System.Windows.Forms.DockStyle.Fill;
             this.event_list.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.event_list.FormattingEnabled = true;
-            this.event_list.ItemHeight = 19;
+            this.event_list.ItemHeight = 29;
             this.event_list.Location = new System.Drawing.Point(0, 0);
+            this.event_list.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.event_list.Name = "event_list";
-            this.event_list.Size = new System.Drawing.Size(690, 471);
+            this.event_list.Size = new System.Drawing.Size(1035, 707);
             this.event_list.TabIndex = 0;
             this.event_list.VisibleChanged += new System.EventHandler(this.event_list_VisibleChanged);
             this.event_list.KeyDown += new System.Windows.Forms.KeyEventHandler(this.event_list_KeyDown);
@@ -66,11 +69,12 @@
             // 
             // Event_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 561);
+            this.ClientSize = new System.Drawing.Size(1035, 842);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Event_Form";
             this.Text = "Event_Form";
             this.splitContainer1.Panel2.ResumeLayout(false);
