@@ -1105,11 +1105,11 @@ namespace AutoScriptVisualTool
                 };
                 int[] ranges =
                 {
-                    1, 2, 3, 4, 5, 6
+                    4, 3, 2, 2, 4, 4
                 };
                 string[] hints =
                 {
-                    "A", "B", "C", "D", "E", "F"
+                    "傳送門", "村民", "昆圖庫塔卡提考特蘇瓦西拉松", "米婭莫拉蘇娜丹妮謝莉红", "國王", "傳送門"
                 };
                 Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
                 {
@@ -1490,6 +1490,14 @@ namespace AutoScriptVisualTool
                         "Rock", "Rock2", "Tree1", "Chest", "Brickwall"
                     }}
                 };
+                int[] ranges =
+                {
+                    2, 2, 2, 2, 2
+                };
+                string[] hints =
+                {
+                    "石頭1", "石頭2", "木頭1", "寶箱1", "磚頭1"
+                };
                 Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1550,6 +1558,9 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
+                        // set trigger range and hint for a class in trigger
+                        sub.get_sub_form().set_range_nud(ranges[q2]);
+                        sub.get_sub_form().set_hint_tb(hints[q2]);
                         ++q2;
                     }
                     ++k2;
@@ -2282,6 +2293,15 @@ namespace AutoScriptVisualTool
                         "People", "Peporter", "Hen", "Ano", "Door", "Zuki", "River", "Dachen", "Gasoline"
                     }}
                 };
+                int[] ranges =
+                {
+                    2, 2, 2, 2, 2, 2, 2, 2, 2
+                };
+                string[] hints =
+                {
+                    "財神市長", "寒天記者", "潘橫旭", "阿No經紀人", "與釘手中交談",
+                    "凳子棋經紀人", "試喝", "孫小千", "調查岩石"
+                };
                 Dictionary<int, string[]> dic6 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -2556,6 +2576,9 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num2, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic6[q2]);
+                        // set trigger range and hint for a class in trigger
+                        sub.get_sub_form().set_range_nud(ranges[q2]);
+                        sub.get_sub_form().set_hint_tb(hints[q2]);
                         ++q2;
                     }
                     ++k2;
