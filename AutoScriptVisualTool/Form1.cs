@@ -443,7 +443,7 @@ namespace AutoScriptVisualTool
                 };
                 bool[] is_NoDefault =
                 {
-                    false, true
+                    true, false
                 };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
@@ -456,7 +456,7 @@ namespace AutoScriptVisualTool
                 };
                 bool[] is_static =
                 {
-                    true, true, false
+                    false, false, true
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
@@ -758,6 +758,10 @@ namespace AutoScriptVisualTool
                 {
                     "start0", "start1", "start2", "start10"
                 };
+                bool[] is_NoDefault =
+                {
+                    true, false, false, false
+                };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -772,6 +776,10 @@ namespace AutoScriptVisualTool
                     {3, new string[]{
                         "SceneStart", "DontMove", "CanMove", "KEsc"
                     }}
+                };
+                bool[] is_static =
+                {
+                    false, false, true, true, true, false, true, true, true, false, true, true, true
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
@@ -923,12 +931,20 @@ namespace AutoScriptVisualTool
                 {
                     map.Add(i, new Script_form(num));
                     Script_form sub = (Script_form)map[i];
+
+                    // set NoDefault for start scripts
+                    sub.set_no_default_cb(is_NoDefault[k]);
+
                     foreach (string s in dic[k])
                     {
                         object obj = s as object;
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static[q]);
+
                         ++q;
                     }
                     ++k;
@@ -1221,6 +1237,10 @@ namespace AutoScriptVisualTool
                 {
                     "start0", "start1"
                 };
+                bool[] is_NoDefault =
+                {
+                    true, false
+                };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1229,6 +1249,10 @@ namespace AutoScriptVisualTool
                     {1, new string[]{
                         "SceneStart", "DontMove", "CanMove", "KEsc"
                     }}
+                };
+                bool[] is_static =
+                {
+                    false, false, true, true, true
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
@@ -1304,12 +1328,16 @@ namespace AutoScriptVisualTool
                 {
                     map.Add(i, new Script_form(num));
                     Script_form sub = (Script_form)map[i];
+                    // set NoDefault for start scripts
+                    sub.set_no_default_cb(is_NoDefault[k]);
                     foreach (string s in dic[k])
                     {
                         object obj = s as object;
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static[q]);
                         ++q;
                     }
                     ++k;
@@ -1643,6 +1671,10 @@ namespace AutoScriptVisualTool
                 {
                     "start0", "start1"
                 };
+                bool[] is_NoDefault =
+                {
+                    true, false
+                };
                 Dictionary<int, string[]> dic = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -1653,6 +1685,11 @@ namespace AutoScriptVisualTool
                         "GasA", "GasB", "GasC", "GasD", "K0", "K1", "K2", "K3", "K4", "K5", "K6", "K7", "K8", "K9",
                         "KEnter", "KEsc"
                     }}
+                };
+                bool[] is_static =
+                {
+                    false, false, true, true, true, true, true, true, true, true, true, true,
+                    true, true, true, true, true, true, true, true, true, true, true, true
                 };
                 Dictionary<int, string[]> dic2 = new Dictionary<int, string[]>
                 {
@@ -2083,12 +2120,16 @@ namespace AutoScriptVisualTool
                 {
                     map.Add(i, new Script_form(num));
                     Script_form sub = (Script_form)map[i];
+                    // set NoDefault for start scripts
+                    sub.set_no_default_cb(is_NoDefault[k]);
                     foreach (string s in dic[k])
                     {
                         object obj = s as object;
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic2[q]);
+                        // set static for a start class
+                        sub.get_sub_form().set_static_cb(is_static[q]);
                         ++q;
                     }
                     ++k;
