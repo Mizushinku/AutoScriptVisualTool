@@ -176,7 +176,7 @@ namespace AutoScriptVisualTool
             ((TextBox)this.splitContainer1.Panel1.Controls["hint_tb"]).Text = hint;
         }
 
-        public void set_freq_tb(int freq)
+        public void set_freq_tb(float freq)
         {
             ((TextBox)this.splitContainer1.Panel1.Controls["freq_tb"]).Text = freq.ToString();
         }

@@ -1577,9 +1577,9 @@ namespace AutoScriptVisualTool
                         "Zombie1", "Zombie2", "Zombie3", "Zombie4", "Zombie5", "Zombie6"
                     }}
                 };
-                int[] freqs =
+                float[] freqs =
                 {
-                    9, 8, 7, 6, 5, 4
+                    0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f
                 };
                 Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
                 {
@@ -2595,6 +2595,10 @@ namespace AutoScriptVisualTool
                         "SceneStart", "Slider"
                     }}
                 };
+                float[] freqs =
+                {
+                    2, 0.3f
+                };
                 Dictionary<int, string[]> dic8 = new Dictionary<int, string[]>
                 {
                     {0, new string[]{
@@ -2624,6 +2628,8 @@ namespace AutoScriptVisualTool
                         sub.class_list.Items.Add(obj);
                         sub.class_list_ItemAdded(num3, obj);
                         sub.get_sub_form().event_list.Items.AddRange(dic8[q3]);
+                        // set update freqence for a class in update
+                        sub.get_sub_form().set_freq_tb(freqs[q3]);
                         ++q3;
                     }
                     ++k3;
