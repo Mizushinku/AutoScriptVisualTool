@@ -839,16 +839,13 @@ namespace AutoScriptVisualTool
                     }},
                     {5, new string[]
                     {
-                        "true # ShowText 蒙達魯克硫斯伯古比奇巴勒城 1700,1000 0,255,0 1,30,B -1 as Place",
+                        "true # ShowText 昆圖庫塔卡提考特蘇瓦西拉松龍穴 1700,1000 0,255,0 1,30,B -1 as Place",
+                        "true # ChBGMfrom Strike",
                         "true # Virtual Default at 0,0,0",
                         "true # Virtual DontMove at 0,0,0",
                         "true # Virtual CanMove at 0,0,0",
-                        "true # NPC White in role -5,-5.5,5 as King",
-                        "true # NPC Vanguard in role -6,-5.5,1 as Guard1",
-                        "true # NPC Vanguard in role -4,-5.5,1 as Guard2",
-                        "true # NPC Vanguard in role -6,-5.5,9 as Guard3",
-                        "true # NPC Vanguard in role -4,-5.5,9 as Guard4",
-                        "true # Create AngelStatue in role -4,-5.5,15 as Statue",
+                        "true # NPC Greenbear in role -15,0,-10 as Monster",
+                        "true # NPC Girl0 in role -22,0,-10 as Princess",
                         "true # Bind down Esc KEsc +"
                     }},
                     {6, new string[]
@@ -881,13 +878,16 @@ namespace AutoScriptVisualTool
                     }},
                     {9, new string[]
                     {
-                        "true # ShowText 昆圖庫塔卡提考特蘇瓦西拉松龍穴 1700,1000 0,255,0 1,30,B -1 as Place",
-                        "true # ChBGMfrom Strike",
+                        "true # ShowText 蒙達魯克硫斯伯古比奇巴勒城 1700,1000 0,255,0 1,30,B -1 as Place",
                         "true # Virtual Default at 0,0,0",
                         "true # Virtual DontMove at 0,0,0",
                         "true # Virtual CanMove at 0,0,0",
-                        "true # NPC Greenbear in role -15,0,-10 as Monster",
-                        "true # NPC Girl0 in role -22,0,-10 as Princess",
+                        "true # NPC White in role -5,-5.5,5 as King",
+                        "true # NPC Vanguard in role -6,-5.5,1 as Guard1",
+                        "true # NPC Vanguard in role -4,-5.5,1 as Guard2",
+                        "true # NPC Vanguard in role -6,-5.5,9 as Guard3",
+                        "true # NPC Vanguard in role -4,-5.5,9 as Guard4",
+                        "true # Create AngelStatue in role -4,-5.5,15 as Statue",
                         "true # Bind down Esc KEsc +"
                     }},
                     {10, new string[]
