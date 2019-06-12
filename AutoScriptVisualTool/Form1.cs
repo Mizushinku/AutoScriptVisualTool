@@ -2727,8 +2727,9 @@ namespace AutoScriptVisualTool
         private void output_file_btn_Click(object sender, EventArgs e)
         {                         
             string path = "";
-            FolderBrowserDialog dialog = new FolderBrowserDialog();                
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 if (string.IsNullOrEmpty(dialog.SelectedPath))
                 {
@@ -2737,6 +2738,7 @@ namespace AutoScriptVisualTool
                 }
                 path = dialog.SelectedPath;
             }
+            else if (result == DialogResult.Cancel) return;
             TabControl.TabPageCollection pages = tabControl1.TabPages;
             foreach (TabPage page in pages)
             {
@@ -2792,7 +2794,7 @@ namespace AutoScriptVisualTool
                 }
             }
                    
-            DialogResult result= MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result= MessageBox.Show("檔案輸出成功!是否加密?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes)
             {
                 InputBox input = new InputBox("密碼", "請輸入金鑰(16進位制):");
@@ -2839,13 +2841,15 @@ namespace AutoScriptVisualTool
                 }
             }
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = false;
+            dialog.Multiselect = true;
             dialog.Title = "請選擇檔案";
-            dialog.Filter = "文字檔案(*.txt)|*.txt";
+            dialog.Filter = "文字檔案(*.auto)|*.auto";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string file = dialog.FileName;
-                Cipher.decode(file, file, key);
+                foreach (string file in dialog.FileNames)
+                {
+                    Cipher.decode(file, file, key);                    
+                }
                 MessageBox.Show("檔案解密完成!", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
